@@ -1,5 +1,5 @@
 Folie 2:
--Die Monte-Carlo-Methode, ist ein Verfahren aus der Stochastik, bei dem sehr häufig durchgeführte Zufallsexperimente die Basis darstellen. Es wird aufgrund der Ergebnisse versucht mit Hilfe der Wahrscheinlichkeitstheorie analytisch unlösbare Probleme im mathematischem Kontext numerisch zu lösen.
+-Die Monte-Carlo-Methode, ist ein Verfahren aus der Stochastik, bei dem sehr häufig durchgeführte Zufallsexperimente die Basis darstellen. Es wird aufgrund der Ergebnisse versucht mit Hilfe der Wahrscheinlichkeitstheorie analytisch unlösbare Probleme in mathematischem Kontext numerisch zu lösen.
 -Es gibt verschiedene Typen von Monte-Carlo Verfahren, und wir werden uns mit dem Ensemble-Monte-Carlo-Verfahren beschaeftigen. Das bedeutet, dass mehrere Ausgaben auf einmal generiert werden, da wir diese parallel berechnen. 
 Wahrscheinlichkeitsverteilungen beschreiben, wie sich die Wahrscheinlichkeiten auf die möglichen Ergebnisse einer Zufallsvariable verteilen.
 

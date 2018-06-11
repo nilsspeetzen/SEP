@@ -4,7 +4,7 @@ Folie 2:
 Wahrscheinlichkeitsverteilungen beschreiben, wie sich die Wahrscheinlichkeiten auf die möglichen Ergebnisse einer Zufallsvariable verteilen.
 
 Folie 3:
--Eine Wahrscheinlichkeitsverteilung gibt an, wie sich die Wahrscheinlichkeiten auf die möglichen Werte einer Zufallsvariablen verteilen.
+-Eine Wahrscheinlichkeitsverteilung gibt an, wie sich die Wahrscheinlichkeiten auf die möglichen Werte einer Zufallsvariable verteilen.
 -Ziel der Sensitivitaetsanalhyse: Quantifizierung der Aenderung der Modellausgabe, die von der Aenderung der Modelleingabe verursacht wird
     *Identifikation der Parameter (unsichere Parameter), fuer die man besonders genaue Eingangsinformation braucht
     *Verstaendnis der Modellsystems

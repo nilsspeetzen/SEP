@@ -20,17 +20,22 @@ int main(int c, char* v[]) {
         //cin >> input;
         MT firstline;
         ifstream infile(input);
-        int n, m;
-        infile >> n >> m;
+        int n;
+        infile >> n;
         LINEAR_SYSTEM lsys(n);
-        lsys.A() = MT::Constant(n,m,0);
 
         for(int i=0; i<n;i++)
-            for(int j=0; j<m;j++) {
+            for(int j=0; j<n;j++)
                 infile >> lsys.A(i,j);
-            }
 
-        cout << lsys.A() << endl;
+        for(int i=0; i<n;i++)
+            infile >> lsys.b(i);
+
+        cout << "A" << endl << lsys.A() << endl
+             << "b" << endl << lsys.b() << endl;
+        LU lsol;
+        lsol.solve(lsys);
+        cout << "x" << endl << lsys.x() << endl;
 
         break;
     }

@@ -1,6 +1,7 @@
 #include<cassert>
 #include<cstdlib>
 #include<iostream>
+#include<fstream>
 using namespace std;
 
 #include "../lin_sys/lin_sys.h"
@@ -19,6 +20,13 @@ int main(int c, char* v[]) {
         cin >> input;
         cout << input << endl;
 
+        int test = 0;
+        ifstream inputstream;
+        inputstream.open (input);
+        inputstream >> test;
+        inputstream.close();
+
+        cout << test << endl;
         /*LINEAR_SYSTEM lsys(n);
         lsys.A()=MT::Random(n,n);
         lsys.b()=VT::Random(n);

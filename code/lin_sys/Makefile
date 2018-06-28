@@ -3,8 +3,8 @@ EXE=$(addsuffix .exe, $(basename $(SRC)))
 CPPC=clang++ -std=c++14
 CPPC=g++-8 -std=c++14
 CPPC_FLAGS=-Wall -Wextra -pedantic -O3 
-DCO=../../../dco
-EIGEN=../../../eigen
+DCO=../../../lib/dco
+EIGEN=../../../lib/eigen
 all : $(EXE)
 
 %.exe : %.cpp

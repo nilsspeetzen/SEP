@@ -4,7 +4,8 @@
 #include<fstream>
 using namespace std;
 
-#include "../lin_sys/lin_sys.h"
+//#include "../lin_sys/lin_sys.h"
+#include "montecarlo.h"
 
 int main(int c, char* v[]) {
     cout << endl << "-----Menue-----" << endl
@@ -36,6 +37,10 @@ int main(int c, char* v[]) {
         LU lsol;
         lsol.solve(lsys);
         cout << "x" << endl << lsys.x() << endl;
+
+        LINEAR_SYSTEM_GEN lsysg(lsys);
+        LINEAR_SYSTEM rlsys = lsysg.getSystem(5);
+        cout << "Ar" << endl << rlsys.A() << endl;
 
         break;
     }

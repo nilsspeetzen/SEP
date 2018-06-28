@@ -2,14 +2,14 @@ SRC=$(wildcard *.cpp)
 EXE=$(addsuffix .exe, $(basename $(SRC)))
 CPPC=clang++ -std=c++14 
 CPPC=g++-8 -std=c++14
-#CPPC_FLAGS=-Wall -Wextra -pedantic -O3
+CPPC_FLAGS=-Wall -Wextra -pedantic -O3
 DCO=../../../lib/dco/dcw6i32nel/include
 EIGEN=../../../lib/eigen
 
 all : $(EXE)
 
 %.exe : %.cpp
-	$(CPPC) $(CPPC_FLAGS) $< -I$(EIGEN) -I$(DCO) -o $@
+        $(CPPC) $(CPPC_FLAGS) $< -I$(EIGEN) -I$(DCO) -o $@
 
 pdf : 
 	mpage -1 -H *.h *.cpp >source.ps

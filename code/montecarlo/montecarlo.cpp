@@ -6,22 +6,26 @@ using namespace std;
 #include "../lin_sys/lin_sys.h"
 
 int main(int c, char* v[]) {
-    cout << "kek" << endl;
-    int n = 3;
-    LINEAR_SYSTEM lsys(n);
-    lsys.A()=MT::Random(n,n);
-    lsys.b()=VT::Random(n);
-  {
-    cout << "LU" << endl;
-    LU lsol;
-    lsol.solve(lsys);
-    cout << "x=" << endl << lsys.x() << endl;
-  }
-  {
-    cout << "QR" << endl;
-    QR lsol;
-    lsol.solve(lsys);
-    cout << "x=" << endl << lsys.x() << endl;
-  }
+    cout << endl << "-----Menue-----" << endl
+                 << "1: linsys" << endl;
+    int n=0;
+    cin >> n;
+    switch (n) {
+    case 1:
+    {
+        LINEAR_SYSTEM lsys(n);
+        lsys.A()=MT::Random(n,n);
+        lsys.b()=VT::Random(n);
+        cout << "LU" << endl;
+        LU lsol;
+        lsol.solve(lsys);
+        cout << "x=" << endl << lsys.x() << endl;
+        break;
+    }
+    default:
+        cout << endl << "-----Fehler-----" << endl;
+        break;
+    }
+
     return 0;
 }

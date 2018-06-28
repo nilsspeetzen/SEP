@@ -15,12 +15,10 @@ int main(int c, char* v[]) {
     switch (n) {
     case 1:
     {
-        string input = "kek.txt";
-        cout << "Bitte geben sie den Namen ihrer Inputdatei ein: ";
+        string input = "";
+        cout << "Inputdatei: ";
         cin >> input;
-        cout << input << endl;
-
-        int test = 0;
+        string test = "";
         ifstream inputstream;
         inputstream.open (input);
         inputstream >> test;

@@ -36,12 +36,14 @@ int main(int c, char* v[]) {
         //     << "b" << endl << lsys.b() << endl;
         LU lsol;
         lsol.solve(lsys);
-        //cout << "x" << endl << lsys.x() << endl;
+        cout << "x" << endl << lsys.x() << endl;
 
         LINEAR_SYSTEM_GEN lsysg(lsys);
         LINEAR_PARRALEL_SOLVER lsysps(lsysg);
-        DATASET data = lsysps.psolve(1000,0.01);
+        DATASET data = lsysps.psolve(10,0.01);
         data.writeToFile("data.txt");
+
+        data.displayRow(0, lsys.x());
 
         break;
     }

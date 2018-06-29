@@ -42,6 +42,12 @@ public:
     void addSol(int i, VT sol) {
         _x.col(i) = sol;
     }
+    void displayRow(int i, VT x) {
+        VT line = _x.row(i);
+        VT diff = line-VT::Constant(line.size(), x(i));
+        cout << line.maxCoeff() << endl;
+        cout << diff << endl;
+    }
 };
 
 class LINEAR_PARRALEL_SOLVER

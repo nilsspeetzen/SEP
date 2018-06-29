@@ -32,15 +32,15 @@ int main(int c, char* v[]) {
         for(int i=0; i<n;i++)
             infile >> lsys.b(i);
         infile.close();
-        cout << "A" << endl << lsys.A() << endl
-             << "b" << endl << lsys.b() << endl;
+        //cout << "A" << endl << lsys.A() << endl
+        //     << "b" << endl << lsys.b() << endl;
         LU lsol;
         lsol.solve(lsys);
-        cout << "x" << endl << lsys.x() << endl;
+        //cout << "x" << endl << lsys.x() << endl;
 
         LINEAR_SYSTEM_GEN lsysg(lsys);
         LINEAR_PARRALEL_SOLVER lsysps(lsysg);
-        DATASET data = lsysps.psolve(10,0.01);
+        DATASET data = lsysps.psolve(1000,0.01);
         data.writeToFile("data.txt");
 
         break;

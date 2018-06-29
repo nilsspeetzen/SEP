@@ -8,6 +8,7 @@ CPPC=g++-8 -std=c++14
 
 #CPPC_FLAGS=-Wall -Wextra -pedantic -O3
 
+OMP=-fopenmp
 DCO=../../../lib/dco
 
 EIGEN=../../../lib/eigen
@@ -19,7 +20,7 @@ all : $(EXE)
 
 %.exe : %.cpp
 
-	$(CPPC) $(CPPC_FLAGS) $< -I$(EIGEN) -I$(DCO) -o $@
+	$(CPPC) $(CPPC_FLAGS) $(OMP) $< -I$(EIGEN) -I$(DCO) -o $@
 
 
 

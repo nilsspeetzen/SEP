@@ -5,6 +5,7 @@
 #include <fstream>
 #include <random>
 #include <chrono>
+#include <omp.h>
 using namespace std;
 
 class LINEAR_SYSTEM_GEN
@@ -52,11 +53,15 @@ public:
     DATASET psolve(int num, double range) {
         DATASET sol(_lsysg.n(), num);
         LU lu;
+        double start = omp_get_wtime();
+        #pragma omp parallel for
         for(int i=0; i<num; i++){
             LINEAR_SYSTEM rlsys = _lsysg.getSystem(range);
             lu.solve(rlsys);
             sol.addSol(i,rlsys.x());
         }
+        double end = omp_get_wtime();
+        cout << "Zeit fürs Lösen: " << end-start << endl;
         return sol;
     }
 

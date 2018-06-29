@@ -40,7 +40,7 @@ int main(int c, char* v[]) {
 
         LINEAR_SYSTEM_GEN lsysg(lsys);
         LINEAR_PARRALEL_SOLVER lsysps(lsysg);
-        DATASET data = lsysps.psolve(10,5);
+        DATASET data = lsysps.psolve(10,0.01);
         data.writeToFile("data.txt");
 
         break;

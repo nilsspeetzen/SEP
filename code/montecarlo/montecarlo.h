@@ -3,6 +3,8 @@
 
 #include "../lin_sys/lin_sys.h"
 #include <fstream>
+#include <random>
+#include <chrono>
 using namespace std;
 
 class LINEAR_SYSTEM_GEN
@@ -13,9 +15,11 @@ protected:
 public:
     LINEAR_SYSTEM_GEN(LINEAR_SYSTEM lsys) : _lsys(lsys), _n(lsys.A().rows()) {}
     LINEAR_SYSTEM getSystem(double range) {
-        LINEAR_SYSTEM rlsys(_n);
-        srand (time(NULL));
-        double f = (double)rand() / RAND_MAX;
+        LINEAR_SYSTEM rlsys = _lsys;
+        unsigned seed = chrono::system_clock::now().time_since_epoch().count();
+        default_random_engine generator(seed);
+        normal_distribution<double> distribution(0,range);
+        double f = distribution(generator);
         rlsys.A() = _lsys.A() + MT::Constant(_n,_n,2*range*f - range);
         return rlsys;
     }

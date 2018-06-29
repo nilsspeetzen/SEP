@@ -7,10 +7,9 @@ CPPC=clang++ -std=c++14
 CPPC=g++-8 -std=c++14
 
 #CPPC_FLAGS=-Wall -Wextra -pedantic -O3
-
-OMP=-fopenmp
+CPPC_FLAGS=
 DCO=../../../lib/dco
-
+/dcw6i32nel/includeasd
 EIGEN=../../../lib/eigen
 
 
@@ -19,9 +18,7 @@ all : $(EXE)
 
 
 %.exe : %.cpp
-
-	$(CPPC) $(CPPC_FLAGS) $(OMP) $< -I$(EIGEN) -I$(DCO) -o $@
-
+	$(CPPC) $(CPPC_FLAGS) $< -I$(EIGEN) -I$(DCO) -o $@
 
 
 pdf :
@@ -30,10 +27,11 @@ pdf :
 	ps2pdf source.ps
 
 
-
 clean :
+
 	rm -fr $(EXE) *.out html latex source.*
 
 
 
 .PHONY: all clean pdf
+

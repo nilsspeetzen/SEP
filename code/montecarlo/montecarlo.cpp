@@ -31,7 +31,7 @@ int main(int c, char* v[]) {
 
         for(int i=0; i<n;i++)
             infile >> lsys.b(i);
-
+        infile.close();
         cout << "A" << endl << lsys.A() << endl
              << "b" << endl << lsys.b() << endl;
         LU lsol;
@@ -39,8 +39,9 @@ int main(int c, char* v[]) {
         cout << "x" << endl << lsys.x() << endl;
 
         LINEAR_SYSTEM_GEN lsysg(lsys);
-        LINEAR_SYSTEM rlsys = lsysg.getSystem(5);
-        cout << "Ar" << endl << rlsys.A() << endl;
+        LINEAR_PARRALEL_SOLVER lsysps(lsysg);
+        DATASET data = lsysps.psolve(10,5);
+        data.writeToFile("data.txt");
 
         break;
     }

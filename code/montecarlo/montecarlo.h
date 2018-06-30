@@ -34,8 +34,18 @@ class DATASET
 {
 protected:
     MT _x;
+    int _dim;
+    int _num;
 public:
-    DATASET(int dim, int num) : _x(MT::Zero(dim,num)) {}
+    DATASET() {}
+    DATASET(int dim, int num) : _x(MT::Zero(dim,num)), _dim(dim), _num(num) {}
+    DATASET(string name, int dim, int num) : _x(MT::Zero(dim,num)), _dim(dim), _num(num) {
+        ifstream input(name);
+        for(int i=0; i<dim;i++)
+            for(int j=0; j<num;j++)
+                input >> _x(i,j);
+        input.close();
+    }
     void writeToFile(string name) {
         ofstream output(name);
         output << _x;
@@ -44,6 +54,12 @@ public:
     void addSol(int i, VT sol) {
         _x.col(i) = sol;
     }
+    void displayRow(int i) {
+        VT line = _x.row(i);
+        double avg = line.mean();
+        cout << "Mittelwert:" << avg << endl;
+        //cout << "Alle Werte:" << endl << line << endl;
+    }
     void displayRow(int i, VT x) {
         VT line = _x.row(i);
         VT diff = line-VT::Constant(line.size(), x(i));
@@ -51,7 +67,7 @@ public:
         cout << "Auswertung für Parameter " << i+1 << ":" << endl;
         cout << "Exakt:   " << x(i) << endl;
         cout << "Maxdiff: " << maxDiff << endl;
-        cout << "Alle Werte:" << endl << line << endl;
+        //cout << "Alle Werte:" << endl << line << endl;
     }
 };
 

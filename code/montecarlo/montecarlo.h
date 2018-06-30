@@ -21,7 +21,9 @@ public:
         default_random_engine generator(seed);
         normal_distribution<double> distribution(0,range);
         double f = distribution(generator);
-        rlsys.A() = _lsys.A() + MT::Constant(_n,_n,2*range*f - range);
+        f = range*f;
+        //cout << f << endl;
+        rlsys.A() = _lsys.A() + MT::Constant(_n,_n,f);
         return rlsys;
     }
     LINEAR_SYSTEM& lsys() { return _lsys; }
@@ -45,8 +47,11 @@ public:
     void displayRow(int i, VT x) {
         VT line = _x.row(i);
         VT diff = line-VT::Constant(line.size(), x(i));
-        cout << line.maxCoeff() << endl;
-        cout << diff << endl;
+        double maxDiff = diff.cwiseAbs().maxCoeff();
+        cout << "Auswertung für Parameter " << i+1 << ":" << endl;
+        cout << "Exakt:   " << x(i) << endl;
+        cout << "Maxdiff: " << maxDiff << endl;
+        cout << "Alle Werte:" << endl << line << endl;
     }
 };
 
@@ -60,10 +65,11 @@ public:
         DATASET sol(_lsysg.n(), num);
         LU lu;
         double start = omp_get_wtime();
-        #pragma omp parallel for
+        //#pragma omp parallel for
         for(int i=0; i<num; i++){
             LINEAR_SYSTEM rlsys = _lsysg.getSystem(range);
             lu.solve(rlsys);
+            //cout << "A11: " << rlsys.A()(1,1) << " X: " << rlsys.x()(1) << endl;
             sol.addSol(i,rlsys.x());
         }
         double end = omp_get_wtime();

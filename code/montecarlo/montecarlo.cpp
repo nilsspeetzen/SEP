@@ -12,13 +12,14 @@ int main(int c, char* v[]) {
                  << "1: System loesen" << endl
                  << "2: Ergebnisse anzeigen" << endl;
     int n=1;
-    //cin >> n;
+    cin >> n;
+    while(n!=3) {
     switch (n) {
     case 1:
     {
         string input = "m.txt";
-        //cout << "Inputdatei: ";
-        //cin >> input;
+        cout << "Inputdatei: ";
+        cin >> input;
         MT firstline;
         ifstream infile(input);
         int n;
@@ -36,20 +37,28 @@ int main(int c, char* v[]) {
         //     << "b" << endl << lsys.b() << endl;
         LU lsol;
         lsol.solve(lsys);
-        cout << "x" << endl << lsys.x() << endl;
+        cout << "Lösung mit Erwartungswerten:" << endl << lsys.x() << endl;
 
         LINEAR_SYSTEM_GEN lsysg(lsys);
         LINEAR_PARRALEL_SOLVER lsysps(lsysg);
-        DATASET data = lsysps.psolve(10,0.01);
+        DATASET data = lsysps.psolve(10,0.1);
         data.writeToFile("data.txt");
 
-        data.displayRow(0, lsys.x());
-
         break;
+    }
+    case 2:
+    {
+        if(data == nullptr) break;
+        int i = 1;
+        cout << "Welchen Parameter möchten Sie betrachten? ";
+        cin >> i;
+        data.displayRow(i-1, lsys.x());
+
     }
     default:
         break;
     }
-
+    cin >> n;
+    }
     return 0;
 }

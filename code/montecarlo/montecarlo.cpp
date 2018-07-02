@@ -25,7 +25,7 @@ int main(int c, char* v[]) {
         {
             cout << endl << "1:LIN" << endl
                          << "2:NONLIN" << endl
-                         << "3:ODE";
+                         << "3:ODE" << endl;
             int systype = 1;
             cin >> systype;
 
@@ -74,7 +74,8 @@ int main(int c, char* v[]) {
                 cin >> num;
                 cout << "Standardabweichung: ";
                 cin >> range;
-                NONLINEAR_MC_SOLVER<double, NS, NP> nlmcsol(&nlsys);
+
+                NONLINEAR_MC_SOLVER<TOY<double>, double, NS, NP> nlmcsol(nlsys);
                 DATASET data = nlmcsol.psolve(num, range);
                 data.writeToFile("data.txt");
                 unlock2 = true;
@@ -82,7 +83,27 @@ int main(int c, char* v[]) {
             }
             case 3:
             {
+                cout << "LV" << endl;
+                const int NS=2,NP=4;
+                LOTKA_VOLTERRA<double> ode;
+                ode.x(0)=1000; ode.x(1)=20;
+                ode.p(0)=0.015; ode.p(1)=0.0001; ode.p(2)=0.03; ode.p(3)=0.0001;
 
+                double range, T_end, nts;
+                cout << "Wieviele Berechnungen sollen durchgeführt werden? ";
+                cin >> num;
+                cout << "Standardabweichung: ";
+                cin >> range;
+                cout << "Endzeit: ";
+                cin >> T_end;
+                cout << "Zeitschritte: ";
+                cin >> nts;
+
+                ODE_MC_SOLVER<LOTKA_VOLTERRA<double>, double, NP, NS> odesol(ode);
+                DATASET data = odesol.psolve(num, range);
+                data.writeToFile("data.txt");
+                unlock2 = true;
+                break;
             }
             default:
                 break;
@@ -93,7 +114,7 @@ int main(int c, char* v[]) {
         case 2:
         {
             if(!unlock2) break;
-            DATASET data("data.txt", dim, num);
+            DATASET data("data.txt");
             int i = 1;
             cout << "Welchen Parameter möchten Sie betrachten? ";
             cin >> i;

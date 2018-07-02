@@ -23,15 +23,18 @@ protected:
 public:
     DATASET() {}
     DATASET(int dim, int num) : _x(MT::Zero(dim,num)), _dim(dim), _num(num) {}
-    DATASET(string name, int dim, int num) : _x(MT::Zero(dim,num)), _dim(dim), _num(num) {
+    DATASET(string name) {
         ifstream input(name);
-        for(int i=0; i<dim;i++)
-            for(int j=0; j<num;j++)
+        input >> _dim >> _num;
+        _x = MT::Zero(_dim,_num);
+        for(int i=0; i<_dim;i++)
+            for(int j=0; j<_num;j++)
                 input >> _x(i,j);
         input.close();
     }
     void writeToFile(string name) {
         ofstream output(name);
+        output << _dim << " " << _num << " " << endl;
         output << _x;
         output.close();
     }
@@ -39,10 +42,14 @@ public:
         _x.col(i) = sol;
     }
     void displayRow(int i) {
-        VT line = _x.row(i);
-        double avg = line.mean();
-        cout << "Mittelwert:" << avg << endl;
-        //cout << "Alle Werte:" << endl << line << endl;
+        if(0 <= i && i <= _dim-1) {
+            VT line = _x.row(i);
+            double avg = line.mean();
+            cout << "Mittelwert:" << avg << endl;
+            //cout << "Alle Werte:" << endl << line << endl;
+        } else {
+            cout << "Nicht so viele Dimensionen";
+        }
     }
     void displayRow(int i, VT x) {
         VT line = _x.row(i);

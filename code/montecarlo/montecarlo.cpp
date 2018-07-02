@@ -24,7 +24,8 @@ int main(int c, char* v[]) {
         case 1:
         {
             cout << endl << "1:LIN" << endl
-                         << "2:NONLIN" << endl;
+                         << "2:NONLIN" << endl
+                         << "3:ODE";
             int systype = 1;
             cin >> systype;
 
@@ -63,7 +64,7 @@ int main(int c, char* v[]) {
             }
             case 2:
             {
-                /*cout << "Toy" << endl;
+                cout << "Toy" << endl;
                 const int NS=1,NP=1;
                 TOY<double> nlsys;
                 nlsys.x(0)=1; nlsys.p(0)=2;
@@ -73,8 +74,10 @@ int main(int c, char* v[]) {
                 cin >> num;
                 cout << "Standardabweichung: ";
                 cin >> range;
-                NONLINEAR_MC_SOLVER nlmcsol(nlsys);
-                DATASET data = nlmcsol.psolve(num, range);*/
+                NONLINEAR_MC_SOLVER<double, NS, NP> nlmcsol(&nlsys);
+                DATASET data = nlmcsol.psolve(num, range);
+                data.writeToFile("data.txt");
+                unlock2 = true;
                 break;
             }
             case 3:
@@ -95,6 +98,7 @@ int main(int c, char* v[]) {
             cout << "Welchen Parameter möchten Sie betrachten? ";
             cin >> i;
             data.displayRow(i-1);
+            break;
 
         }
         default:

@@ -19,26 +19,27 @@ class NONLINEAR_MC_SOLVER
     typedef Matrix<TP,NP,1> VTP;
 
 protected:
-    NONLINEAR_SYSTEM<TS,NP,NS,TP> _nlsys;
+    NONLINEAR_SYSTEM<TS,NP,NS,TP>* _nlsys;
     int _n;
 public:
-    NONLINEAR_MC_SOLVER(NONLINEAR_SYSTEM<TS,NP,NS,TP>& nlsys) : _nlsys(nlsys), _n(nlsys.x.rows()) {}
+    NONLINEAR_MC_SOLVER(NONLINEAR_SYSTEM<TS,NP,NS,TP>* nlsys) : _nlsys(nlsys), _n(nlsys->x().rows()) {}
     DATASET psolve(int num, double range) {
         DATASET sol(_n, num);
-        LU lsol;
-        NEWTON nlsol(lsol);
+        LU<TS,NS> lsol;
+        NEWTON<TS,NS,NP> nlsol(lsol);
         nlsol.eps() = 1e-7;
         double start = omp_get_wtime();
         #pragma omp parallel for
         for(int i=0; i<num; i++){
-            NONLINEAR_SYSTEM<TS,NP,NS,TP> nrlsys = _nlsys;
+            NONLINEAR_SYSTEM<TS,NP,NS,TP>* nrlsys;
+            nrlsys = _nlsys;
             unsigned seed = chrono::system_clock::now().time_since_epoch().count();
             default_random_engine generator(seed);
             normal_distribution<double> distribution(0,range);
             double f = range*distribution(generator);
-            nrlsys.x() = _nlsys.x() + MT::Constant(_n,1,f);
-            nlsol.solve(nrlsys);
-            sol.addSol(i,nrlsys.x());
+            nrlsys->x() = _nlsys->x() + MT::Constant(_n,1,f);
+            nlsol.solve(*nrlsys);
+            sol.addSol(i,nrlsys->x());
         }
         double end = omp_get_wtime();
         cout << "Zeit fürs Lösen: " << end-start << endl;

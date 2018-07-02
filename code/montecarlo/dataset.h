@@ -51,14 +51,12 @@ public:
             cout << "Nicht so viele Dimensionen";
         }
     }
-    void displayRow(int i, VT x) {
-        VT line = _x.row(i);
-        VT diff = line-VT::Constant(line.size(), x(i));
-        double maxDiff = diff.cwiseAbs().maxCoeff();
-        cout << "Auswertung für Parameter " << i+1 << ":" << endl;
-        cout << "Exakt:   " << x(i) << endl;
-        cout << "Maxdiff: " << maxDiff << endl;
-        //cout << "Alle Werte:" << endl << line << endl;
+    void displayRows() {
+        for(int i = 0; i<_dim; i++) {
+            VT line = _x.row(i);
+            double avg = line.mean();
+            cout << "Mittelwert für x(" << i << ") :" << avg << endl;
+        }
     }
 };
 

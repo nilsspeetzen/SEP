@@ -115,10 +115,10 @@ int main(int c, char* v[]) {
         {
             if(!unlock2) break;
             DATASET data("data.txt");
-            int i = 1;
-            cout << "Welchen Parameter möchten Sie betrachten? ";
-            cin >> i;
-            data.displayRow(i-1);
+            //int i = 1;
+            //cout << "Welchen Parameter möchten Sie betrachten? ";
+            //cin >> i;
+            data.displayRows();
             break;
 
         }

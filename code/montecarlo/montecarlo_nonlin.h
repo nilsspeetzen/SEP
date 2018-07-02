@@ -1,7 +1,7 @@
 #ifndef MONTECARLO_NONLIN_H
 #define MONTECARLO_NONLIN_H
 
-#include "/home/oem/Desktop/PRAKSA_KOD/SEP-master/code/nonlin_sys/nonlin_sys.h"
+#include "../nonlin_sys/nonlin_sys.h"
 #include <fstream>
 #include <random>
 #include <chrono>

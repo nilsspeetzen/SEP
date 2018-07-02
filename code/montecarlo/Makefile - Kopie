@@ -10,9 +10,8 @@ CPPC=g++-8 -std=c++14
 
 OMP=-fopenmp
 DCO=../../../lib/dco
+
 EIGEN=../../../lib/eigen
-LINSYS=../lin_sys
-NONLINSYS=../nonlin_sys
 
 
 all : $(EXE)
@@ -21,7 +20,7 @@ all : $(EXE)
 
 %.exe : %.cpp
 
-	$(CPPC) $(CPPC_FLAGS) $(OMP) $< -I$(EIGEN) -I$(DCO) -I$(LINSYS) -I$(NONLINSYS) -o $@
+	$(CPPC) $(CPPC_FLAGS) $(OMP) $< -I$(EIGEN) -I$(DCO) -o $@
 
 
 

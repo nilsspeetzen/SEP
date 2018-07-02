@@ -4,7 +4,7 @@
 #include<fstream>
 using namespace std;
 
-#include ".../lin_sys/lin_sys.h"
+//#include ".../lin_sys/lin_sys.h"
 #include "montecarlo_ode.h"
 
 int main(int c, char* v[]) {

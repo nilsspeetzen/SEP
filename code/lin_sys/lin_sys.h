@@ -1,3 +1,6 @@
+#ifndef LIN_SYS_H
+#define LIN_SYS_H
+
 #include <Eigen/LU>
 #include <Eigen/QR>
 using namespace Eigen;
@@ -41,3 +44,5 @@ public:
     s.x()=QR.solve(s.b());
   }
 };
+
+#endif

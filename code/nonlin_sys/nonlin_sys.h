@@ -8,7 +8,7 @@
 #include <Eigen/QR>
 using namespace Eigen;
 
-#include "lin_sys.h"
+#include "../lin_sys_generic/lin_sys.h"
 
 template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
 class NONLINEAR_SYSTEM 
@@ -44,7 +44,7 @@ class NEWTON : public NONLINEAR_SOLVER<TS,NP,NS,TP>
   LINEAR_SOLVER<TS,NS>& _lsol;
   double _eps;
 public:
-  NEWTON(LINEAR_SOLVER<TS,NS>& lsol) : _lsol(lsol), _eps(0) {};
+  NEWTON(LINEAR_SOLVER<TS,NS>& lsol) : _lsol(lsol), _eps(0) {}
   double& eps() { return _eps; }
   void solve(NONLINEAR_SYSTEM<TS,NP,NS,TP>& nlsys) {
     assert(_eps>0);

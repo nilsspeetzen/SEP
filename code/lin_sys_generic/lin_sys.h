@@ -1,5 +1,7 @@
 // A Case Study in Simulation Software Engineering with C++
 // Uwe Naumann, STCE, RWTH Aachen, 2018
+#ifndef LIN_SYS_GENERIC_H
+#define LIN_SYS_GENERIC_H
 
 #include <Eigen/LU>
 #include <Eigen/QR>
@@ -53,3 +55,4 @@ public:
   }
 };
 
+#endif

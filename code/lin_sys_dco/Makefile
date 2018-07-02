@@ -9,8 +9,7 @@ CPPC=g++-8 -std=c++14
 #CPPC_FLAGS=-Wall -Wextra -pedantic -O3
 
 OMP=-fopenmp
-DCO=../../../lib/dco
-/dcw6i32nel/include
+DCO=../../../lib/dco/dcw6i32nel/include
 EIGEN=../../../lib/eigen
 
 

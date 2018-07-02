@@ -2,9 +2,9 @@ SRC=$(wildcard *.cpp)
 
 EXE=$(addsuffix .exe, $(basename $(SRC)))
 
-CPPC=clang++ -std=c++14
+CPPC=clang++ -std=c++17
 
-CPPC=g++-8 -std=c++14
+CPPC=g++-8 -std=c++17
 
 #CPPC_FLAGS=-Wall -Wextra -pedantic -O3
 

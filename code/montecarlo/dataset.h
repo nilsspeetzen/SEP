@@ -54,8 +54,12 @@ public:
     void displayRows() {
         for(int i = 0; i<_dim; i++) {
             VT line = _x.row(i);
+            double min = line.minCoeff();
             double avg = line.mean();
+            double max = line.maxCoeff();
+            cout << "Minimum    für x(" << i << ") :" << min << endl;
             cout << "Mittelwert für x(" << i << ") :" << avg << endl;
+            cout << "Maximum    für x(" << i << ") :" << max << endl << endl;
         }
     }
 };

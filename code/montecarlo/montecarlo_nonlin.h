@@ -42,6 +42,7 @@ public:
         }
         double end = omp_get_wtime();
         cout << "Zeit fürs Lösen: " << end-start << endl;
+        cout << "Anzahl Threads:  " << omp_get_max_threads() << endl;
         return sol;
     }
 

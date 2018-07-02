@@ -23,7 +23,8 @@ int main(int c, char* v[]) {
         switch (n) {
         case 1:
         {
-            cout << endl << "1:LIN" << endl
+            cout << endl << "---------------" << endl
+                         << "1:LIN" << endl
                          << "2:NONLIN" << endl
                          << "3:ODE" << endl;
             int systype = 1;
@@ -67,7 +68,11 @@ int main(int c, char* v[]) {
                 cout << "Toy" << endl;
                 const int NS=1,NP=1;
                 TOY<double> nlsys;
-                nlsys.x(0)=1; nlsys.p(0)=2;
+
+                cout << "X (z.B.1): ";
+                cin >> nlsys.x(0);
+                cout << "P (z.B.2): ";
+                cin >> nlsys.p(0);
 
                 double range;
                 cout << "Wieviele Berechnungen sollen durchgeführt werden? ";
@@ -86,7 +91,12 @@ int main(int c, char* v[]) {
                 cout << "LV" << endl;
                 const int NS=2,NP=4;
                 LOTKA_VOLTERRA<double> ode;
-                ode.x(0)=1000; ode.x(1)=20;
+
+                cout << "Beute (z.B.1000): ";
+                cin >> ode.x(0);
+                cout << "Räuber (z.B.20): ";
+                cin >> ode.x(1);
+
                 ode.p(0)=0.015; ode.p(1)=0.0001; ode.p(2)=0.03; ode.p(3)=0.0001;
 
                 double range, T_end, nts;

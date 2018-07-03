@@ -23,7 +23,7 @@ protected:
     int _n;
 public:
     NONLINEAR_MC_SOLVER(NLS nlsys) : _nlsys(nlsys), _n(nlsys.x().rows()) {}
-    DATASET psolve(int num, double range) {
+    DATASET psolve(int num, double range, bool x, bool p) {
         DATASET sol(_n, num);
         LU<TS,NS> lsol;
         NEWTON<TS,NS,NP> nlsol(lsol);
@@ -36,7 +36,8 @@ public:
             default_random_engine generator(seed);
             normal_distribution<double> distribution(0,range);
             double f = range*distribution(generator);
-            nrlsys.x() = _nlsys.x() + MT::Constant(_n,1,f);
+            if(x) nrlsys.x() = _nlsys.x() + MT::Constant(_n,1,f);
+            if(p) nrlsys.p() = _nlsys.p() + MT::Constant(_n,1,f);
             nlsol.solve(nrlsys);
             sol.addSol(i,nrlsys.x());
         }

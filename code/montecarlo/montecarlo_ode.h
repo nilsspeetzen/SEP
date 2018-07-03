@@ -21,7 +21,7 @@ protected:
     ODET _ode;
 public:
     ODE_MC_SOLVER(ODET ode) : _ode(ode) {}
-    DATASET psolve(int num, double range) {
+    DATASET psolve(int num, double range, bool x, bool p) {
         DATASET sol(_ode.x().rows(), num);
         EXPLICIT_EULER<double,NP,NS> ee;
         double start = omp_get_wtime();
@@ -32,8 +32,8 @@ public:
             default_random_engine generator(seed);
             normal_distribution<double> distribution(0,range);
             double f = range * distribution(generator);
-            rode.x() = _ode.x() + VTS::Constant(NS,1,f);
-            rode.p() = _ode.p() + VTP::Constant(NP,1,f);
+            if(x) rode.x() = _ode.x() + VTS::Constant(NS,1,f);
+            if(p) rode.p() = _ode.p() + VTP::Constant(NP,1,f);
             ee.solve(rode);
             sol.addSol(i,rode.x());
         }

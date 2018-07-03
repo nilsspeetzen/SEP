@@ -46,8 +46,6 @@ int main(int c, char* v[]) {
                     infile >> lsys.b(i);
                 infile.close();
 
-                //cout << "A" << endl << lsys.A() << endl
-                //     << "b" << endl << lsys.b() << endl;
                 LU lsol;
                 lsol.solve(lsys);
                 cout << "Lösung mit Erwartungswerten:" << endl << lsys.x() << endl;
@@ -58,7 +56,12 @@ int main(int c, char* v[]) {
                 cin >> num;
                 cout << "Standardabweichung: ";
                 cin >> range;
-                DATASET data = lmcsol.psolve(num,range);
+                bool A,b;
+                cout << "A verändern? ";
+                cin >> A;
+                cout << "b verändern? ";
+                cin >> b;
+                DATASET data = lmcsol.psolve(num,range,A,b);
                 data.writeToFile("data.txt");
                 unlock2 = true;
                 break;
@@ -79,9 +82,14 @@ int main(int c, char* v[]) {
                 cin >> num;
                 cout << "Standardabweichung: ";
                 cin >> range;
+                bool x,p;
+                cout << "x verändern? ";
+                cin >> x;
+                cout << "p verändern? ";
+                cin >> p;
 
                 NONLINEAR_MC_SOLVER<TOY<double>, double, NS, NP> nlmcsol(nlsys);
-                DATASET data = nlmcsol.psolve(num, range);
+                DATASET data = nlmcsol.psolve(num, range, x, p);
                 data.writeToFile("data.txt");
                 unlock2 = true;
                 break;
@@ -108,6 +116,11 @@ int main(int c, char* v[]) {
                 cin >> T_end;
                 cout << "Zeitschritte: ";
                 cin >> nts;
+                bool x,p;
+                cout << "x verändern? ";
+                cin >> x;
+                cout << "p verändern? ";
+                cin >> p;
 
                 ODE_MC_SOLVER<LOTKA_VOLTERRA<double>, double, NP, NS> odesol(ode);
                 DATASET data = odesol.psolve(num, range);

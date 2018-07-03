@@ -21,7 +21,7 @@ protected:
     int _n;
 public:
     LINEAR_MC_SOLVER(LINEAR_SYSTEM<TA,N,Tb,Tx> lsys) : _lsys(lsys), _n(lsys.A().rows()) {}
-    DATASET psolve(int num, double range) {
+    DATASET psolve(int num, double range, bool A, bool b) {
         DATASET sol(_n, num);
         LU lsol;
         double start = omp_get_wtime();
@@ -32,7 +32,8 @@ public:
             default_random_engine generator(seed);
             normal_distribution<double> distribution(0,range);
             double f = range*distribution(generator);
-            rlsys.A() = _lsys.A() + MT::Constant(_n,_n,f);
+            if(A) rlsys.A() = _lsys.A() + MT::Constant(_n,_n,f);
+            if(b) rlsys.b() = _lsys.b() + MT::Constant(_n,1,f);
             lsol.solve(rlsys);
             sol.addSol(i,rlsys.x());
         }

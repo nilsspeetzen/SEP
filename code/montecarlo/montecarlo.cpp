@@ -123,7 +123,7 @@ int main(int c, char* v[]) {
                 cin >> p;
 
                 ODE_MC_SOLVER<LOTKA_VOLTERRA<double>, double, NP, NS> odesol(ode);
-                DATASET data = odesol.psolve(num, range);
+                DATASET data = odesol.psolve(num, range, x, p);
                 data.writeToFile("data.txt");
                 unlock2 = true;
                 break;

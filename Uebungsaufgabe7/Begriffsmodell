@@ -1,0 +1,10 @@
+Begriffsmodell
+
+lin_sys_new.cpp:
+#include "lin_sys.h"
+Wir werden lin_sys.cpp so aendern, dass die Benutzeranforderungen erfuellt werden:
+-Klasse MC_parallel_lin_sys: parallele Berechnung von Ensembles mittels Monte-Carlo
+-Klasse Wahrscheinlichkeitsverteilungen_lin_sys: Untersuchung der Wahrscheinlichkeitsverteilungen
+-Klasse Skalierbarkeit_lin_sys: Skalierbarkeit pruefen
+
+nonlinsys_new und ode_new analog 

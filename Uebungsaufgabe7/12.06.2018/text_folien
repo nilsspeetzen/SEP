@@ -1,0 +1,14 @@
+Folie 2:
+-Die Monte-Carlo-Methode, ist ein Verfahren aus der Stochastik, bei dem sehr häufig durchgeführte Zufallsexperimente die Basis darstellen. Es wird aufgrund der Ergebnisse versucht mit Hilfe der Wahrscheinlichkeitstheorie analytisch unlösbare Probleme in mathematischem Kontext numerisch zu lösen.
+-Es gibt verschiedene Typen von Monte-Carlo Verfahren, und wir werden uns mit dem Ensemble-Monte-Carlo-Verfahren beschaeftigen. Das bedeutet, dass mehrere Ausgaben auf einmal generiert werden, da wir diese parallel berechnen. 
+Wahrscheinlichkeitsverteilungen beschreiben, wie sich die Wahrscheinlichkeiten auf die möglichen Ergebnisse einer Zufallsvariable verteilen.
+
+Folie 3:
+-Eine Wahrscheinlichkeitsverteilung gibt an, wie sich die Wahrscheinlichkeiten auf die möglichen Werte einer Zufallsvariable verteilen.
+-Ziel der Sensitivitaetsanalhyse: Quantifizierung der Aenderung der Modellausgabe, die von der Aenderung der Modelleingabe verursacht wird
+    *Identifikation der Parameter (unsichere Parameter), fuer die man besonders genaue Eingangsinformation braucht
+    *Verstaendnis der Modellsystems
+    *Beurteilung der Anwendbarkeit des Modells auf eine bestimmte Fragestallung
+
+Folie 4:
+Unter Skalierbarkeit versteht man die Fähigkeit eines Systems, Netzwerk, Prozesses oder Software zur Größenveränderung. Meist wird dabei die Fähigkeit des Systems zum Wachstum bezeichnet.

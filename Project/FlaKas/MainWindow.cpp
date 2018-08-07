@@ -1,14 +1,14 @@
-#include "worldmachine.h"
-#include "ui_worldmachine.h"
+#include "mainwindow.h"
+#include "ui_mainwindow.h"
 
-WorldMachine::WorldMachine(QWidget *parent) :
+MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::WorldMachine)
+    ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
 }
 
-WorldMachine::~WorldMachine()
+MainWindow::~MainWindow()
 {
     delete ui;
 }

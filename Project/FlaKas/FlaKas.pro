@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-08-07T20:05:58
+# Project created by QtCreator 2018-08-07T20:13:32
 #
 #-------------------------------------------------
 
@@ -25,10 +25,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    MainWindow.cpp
+        mainwindow.cpp
 
 HEADERS += \
-    MainWindow.h
+        mainwindow.h
 
 FORMS += \
-    MainWindow.ui
+        mainwindow.ui

@@ -25,10 +25,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    testclass.cpp \
+    flash.cpp \
+    module.cpp \
+    cascade.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    testclass.h \
+    flash.h \
+    module.h \
+    cascade.h
 
 FORMS += \
         mainwindow.ui

@@ -14,7 +14,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
+void MainWindow::setProgress(int i)
+{
+    ui->progressBar->setValue(i);
+}
+
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_OKButton_clicked()
+{
+    ui->OKButton->hide();
 }

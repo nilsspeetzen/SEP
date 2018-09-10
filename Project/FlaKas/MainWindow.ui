@@ -27,13 +27,13 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="OKButton">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>40</y>
-      <width>121</width>
-      <height>121</height>
+      <width>80</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="text">
@@ -66,7 +66,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
@@ -75,7 +75,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

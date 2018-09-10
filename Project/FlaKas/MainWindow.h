@@ -4,8 +4,13 @@
 #include <QMainWindow>
 
 namespace Ui {
+
 class MainWindow;
 }
+
+/**
+ *@brief Hauptfenster
+ */
 
 class MainWindow : public QMainWindow
 {
@@ -14,6 +19,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
+    void setProgress(int i);
+
+private slots:
+    void on_OKButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['testclass',['TestClass',['../class_test_class.html#a09903432ed60c7c38f1beccc4cf18987',1,'TestClass']]]
+  ['setprogress',['setProgress',['../class_main_window.html#ae576381be77310817278e79c978d1135',1,'MainWindow']]]
 ];

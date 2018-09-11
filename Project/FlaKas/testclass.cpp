@@ -10,7 +10,7 @@ int TestClass::helloTestClass()
     return 50;
 }
 
-void TestClass::makeNewButton(int x, int y, MainWindow* ui)
+void TestClass::makeNewButton(int x, int y, MainWindow* mW)
 {
-
+    mW->addButton();
 }

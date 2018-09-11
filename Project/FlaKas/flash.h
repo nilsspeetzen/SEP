@@ -11,12 +11,15 @@
  *
  */
 
+//TODO die GLS vom Module genauer machen, visuelles Zeug
+
 class Flash : public Module
 {
 private:
-
+    int id;
 public:
     Flash();
+    int getId();
 };
 
 #endif // FLASH_H

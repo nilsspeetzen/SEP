@@ -7,6 +7,9 @@
  *
  */
 
+//TODO erstmal einen Flash einfügen können und den dann Lösen
+//später dann eine Funktion zum darstellen
+
 class cascade
 {
 private:

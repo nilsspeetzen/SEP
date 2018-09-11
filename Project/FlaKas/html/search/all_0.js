@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['cascade',['cascade',['../classcascade.html',1,'cascade'],['../classcascade.html#a0215d853ce25d724cd778ab512b0eda6',1,'cascade::cascade()']]],
-  ['cascade_2ecpp',['cascade.cpp',['../cascade_8cpp.html',1,'']]],
-  ['cascade_2eh',['cascade.h',['../cascade_8h.html',1,'']]]
+  ['addbutton',['addButton',['../class_main_window.html#a962b966d1e81982b7b9da86f0df0bbc1',1,'MainWindow']]]
 ];

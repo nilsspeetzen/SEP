@@ -28,8 +28,6 @@ INCLUDEPATH += \
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    flash.cpp \
-    module.cpp \
     cascade.cpp
 
 HEADERS += \

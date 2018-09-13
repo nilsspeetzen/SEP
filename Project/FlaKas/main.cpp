@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "testclass.h"
+#include "cascade.h"
 #include <QApplication>
 
 /**
@@ -12,15 +13,15 @@
  * SEP Projekt zu Flashkaskaden
  */
 
+const static int NUMSUBSTANCES = 2;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
 
-    TestClass perp;
-    w.setProgress(perp.helloTestClass());
-    perp.makeNewButton(50, 50, &w);
+    cascade C;
 
     return a.exec();
 }

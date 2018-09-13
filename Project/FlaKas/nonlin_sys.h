@@ -1,14 +1,15 @@
 #ifndef NONLIN_SYS_H
 #define NONLIN_SYS_H
 
-// A Case Study in Simulation Software Engineering with C++
-// Uwe Naumann, STCE, RWTH Aachen, 2018
-
 #include "LU"
 #include "QR"
+#include "lin_sys.h"
+
 using namespace Eigen;
 
-#include "lin_sys.h"
+/**
+ * Basierend auf nonlin_sys.h von Uwe Naumann
+ */
 
 template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
 class NONLINEAR_SYSTEM

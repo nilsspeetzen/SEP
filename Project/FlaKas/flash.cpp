@@ -1,11 +1,5 @@
 #include "flash.h"
 
-Flash::Flash()
-{
+VTS Flash::f() {
 
-}
-
-int Flash::getId()
-{
-    return id;
 }

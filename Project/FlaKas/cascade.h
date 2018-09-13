@@ -13,12 +13,21 @@
 class cascade
 {
 private:
-    Flash f;
+    Flash<> f;
 public:
     /**
      * @brief Konstruktor
      */
-    cascade();
+    cascade() {
+
+    }
+    /**
+     * @brief solve
+     * Löst das NLS der Kaskade und trägt die Lösung in den Flashes ein
+     */
+    void solve() {
+
+    }
 };
 
 #endif // CASCADE_H

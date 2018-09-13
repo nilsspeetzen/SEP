@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['testclass',['TestClass',['../class_test_class.html',1,'']]]
+  ['mainwindow',['MainWindow',['../class_main_window.html',1,'']]],
+  ['module',['Module',['../class_module.html',1,'']]],
+  ['module_3c_3e',['Module&lt;&gt;',['../class_module.html',1,'']]]
 ];

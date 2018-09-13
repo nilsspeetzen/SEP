@@ -1,0 +1,181 @@
+\hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{}\section{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM$<$ TS, NP, NS, TP $>$ Class Template Reference}
+\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M$<$ T\+S, N\+P, N\+S, T\+P $>$@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M$<$ T\+S, N\+P, N\+S, T\+P $>$}}
+
+
+{\ttfamily \#include $<$nonlin\+\_\+sys.\+h$>$}
+
+
+
+Inheritance diagram for N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM$<$ TS, NP, NS, TP $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aa6073542adb090bf99729df5b03ca707}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}} (int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_ab5876470030832088d8ee1ed609d5311}{np}}, int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f}{ns}})
+\item 
+int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f}{ns}} ()
+\item 
+int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_ab5876470030832088d8ee1ed609d5311}{np}} ()
+\item 
+V\+TS \& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a74d8eaa53624eae38a6f2e6b5bdd4381}{x}} ()
+\item 
+TS \& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aabd6041ce7d6aaad8ce55e03c2efde1e}{x}} (int i)
+\item 
+V\+TP \& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a1536a98a6cb3fec681bdd3312ae43714}{p}} ()
+\item 
+TP \& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a75739c8370b0aa04f8f03e88ac19d09b}{p}} (int i)
+\item 
+virtual V\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a65827d7df297f26cd3f14f472a212077}{f}} ()=0
+\item 
+virtual M\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a531f56bcbc77f2219164af40aa16fad2}{dfdx}} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+V\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a06e2289a0e10aa47527d5fd348faf4f9}{\+\_\+x}}
+\item 
+V\+TP \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aee48110f36d056d217437af5e7cc5447}{\+\_\+p}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$\newline
+class N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M$<$ T\+S, N\+P, N\+S, T\+P $>$}
+
+Basierend auf \mbox{\hyperlink{nonlin__sys_8h}{nonlin\+\_\+sys.\+h}} von Uwe Naumann 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aa6073542adb090bf99729df5b03ca707}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aa6073542adb090bf99729df5b03ca707}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M()}{NONLINEAR\_SYSTEM()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+\mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}} (\begin{DoxyParamCaption}\item[{int}]{np,  }\item[{int}]{ns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a531f56bcbc77f2219164af40aa16fad2}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a531f56bcbc77f2219164af40aa16fad2}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!dfdx@{dfdx}}
+\index{dfdx@{dfdx}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{dfdx()}{dfdx()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+virtual M\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::dfdx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b}{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a531f56bcbc77f2219164af40aa16fad2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a65827d7df297f26cd3f14f472a212077}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a65827d7df297f26cd3f14f472a212077}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!f@{f}}
+\index{f@{f}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+virtual V\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2}{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a65827d7df297f26cd3f14f472a212077_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_ab5876470030832088d8ee1ed609d5311}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_ab5876470030832088d8ee1ed609d5311}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!np@{np}}
+\index{np@{np}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{np()}{np()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::np (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!ns@{ns}}
+\index{ns@{ns}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{ns()}{ns()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::ns (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a1536a98a6cb3fec681bdd3312ae43714}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a1536a98a6cb3fec681bdd3312ae43714}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!p@{p}}
+\index{p@{p}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{p()}{p()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TP\& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::p (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a75739c8370b0aa04f8f03e88ac19d09b}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a75739c8370b0aa04f8f03e88ac19d09b}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!p@{p}}
+\index{p@{p}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{p()}{p()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+TP\& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::p (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a74d8eaa53624eae38a6f2e6b5bdd4381}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a74d8eaa53624eae38a6f2e6b5bdd4381}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!x@{x}}
+\index{x@{x}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TS\& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a74d8eaa53624eae38a6f2e6b5bdd4381_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aabd6041ce7d6aaad8ce55e03c2efde1e}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aabd6041ce7d6aaad8ce55e03c2efde1e}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!x@{x}}
+\index{x@{x}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+TS\& \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::x (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aee48110f36d056d217437af5e7cc5447}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_aee48110f36d056d217437af5e7cc5447}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!\+\_\+p@{\+\_\+p}}
+\index{\+\_\+p@{\+\_\+p}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{\+\_\+p}{\_p}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TP \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::\+\_\+p\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a06e2289a0e10aa47527d5fd348faf4f9}\label{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a06e2289a0e10aa47527d5fd348faf4f9}} 
+\index{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}!\+\_\+x@{\+\_\+x}}
+\index{\+\_\+x@{\+\_\+x}!N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM@{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}
+\subsubsection{\texorpdfstring{\+\_\+x}{\_x}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TS \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+EM}}$<$ TS, NP, NS, TP $>$\+::\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{nonlin__sys_8h}{nonlin\+\_\+sys.\+h}}\end{DoxyCompactItemize}

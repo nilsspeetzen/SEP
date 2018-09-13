@@ -13,12 +13,19 @@
 class cascade
 {
 private:
-    Flash<> f;
+    int numSubstances;
+    Flash<>* f;
 public:
     /**
      * @brief Konstruktor
      */
-    cascade() {
+    cascade(int numSubstances) : numSubstances(numSubstances) {
+
+    }
+    /**
+     * @brief addFlash
+     */
+    void addFlash() {
 
     }
     /**

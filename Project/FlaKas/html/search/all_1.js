@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['cascade',['cascade',['../classcascade.html',1,'cascade'],['../classcascade.html#a0215d853ce25d724cd778ab512b0eda6',1,'cascade::cascade()']]],
-  ['cascade_2ecpp',['cascade.cpp',['../cascade_8cpp.html',1,'']]],
-  ['cascade_2eh',['cascade.h',['../cascade_8h.html',1,'']]]
+  ['a',['A',['../class_l_i_n_e_a_r___s_y_s_t_e_m.html#a307c8896bb3218768f016a2a24de3bcd',1,'LINEAR_SYSTEM::A()'],['../class_l_i_n_e_a_r___s_y_s_t_e_m.html#a5163aedcb567d591f5812bd3c892fb07',1,'LINEAR_SYSTEM::A(int i, int j)']]],
+  ['addbutton',['addButton',['../class_main_window.html#a962b966d1e81982b7b9da86f0df0bbc1',1,'MainWindow']]]
 ];

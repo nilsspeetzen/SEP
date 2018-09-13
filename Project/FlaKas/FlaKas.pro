@@ -28,7 +28,6 @@ INCLUDEPATH += \
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    testclass.cpp \
     flash.cpp \
     module.cpp \
     cascade.cpp
@@ -38,7 +37,9 @@ HEADERS += \
     testclass.h \
     flash.h \
     module.h \
-    cascade.h
+    cascade.h \
+    lin_sys.h \
+    nonlin_sys.h
 
 FORMS += \
         mainwindow.ui

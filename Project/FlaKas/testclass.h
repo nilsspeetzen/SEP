@@ -6,8 +6,12 @@ class TestClass
 {
 public:
     TestClass();
-    int helloTestClass();
-    void makeNewButton(int x, int y, MainWindow* mW);
+    int helloTestClass(){
+        return 50;
+    }
+    void makeNewButton(MainWindow* mW){
+        mW->addButton();
+    }
 };
 
 #endif // TESTCLASS_H

@@ -1,5 +1,4 @@
 <map id="LINEAR_SYSTEM::A" name="LINEAR_SYSTEM::A">
-<area shape="rect" id="node2" href="$class_l_u.html#a624d7ff38645debae206313534516f49" title="LU::solve" alt="" coords="221,29,295,56"/>
-<area shape="rect" id="node3" href="$class_q_r.html#ab8f49cec36214bdcd9fca78e89c3737e" title="QR::solve" alt="" coords="219,104,297,131"/>
-<area shape="rect" id="node4" href="$class_n_e_w_t_o_n.html#a1dd31b882567d3e0427eb53ce169f0ce" title="NEWTON::solve" alt="" coords="200,155,316,181"/>
+<area shape="rect" id="node2" href="$class_l_u.html#a624d7ff38645debae206313534516f49" title="LU::solve" alt="" coords="202,29,277,56"/>
+<area shape="rect" id="node3" href="$class_q_r.html#ab8f49cec36214bdcd9fca78e89c3737e" title="QR::solve" alt="" coords="200,104,279,131"/>
 </map>

@@ -4,10 +4,17 @@
 #include "LU"
 #include "QR"
 #include "lin_sys.h"
+#include <iostream>
 
 using namespace Eigen;
 
 /**
+ * @file nonlin_sys.h
+ * @brief Nichtlineare Systeme
+ */
+
+/**
+ * @brief Nichtlineare Systeme
  * Basierend auf nonlin_sys.h von Uwe Naumann
  */
 
@@ -50,6 +57,7 @@ public:
   void solve(NONLINEAR_SYSTEM<TS,NP,NS,TP>& nlsys) {
     assert(_eps>0);
     LINEAR_SYSTEM<TS,NS> lsys(nlsys.ns());
+    std::cout << nlsys.f().norm() << std::endl;
     while (nlsys.f().norm()>_eps) {
       lsys.A()=nlsys.dfdx(); lsys.b()=-nlsys.f();
       _lsol.solve(lsys);

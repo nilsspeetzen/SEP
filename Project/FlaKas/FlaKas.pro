@@ -27,8 +27,7 @@ INCLUDEPATH += \
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
-    cascade.cpp
+        mainwindow.cpp
 
 HEADERS += \
         mainwindow.h \

@@ -3,6 +3,11 @@
 
 #include <QMainWindow>
 
+/**
+ * @file mainwindow.h
+ * @brief Hauptfenster
+ */
+
 namespace Ui {
 
 class MainWindow;
@@ -25,7 +30,6 @@ public:
     void addButton(); //test, macht momentan das Fenster leer
 
 private slots:
-    void on_OKButton_clicked();
 
 private:
     Ui::MainWindow *ui; //Inhalt des gesamten Fensters

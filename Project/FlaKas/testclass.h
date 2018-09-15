@@ -2,6 +2,10 @@
 #define TESTCLASS_H
 #include "mainwindow.h"
 
+/**
+ * @brief Nur zum ausprobieren
+ */
+
 class TestClass
 {
 public:

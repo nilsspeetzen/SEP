@@ -1,5 +1,5 @@
-\hypertarget{classcascade}{}\section{cascade Class Reference}
-\label{classcascade}\index{cascade@{cascade}}
+\hypertarget{classcascade}{}\section{cascade$<$ TS, NP, NS, TP $>$ Class Template Reference}
+\label{classcascade}\index{cascade$<$ T\+S, N\+P, N\+S, T\+P $>$@{cascade$<$ T\+S, N\+P, N\+S, T\+P $>$}}
 
 
 Enthält alle Flashes.  
@@ -9,45 +9,164 @@ Enthält alle Flashes.
 
 {\ttfamily \#include $<$cascade.\+h$>$}
 
+
+
+Inheritance diagram for cascade$<$ TS, NP, NS, TP $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classcascade__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cascade$<$ TS, NP, NS, TP $>$\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classcascade__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcascade_a0215d853ce25d724cd778ab512b0eda6}{cascade}} ()
+\mbox{\hyperlink{classcascade_a9775f4c242df052cfb9c0c8a095a2964}{cascade}} (int num\+Substances, Matrix$<$ TS, Dynamic, 7 $>$ a)
 \begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classcascade_a97774229982891611641e05bfe4d8c06}{solve}} ()
-\begin{DoxyCompactList}\small\item\em solve Löst das N\+LS der Kaskade und trägt die Lösung in den Flashes ein \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classcascade_ae1aae44e18b9d87cb710c54726726baa}{add\+Flash}} ()
+\begin{DoxyCompactList}\small\item\em add\+Flash \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_flash}{Flash}} \& \mbox{\hyperlink{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}{get\+Flash}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em get\+Flash \end{DoxyCompactList}\item 
+V\+TS \mbox{\hyperlink{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}{f}} ()
+\begin{DoxyCompactList}\small\item\em konstruiert das N\+LS der Kaskade \end{DoxyCompactList}\item 
+M\+TS \mbox{\hyperlink{classcascade_ac72705f0ad01cc88d43c002d63acce13}{dfdx}} ()
+\begin{DoxyCompactList}\small\item\em dfdx \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
+\subsubsection*{template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$\newline
+class cascade$<$ T\+S, N\+P, N\+S, T\+P $>$}
+
 Enthält alle Flashes. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcascade_a0215d853ce25d724cd778ab512b0eda6}\label{classcascade_a0215d853ce25d724cd778ab512b0eda6}} 
+\mbox{\Hypertarget{classcascade_a9775f4c242df052cfb9c0c8a095a2964}\label{classcascade_a9775f4c242df052cfb9c0c8a095a2964}} 
 \index{cascade@{cascade}!cascade@{cascade}}
 \index{cascade@{cascade}!cascade@{cascade}}
 \subsubsection{\texorpdfstring{cascade()}{cascade()}}
-{\footnotesize\ttfamily cascade\+::cascade (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+\mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{classcascade}{cascade}} (\begin{DoxyParamCaption}\item[{int}]{num\+Substances,  }\item[{Matrix$<$ TS, Dynamic, 7 $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Konstruktor. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em num\+Substances} & Anzahl der verschiedenen Substanzen im Gemisch \\
+\hline
+{\em a} & Antoine-\/\+Parameter für die Substanzen (num\+Substances$\ast$7 Matrix) \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classcascade_a97774229982891611641e05bfe4d8c06}\label{classcascade_a97774229982891611641e05bfe4d8c06}} 
-\index{cascade@{cascade}!solve@{solve}}
-\index{solve@{solve}!cascade@{cascade}}
-\subsubsection{\texorpdfstring{solve()}{solve()}}
-{\footnotesize\ttfamily void cascade\+::solve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{classcascade_ae1aae44e18b9d87cb710c54726726baa}\label{classcascade_ae1aae44e18b9d87cb710c54726726baa}} 
+\index{cascade@{cascade}!add\+Flash@{add\+Flash}}
+\index{add\+Flash@{add\+Flash}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{add\+Flash()}{addFlash()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+void \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::add\+Flash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-solve Löst das N\+LS der Kaskade und trägt die Lösung in den Flashes ein 
+add\+Flash 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=277pt]{classcascade_ae1aae44e18b9d87cb710c54726726baa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{classcascade_ae1aae44e18b9d87cb710c54726726baa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcascade_ac72705f0ad01cc88d43c002d63acce13}\label{classcascade_ac72705f0ad01cc88d43c002d63acce13}} 
+\index{cascade@{cascade}!dfdx@{dfdx}}
+\index{dfdx@{dfdx}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{dfdx()}{dfdx()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+M\+TS \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::dfdx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+dfdx 
+
+\begin{DoxyReturn}{Returns}
+Abl. des N\+LS der Kaskade 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a531f56bcbc77f2219164af40aa16fad2}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+\mbox{\Hypertarget{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}\label{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}} 
+\index{cascade@{cascade}!f@{f}}
+\index{f@{f}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TS \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+konstruiert das N\+LS der Kaskade 
+
+\begin{DoxyReturn}{Returns}
+N\+LS der Kaskade 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_a65827d7df297f26cd3f14f472a212077}{N\+O\+N\+L\+I\+N\+E\+A\+R\+\_\+\+S\+Y\+S\+T\+E\+M$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}\label{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}} 
+\index{cascade@{cascade}!get\+Flash@{get\+Flash}}
+\index{get\+Flash@{get\+Flash}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{get\+Flash()}{getFlash()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+\mbox{\hyperlink{class_flash}{Flash}}\& \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::get\+Flash (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Flash 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{cascade_8h}{cascade.\+h}}\item 
-\mbox{\hyperlink{cascade_8cpp}{cascade.\+cpp}}\end{DoxyCompactItemize}
+\mbox{\hyperlink{cascade_8h}{cascade.\+h}}\end{DoxyCompactItemize}

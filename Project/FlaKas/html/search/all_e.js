@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['testclass',['TestClass',['../class_test_class.html',1,'TestClass'],['../class_test_class.html#a09903432ed60c7c38f1beccc4cf18987',1,'TestClass::TestClass()']]],
-  ['testclass_2ecpp',['testclass.cpp',['../testclass_8cpp.html',1,'']]],
-  ['testclass_2eh',['testclass.h',['../testclass_8h.html',1,'']]]
+  ['solve',['solve',['../class_l_i_n_e_a_r___s_o_l_v_e_r.html#a83c4d3b280e57814ec091dd9f8927c24',1,'LINEAR_SOLVER::solve()'],['../class_l_u.html#a624d7ff38645debae206313534516f49',1,'LU::solve()'],['../class_q_r.html#ab8f49cec36214bdcd9fca78e89c3737e',1,'QR::solve()'],['../class_n_o_n_l_i_n_e_a_r___s_o_l_v_e_r.html#aae333fb75e2d5d8baa0e37991bfac7c4',1,'NONLINEAR_SOLVER::solve()'],['../class_n_e_w_t_o_n.html#a1dd31b882567d3e0427eb53ce169f0ce',1,'NEWTON::solve()']]]
 ];

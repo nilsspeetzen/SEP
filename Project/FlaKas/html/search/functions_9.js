@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['newton',['NEWTON',['../class_n_e_w_t_o_n.html#a473d598fe7f30d8895a90a7daecb5f01',1,'NEWTON']]],
-  ['nonlinear_5fsystem',['NONLINEAR_SYSTEM',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#aa6073542adb090bf99729df5b03ca707',1,'NONLINEAR_SYSTEM']]],
-  ['np',['np',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#ab5876470030832088d8ee1ed609d5311',1,'NONLINEAR_SYSTEM']]],
-  ['ns',['ns',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#abf4102c649f8316e44033a76f9d6183f',1,'NONLINEAR_SYSTEM']]]
+  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['mainwindow',['MainWindow',['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow']]],
+  ['makenewbutton',['makeNewButton',['../class_test_class.html#a42a56dd831d10b5580fe9fc4e973f7de',1,'TestClass']]],
+  ['module',['Module',['../class_module.html#a3cbc8718d92a4420abb1676ae7cc4d8a',1,'Module']]]
 ];

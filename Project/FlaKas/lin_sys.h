@@ -8,6 +8,12 @@
 using namespace Eigen;
 
 /**
+ * @file lin_sys.h
+ * @brief Lineare Systeme
+ */
+
+/**
+ * @brief Lineare Systeme
  * Basierend auf lin_sys.h von Uwe Naumann
  */
 

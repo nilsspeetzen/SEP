@@ -1,8 +1,5 @@
 <map id="module.h" name="module.h">
-<area shape="rect" id="node2" href="$flash_8h.html" title="flash.h" alt="" coords="129,80,189,107"/>
-<area shape="rect" id="node7" href="$module_8cpp.html" title="module.cpp" alt="" coords="213,80,302,107"/>
-<area shape="rect" id="node3" href="$cascade_8h.html" title="cascade.h" alt="" coords="67,155,149,181"/>
-<area shape="rect" id="node6" href="$flash_8cpp.html" title="flash.cpp" alt="" coords="173,155,248,181"/>
-<area shape="rect" id="node4" href="$cascade_8cpp.html" title="cascade.cpp" alt="" coords="5,229,101,256"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="main funcion " alt="" coords="125,229,200,256"/>
+<area shape="rect" id="node2" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="17,80,77,107"/>
+<area shape="rect" id="node3" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="5,155,88,181"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main funcion " alt="" coords="9,229,84,256"/>
 </map>

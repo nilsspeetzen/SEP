@@ -1,9 +1,8 @@
 <map id="main.cpp" name="main.cpp">
-<area shape="rect" id="node2" href="$mainwindow_8h.html" title="Hauptfenster. " alt="" coords="71,155,174,181"/>
-<area shape="rect" id="node4" href="$testclass_8h.html" title="testclass.h" alt="" coords="161,80,247,107"/>
-<area shape="rect" id="node5" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="272,80,355,107"/>
-<area shape="rect" id="node6" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="214,155,274,181"/>
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="Hauptfenster. " alt="" coords="66,155,169,181"/>
+<area shape="rect" id="node4" href="$testclass_8h.html" title="testclass.h" alt="" coords="155,80,242,107"/>
+<area shape="rect" id="node5" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="267,80,349,107"/>
+<area shape="rect" id="node6" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="209,155,269,181"/>
 <area shape="rect" id="node7" href="$module_8h.html" title="Basismodul. " alt="" coords="136,229,211,256"/>
-<area shape="rect" id="node9" href="$nonlin__sys_8h.html" title="Nichtlineare Systeme. " alt="" coords="121,304,215,331"/>
-<area shape="rect" id="node11" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="131,379,205,405"/>
+<area shape="rect" id="node10" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="99,304,173,331"/>
 </map>

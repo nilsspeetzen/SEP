@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7emainwindow',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]]
+  ['vin',['Vin',['../class_flash.html#aa4358ff3c66c1c461a2dba41436b95fe',1,'Flash']]],
+  ['vout',['Vout',['../class_flash.html#a14aa681b115b9ca955ab775ff5e674e0',1,'Flash']]]
 ];

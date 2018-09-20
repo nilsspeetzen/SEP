@@ -1,0 +1,13 @@
+<map id="Flash::dfdx" name="Flash::dfdx">
+<area shape="rect" id="node2" href="$class_flash.html#ade19a84735d622bd8fcc10bc37ed5cdd" title="Flash::xini" alt="" coords="143,5,226,32"/>
+<area shape="rect" id="node3" href="$class_flash.html#a289586a8a31a503bd4f96ea9455f235e" title="Flash::xi" alt="" coords="149,56,221,83"/>
+<area shape="rect" id="node4" href="$class_flash.html#a5bebef2024531af739160f0fc23e3086" title="Flash::yini" alt="" coords="143,107,226,133"/>
+<area shape="rect" id="node5" href="$class_flash.html#a2af985b9562aa54cbc5c3dfd2f4292ef" title="Flash::yi" alt="" coords="149,157,221,184"/>
+<area shape="rect" id="node6" href="$class_flash.html#a8bfde1e00ab93b6a9b07deead0d3525a" title="Flash::Lin" alt="" coords="145,208,224,235"/>
+<area shape="rect" id="node7" href="$class_flash.html#aa4358ff3c66c1c461a2dba41436b95fe" title="Flash::Vin" alt="" coords="144,259,225,285"/>
+<area shape="rect" id="node8" href="$class_flash.html#a74418fb8dbfaf3f5e8f99d53393f6419" title="Flash::Lout" alt="" coords="141,309,228,336"/>
+<area shape="rect" id="node9" href="$class_flash.html#a14aa681b115b9ca955ab775ff5e674e0" title="Flash::Vout" alt="" coords="140,360,229,387"/>
+<area shape="rect" id="node10" href="$class_flash.html#a5ae7d29d13281fafa84cc9c247461fda" title="Flash::ki" alt="" coords="149,411,221,437"/>
+<area shape="rect" id="node11" href="$class_flash.html#af0f7e7c438368d98a6ea330d40b39cd3" title="Flash::T" alt="" coords="150,461,219,488"/>
+<area shape="rect" id="node12" href="$class_flash.html#ae54dbc3d5d7b87c854a765e9b5f4e519" title="Flash::pi" alt="" coords="149,512,221,539"/>
+</map>

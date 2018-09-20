@@ -1,8 +1,13 @@
 #include "mainwindow.h"
-#include "testclass.h"
+//#include "testclass.h"
 #include "cascade.h"
-#include <QApplication>
 #include <iostream>
+
+#include <QApplication>
+//für QML
+#include <QGuiApplication>
+#include <QtQml/QQmlApplicationEngine>
+#include <QtQml/QQmlEngine>
 
 /**
  * @file main.cpp
@@ -16,6 +21,7 @@
 
 int main(int argc, char *argv[])
 {
+    /*
     QApplication a(argc, argv);
     MainWindow w;
 
@@ -24,17 +30,26 @@ int main(int argc, char *argv[])
     A <<    73.649, -7258.2, 0, 0, -7.3037, 4.1653e-6, 2,
             79.276, -10105, 0, 0, -7.521, 7.3408e-19, 6;
 
+
     cascade<> C(NUMSUBSTANCES, A);
     C.addFlash();
     C.getFlash(0).pg() = 1000;
     C.getFlash(0).F() = 3;
     QR<> lsol;
-    NEWTON<> nlsol(lsol);
-    nlsol.eps() = 0.1;
+    MODULENEWTON<> nlsol(lsol);
+    nlsol.eps() = 1;
     nlsol.solve(C.getFlash(0));
     //TODO Matrixdimensionen fixen
-    std::cout << C.getFlash(0).f() << std::endl;
+    std::cout << "x: " << std::endl << C.getFlash(0).f() << std::endl;
 
     //w.show();
+    */
+
+    // QML TEST:
+    QGuiApplication a(argc, argv);
+
+    qmlRegisterType<MainWindow>("mainwindow", 1, 0, "MainWindow");
+    QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:/main.qml")));
+
     return a.exec();
 }

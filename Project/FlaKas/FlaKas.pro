@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += qml#core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -40,3 +40,9 @@ HEADERS += \
 
 FORMS += \
         mainwindow.ui
+
+DISTFILES += \
+    main.qml
+
+RESOURCES += \
+    qml.qrc

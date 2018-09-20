@@ -16,8 +16,7 @@
 //später dann eine Funktion zum darstellen
 
 template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
-class cascade : public NONLINEAR_SYSTEM<TS, NP, NS, TP>
-{
+class cascade {
     typedef Matrix<TS,NS,1> VTS;
     typedef Matrix<TS,NS,NS> MTS;
     typedef Matrix<TP,NP,1> VTP;
@@ -38,7 +37,22 @@ public:
      * @brief addFlash
      */
     void addFlash() {
+        // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
         Flash<> f(_numS, _a);
+        f.T() = 273;
+        f.F() = 100;
+        f.Vin() = 0;
+        f.Vout() = 50;
+        f.Lin() = 0;
+        f.Lout() = 50;
+        for(int i=0; i<_numS; i++) {
+            f.xini(i) = 0.5;
+            f.yini(i) = 0.5;
+            f.xi(i) = 0.5;
+            f.yi(i) = 0.5;
+            f.ki(i) = 0.5;
+            f.pi(i) = 1000;
+        }
         flashes.push_back(f);
     }
     /**

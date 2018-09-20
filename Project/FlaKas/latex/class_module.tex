@@ -9,30 +9,24 @@ Akstrakte Klasse für allgemeine Bauteile.
 
 {\ttfamily \#include $<$module.\+h$>$}
 
-
-
-Inheritance diagram for Module$<$ TS, NP, NS, TP $>$\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=222pt]{class_module__inherit__graph}
-\end{center}
-\end{figure}
-
-
-Collaboration diagram for Module$<$ TS, NP, NS, TP $>$\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=222pt]{class_module__coll__graph}
-\end{center}
-\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_module_a3cbc8718d92a4420abb1676ae7cc4d8a}{Module}} (int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_ab5876470030832088d8ee1ed609d5311}{np}}, int \mbox{\hyperlink{class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m_abf4102c649f8316e44033a76f9d6183f}{ns}})
+\mbox{\hyperlink{class_module_a40ec09f0f85314f2b542077d83567d7a}{Module}} ()
+\item 
+V\+TS \& \mbox{\hyperlink{class_module_a923f4a0593063f6df53e165cc1db4891}{x}} ()
+\item 
+TS \& \mbox{\hyperlink{class_module_a3f448820efd272b2812e0ccc697c42de}{x}} (int i)
+\item 
+virtual V\+TS \mbox{\hyperlink{class_module_a2499211a4fc52bc33512761ea7fb3c62}{f}} ()=0
+\item 
+virtual M\+TS \mbox{\hyperlink{class_module_a0762d7cbad2a73d5eff3f2f1155e8e33}{dfdx}} ()=0
 \end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+V\+TS \mbox{\hyperlink{class_module_a518d0262a48d4bc3647adddefd66897d}{\+\_\+x}}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -44,12 +38,85 @@ Akstrakte Klasse für allgemeine Bauteile.
 Diese Klasse ist eine allgemeine Klasse, welche die In-\/ und Outputs definiert und die innere Operation abstrakt lässt. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_module_a3cbc8718d92a4420abb1676ae7cc4d8a}\label{class_module_a3cbc8718d92a4420abb1676ae7cc4d8a}} 
+\mbox{\Hypertarget{class_module_a40ec09f0f85314f2b542077d83567d7a}\label{class_module_a40ec09f0f85314f2b542077d83567d7a}} 
 \index{Module@{Module}!Module@{Module}}
 \index{Module@{Module}!Module@{Module}}
 \subsubsection{\texorpdfstring{Module()}{Module()}}
 {\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-\mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{class_module}{Module}} (\begin{DoxyParamCaption}\item[{int}]{np,  }\item[{int}]{ns }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{class_module}{Module}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_module_a0762d7cbad2a73d5eff3f2f1155e8e33}\label{class_module_a0762d7cbad2a73d5eff3f2f1155e8e33}} 
+\index{Module@{Module}!dfdx@{dfdx}}
+\index{dfdx@{dfdx}!Module@{Module}}
+\subsubsection{\texorpdfstring{dfdx()}{dfdx()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+virtual M\+TS \mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::dfdx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b}{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_a0762d7cbad2a73d5eff3f2f1155e8e33_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_module_a2499211a4fc52bc33512761ea7fb3c62}\label{class_module_a2499211a4fc52bc33512761ea7fb3c62}} 
+\index{Module@{Module}!f@{f}}
+\index{f@{f}!Module@{Module}}
+\subsubsection{\texorpdfstring{f()}{f()}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+virtual V\+TS \mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2}{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_a2499211a4fc52bc33512761ea7fb3c62_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_module_a923f4a0593063f6df53e165cc1db4891}\label{class_module_a923f4a0593063f6df53e165cc1db4891}} 
+\index{Module@{Module}!x@{x}}
+\index{x@{x}!Module@{Module}}
+\subsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TS\& \mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_module_a923f4a0593063f6df53e165cc1db4891_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_module_a3f448820efd272b2812e0ccc697c42de}\label{class_module_a3f448820efd272b2812e0ccc697c42de}} 
+\index{Module@{Module}!x@{x}}
+\index{x@{x}!Module@{Module}}
+\subsubsection{\texorpdfstring{x()}{x()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+TS\& \mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::x (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_module_a518d0262a48d4bc3647adddefd66897d}\label{class_module_a518d0262a48d4bc3647adddefd66897d}} 
+\index{Module@{Module}!\+\_\+x@{\+\_\+x}}
+\index{\+\_\+x@{\+\_\+x}!Module@{Module}}
+\subsubsection{\texorpdfstring{\+\_\+x}{\_x}}
+{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
+V\+TS \mbox{\hyperlink{class_module}{Module}}$<$ TS, NP, NS, TP $>$\+::\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

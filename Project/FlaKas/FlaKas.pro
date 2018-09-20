@@ -27,16 +27,16 @@ INCLUDEPATH += \
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+    WorldMachine.cpp
 
 HEADERS += \
-        mainwindow.h \
     testclass.h \
     flash.h \
     module.h \
-    cascade.h \
     lin_sys.h \
-    nonlin_sys.h
+    nonlin_sys.h \
+    cascade.h \
+    WorldMachine.h
 
 FORMS += \
         mainwindow.ui

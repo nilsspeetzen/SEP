@@ -1,6 +1,6 @@
 #ifndef TESTCLASS_H
 #define TESTCLASS_H
-#include "mainwindow.h"
+#include "WorldMachine.h"
 
 /**
  * @brief Nur zum ausprobieren
@@ -13,7 +13,7 @@ public:
     int helloTestClass(){
         return 50;
     }
-    void makeNewButton(MainWindow* mW){
+    void makeNewButton(WorldMachine* mW){
         mW->addButton();
     }
 };

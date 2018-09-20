@@ -2,6 +2,7 @@
 #define CASCADE_H
 #include "flash.h"
 #include <vector>
+#include <QtCore>
 
 /**
  * @file cascade.h
@@ -45,6 +46,7 @@ public:
         f.Vout() = 50;
         f.Lin() = 0;
         f.Lout() = 50;
+        f.pg() = 1000;
         for(int i=0; i<_numS; i++) {
             f.xini(i) = 0.5;
             f.yini(i) = 0.5;

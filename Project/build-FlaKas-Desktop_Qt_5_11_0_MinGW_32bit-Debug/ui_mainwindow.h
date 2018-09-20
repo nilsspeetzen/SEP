@@ -64,7 +64,7 @@ public:
 };
 
 namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
+    class WorldMachine: public Ui_MainWindow {};
 } // namespace Ui
 
 QT_END_NAMESPACE

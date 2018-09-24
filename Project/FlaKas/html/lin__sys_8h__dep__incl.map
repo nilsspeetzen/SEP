@@ -1,7 +1,10 @@
 <map id="lin_sys.h" name="lin_sys.h">
-<area shape="rect" id="node2" href="$module_8h.html" title="Basismodul. " alt="" coords="9,80,84,107"/>
-<area shape="rect" id="node6" href="$nonlin__sys_8h.html" title="Nichtlineare Systeme. " alt="" coords="109,80,203,107"/>
-<area shape="rect" id="node3" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="17,155,77,181"/>
-<area shape="rect" id="node4" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="5,229,88,256"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="main funcion " alt="" coords="9,304,84,331"/>
+<area shape="rect" id="node2" href="$module_8h.html" title="Basismodul. " alt="" coords="111,80,185,107"/>
+<area shape="rect" id="node9" href="$nonlin__sys_8h.html" title="Nichtlineare Systeme. " alt="" coords="210,80,305,107"/>
+<area shape="rect" id="node3" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="118,155,178,181"/>
+<area shape="rect" id="node4" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="107,229,189,256"/>
+<area shape="rect" id="node5" href="$_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="90,304,206,331"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="Programminitiation. " alt="" coords="5,379,80,405"/>
+<area shape="rect" id="node7" href="$testclass_8h.html" title="testclass.h" alt="" coords="105,379,191,405"/>
+<area shape="rect" id="node8" href="$_world_machine_8cpp.html" title="WorldMachine.cpp" alt="" coords="216,379,347,405"/>
 </map>

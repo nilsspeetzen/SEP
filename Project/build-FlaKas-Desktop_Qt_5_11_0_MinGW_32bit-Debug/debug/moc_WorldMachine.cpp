@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WorldMachine_t {
-    QByteArrayData data[5];
-    char stringdata0[44];
+    QByteArrayData data[4];
+    char stringdata0[45];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,13 +32,13 @@ struct qt_meta_stringdata_WorldMachine_t {
 static const qt_meta_stringdata_WorldMachine_t qt_meta_stringdata_WorldMachine = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "WorldMachine"
-QT_MOC_LITERAL(1, 13, 7), // "cppSlot"
-QT_MOC_LITERAL(2, 21, 0), // ""
-QT_MOC_LITERAL(3, 22, 3), // "msg"
-QT_MOC_LITERAL(4, 26, 17) // "startOneFlashSlot"
+QT_MOC_LITERAL(1, 13, 17), // "startOneFlashSlot"
+QT_MOC_LITERAL(2, 31, 0), // ""
+QT_MOC_LITERAL(3, 32, 12) // "addFlashSlot"
 
     },
-    "WorldMachine\0cppSlot\0\0msg\0startOneFlashSlot"
+    "WorldMachine\0startOneFlashSlot\0\0"
+    "addFlashSlot"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,11 +56,11 @@ static const uint qt_meta_data_WorldMachine[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   24,    2, 0x0a /* Public */,
-       4,    0,   27,    2, 0x0a /* Public */,
+       1,    0,   24,    2, 0x0a /* Public */,
+       3,    0,   25,    2, 0x0a /* Public */,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::QString,    3,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -72,11 +72,12 @@ void WorldMachine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         WorldMachine *_t = static_cast<WorldMachine *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->cppSlot((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 1: _t->startOneFlashSlot(); break;
+        case 0: _t->startOneFlashSlot(); break;
+        case 1: _t->addFlashSlot(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject WorldMachine::staticMetaObject = {

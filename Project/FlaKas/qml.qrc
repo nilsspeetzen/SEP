@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>flash.qml</file>
+        <file>dataWindow.qml</file>
     </qresource>
     <qresource prefix="/images"/>
 </RCC>

@@ -29,17 +29,11 @@ class Flash : public Module<>
     typedef Matrix<TS,NS,NS> MTS;
     typedef Matrix<TP,NP,1> VTP;
 private:
-    /**
-     * Lin, Lout, Vin, Vout, T, pg, a
-     * xini, yini, xi, yi, ki, pi
-     *
-     * Kaskaden - Parameter:
-     * F, xfi, Vout
-     */
+
     TS _pg, _F;
     Matrix<TS,Dynamic,1> _xf;
-    Matrix<TS,Dynamic,7> _a;
     int _numS;
+    Matrix<TS,Dynamic,7> _a;
 
 public:
     /**

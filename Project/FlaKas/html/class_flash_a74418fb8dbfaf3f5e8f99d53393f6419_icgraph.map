@@ -1,5 +1,4 @@
 <map id="Flash::Lout" name="Flash::Lout">
 <area shape="rect" id="node2" href="$class_flash.html#ad29e755877ca96aa5b9f34a10d6cd8b2" title="f ; muss gleich null sein um das NLS zu lösen (aus Aufgabenstellung) " alt="" coords="151,5,216,32"/>
-<area shape="rect" id="node4" href="$class_flash.html#a83e35b3ab13b3705f0fe06c40b800a8b" title="dfdx ; für den Newton&#45;Löser " alt="" coords="140,56,227,83"/>
-<area shape="rect" id="node3" href="$main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="275,5,325,32"/>
+<area shape="rect" id="node3" href="$class_flash.html#a83e35b3ab13b3705f0fe06c40b800a8b" title="dfdx ; für den Newton&#45;Löser " alt="" coords="140,56,227,83"/>
 </map>

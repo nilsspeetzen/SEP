@@ -1,5 +1,8 @@
 <map id="module.h" name="module.h">
-<area shape="rect" id="node2" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="17,80,77,107"/>
-<area shape="rect" id="node3" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="5,155,88,181"/>
-<area shape="rect" id="node4" href="$main_8cpp.html" title="main funcion " alt="" coords="9,229,84,256"/>
+<area shape="rect" id="node2" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="118,80,178,107"/>
+<area shape="rect" id="node3" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="107,155,189,181"/>
+<area shape="rect" id="node4" href="$_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="90,229,206,256"/>
+<area shape="rect" id="node5" href="$main_8cpp.html" title="Programminitiation. " alt="" coords="5,304,80,331"/>
+<area shape="rect" id="node6" href="$testclass_8h.html" title="testclass.h" alt="" coords="105,304,191,331"/>
+<area shape="rect" id="node7" href="$_world_machine_8cpp.html" title="WorldMachine.cpp" alt="" coords="216,304,347,331"/>
 </map>

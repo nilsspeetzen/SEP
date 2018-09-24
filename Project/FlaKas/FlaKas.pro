@@ -26,23 +26,21 @@ INCLUDEPATH += \
     "../../../lib/eigen/Eigen"
 
 SOURCES += \
-        main.cpp \
-    WorldMachine.cpp
+        main.cpp
 
 HEADERS += \
-    testclass.h \
     flash.h \
     module.h \
     lin_sys.h \
-    nonlin_sys.h \
     cascade.h \
     WorldMachine.h
 
-FORMS += \
-        mainwindow.ui
+FORMS +=
 
 DISTFILES += \
-    main.qml
+    main.qml \
+    flash.qml \
+    dataWindow.qml
 
 RESOURCES += \
     qml.qrc

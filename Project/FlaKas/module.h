@@ -5,7 +5,6 @@
 #include "QR"
 #include "lin_sys.h"
 #include <iostream>
-//#include "nonlin_sys.h"
 
 /**
  * @file module.h
@@ -57,7 +56,7 @@ public:
     while (mod.f().norm()>_eps) {
       lsys.A()=mod.dfdx(); lsys.b()=-mod.f();
       _lsol.solve(lsys);
-      std::cout << "A: " << std::endl << lsys.A() << std::endl << "b: " << std::endl << lsys.b() << std::endl << (mod.f().norm()>_eps) << std::endl;
+      //std::cout << "A: " << std::endl << lsys.A() << std::endl << "b: " << std::endl << lsys.b() << std::endl << (mod.f().norm()>_eps) << std::endl;
       mod.x()+=lsys.x();
     }
   }

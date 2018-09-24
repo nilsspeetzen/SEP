@@ -2,55 +2,57 @@
 #define MAINWINDOW_H
 
 #include <QtCore>
+#include <QtQml/QQmlApplicationEngine>
+#include <QQmlComponent>
 #include "cascade.h"
 
-/**
- * @file mainwindow.h
- * @brief Hauptfenster
- */
-
-namespace Ui {
-
-class WorldMachine;
-}
 
 /**
- *@brief Hauptfenster
+ * @file WorldMachine.h
+ * @brief C++ - QML Schnittstelle
  */
 
-//TODO herausfinden, wie verschiedene Elemente hinzugefügt werden können / wie wir ein veränderbares Fließdiagramm machen können
-
+/**
+ *@brief C++ - QML Schnittstelle
+ * Organisiert die Kaskade und das GUI
+ */
 class WorldMachine : public QObject
 {
     Q_OBJECT
 
 private:
     QString m_userName;
+    QQmlApplicationEngine* _engine;
     QObject* _root;
+    int NUMSUBSTANCES;
+    Matrix<double,2,7> A;
+    cascade<>* C;
 
 public:
-    WorldMachine(QObject* root) : _root(root) {}
+    WorldMachine(QQmlApplicationEngine* engine, QObject* root) : _engine(engine), _root(root) {
+        NUMSUBSTANCES = 2;
+        A <<    73.649, -7258.2, 0, 0, -7.3037, 4.1653e-6, 2,
+                79.276, -10105, 0, 0, -7.521, 7.3408e-19, 6;
+        C = new cascade<>(NUMSUBSTANCES, A);
+    }
 
 signals:
 
 public slots:
-    void cppSlot(const QString& msg) {
-        qDebug() << msg;
-        _root->findChild<QObject*>("row")->findChild<QObject*>("tf")->setProperty("number", 2);
-    }
-
     void startOneFlashSlot() {
-        static int NUMSUBSTANCES = 2;
-        static Matrix<double,2,7> A;
-        A <<    73.649, -7258.2, 0, 0, -7.3037, 4.1653e-6, 2,
-                79.276, -10105, 0, 0, -7.521, 7.3408e-19, 6;
-        cascade<> C(NUMSUBSTANCES, A);
-        C.addFlash();
         QR<> lsol;
         MODULENEWTON<> nlsol(lsol);
         nlsol.eps() = 1;
-        nlsol.solve(C.getFlash(0));
-        std::cout << "x: " << std::endl << C.getFlash(0).f() << std::endl;
+        nlsol.solve(C->getFlash(0));
+        std::stringstream data;
+        data << C->getFlash(0).x();
+        QString qdata = QString::fromStdString(data.str());
+        //std::cout << "x: " << std::endl << data.str() << std::endl;
+        _root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);
+    }
+
+    void addFlashSlot() {
+        C->addFlash();
     }
 };
 

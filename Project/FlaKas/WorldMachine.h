@@ -48,11 +48,19 @@ public slots:
         data << C->getFlash(0).x();
         QString qdata = QString::fromStdString(data.str());
         //std::cout << "x: " << std::endl << data.str() << std::endl;
-        _root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);
+        //_root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);
     }
 
     void addFlashSlot() {
         C->addFlash();
+    }
+
+    void deleteFlashSlot(const int& id) {
+        qDebug() << id;
+    }
+
+    void connectFlashesSlot(const int& id1, const int& id2, const int& phase) {
+        qDebug() << id1 << id2 << phase;
     }
 };
 

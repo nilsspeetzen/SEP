@@ -102,6 +102,7 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_qml.cpp
 debug/qrc_qml.cpp: ../FlaKas/qml.qrc \
 		../../../../Qt/5.11.0/mingw53_32/bin/rcc.exe \
+		../FlaKas/dataWindow.qml \
 		../FlaKas/main.qml \
 		../FlaKas/flash.qml
 	C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\bin\rcc.exe -name qml ..\FlaKas\qml.qrc -o debug\qrc_qml.cpp
@@ -300,6 +301,24 @@ debug/moc_WorldMachine.cpp: ../../../../Qt/5.11.0/mingw53_32/include/QtCore/QtCo
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qwineventnotifier.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qxmlstream.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qtcoreversion.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlApplicationEngine \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlapplicationengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsvalue.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqmlglobal.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqml-config.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmldebug.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqml.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlprivate.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlparserstatus.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlpropertyvaluesource.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmllist.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlerror.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlComponent \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlcomponent.h \
 		../FlaKas/cascade.h \
 		../FlaKas/flash.h \
 		../FlaKas/module.h \
@@ -680,6 +699,24 @@ debug/main.o: ../FlaKas/main.cpp ../FlaKas/WorldMachine.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qwineventnotifier.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qxmlstream.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtCore/qtcoreversion.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlApplicationEngine \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlapplicationengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsengine.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsvalue.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqmlglobal.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqml-config.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetwork-config.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmldebug.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqml.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlprivate.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlparserstatus.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlpropertyvaluesource.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmllist.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlerror.h \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlComponent \
+		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlcomponent.h \
 		../FlaKas/cascade.h \
 		../FlaKas/flash.h \
 		../FlaKas/module.h \
@@ -858,22 +895,6 @@ debug/main.o: ../FlaKas/main.cpp ../FlaKas/WorldMachine.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/qwindowdefs_win.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/qinputmethod.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlApplicationEngine \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlapplicationengine.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlengine.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsengine.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qjsvalue.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqmlglobal.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qtqml-config.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetworkglobal.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtNetwork/qtnetwork-config.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmldebug.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqml.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlprivate.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlparserstatus.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlpropertyvaluesource.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmllist.h \
-		../../../../Qt/5.11.0/mingw53_32/include/QtQml/qqmlerror.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtQml/QQmlEngine
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\FlaKas\main.cpp
 

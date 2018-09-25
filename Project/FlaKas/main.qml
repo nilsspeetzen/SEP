@@ -7,73 +7,51 @@ ApplicationWindow {
     height: 900
     visible: true
 
+    //Phase: 1=Liquid 2=Gas
+    property int currentID: 1
+    property int outConnectID: 1
+    property int outConnectPhase: 1
+    property int inConnectID: 1
+    property int inConnectPhase: 2
+    property bool activeOutConnection: false
+    property bool activeInConnection: true
+
     signal s_startOneFlash()
     signal s_addFlash()
+    signal s_deleteFlash(int id)
+    signal s_connectFlashes(int id1, int id2, int phase)
 
-    Row{
-    id: splitscreen
-    width: 1600
-    height: 900
+    Row {
+        id: topbuttonrow
+        objectName: "row"
+        x: 0
+        y: 0
+        width: 600
+        height: 100
 
-        Column {
-            id: leftcol
-            width: 600
-            height: 408
-            objectName: "col"
-
-            Row {
-                id: topbuttonrow
-                objectName: "row"
-                x: 0
-                y: 0
-                width: 600
-                height: 100
-
-                Button {
-                    id: startButton
-                    text: "OneFlash"
-                    onClicked: {
-                        root.s_startOneFlash()
-                    }
-                }
-
-                Button {
-                    id: addButton
-                    text: "Add Flash"
-                    onClicked: {
-                        root.s_addFlash()
-                        var newFlash = Qt.createComponent("flash.qml");
-                        if (newFlash.status === Component.Ready) {
-                            newFlash.setProperty("id", "blub");
-                            var flashObject = newFlash.createObject(root);
-                        }
-                    }
-                }
-            }
-
-            Popup {
-                id: dataPopup
-                x: 20
-                y: 50
-                Text {
-                    id: dataDisplay
-                    objectName: "dataDisplay"
-                    font.pixelSize: 12
-                }
-                closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
+        Button {
+            id: startButton
+            text: "OneFlash"
+            onClicked: {
+                root.s_startOneFlash()
             }
         }
 
-        Rectangle {
-            id: flashArea
-            objectName: "flashArea"
-            x:200
-            y:0
-            width: root.width - 200
-            height: root.height
-            color: "lightgrey"
+        Button {
+            id: addFlashButton
+            text: "Add Flash"
+            onClicked: {
+                root.s_addFlash()
+                var newFlash = Qt.createComponent("flash.qml");
+                if (newFlash.status === Component.Ready) {
+                    var flashObject = newFlash.createObject(root)
+                    flashObject.flashID = root.currentID
+                    root.currentID +=1
+                }
+            }
         }
     }
+
 }
 
 

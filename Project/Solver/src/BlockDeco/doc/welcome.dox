@@ -1,0 +1,23 @@
+/*
+        AVT.SVT
+        (c) 2018. All rights reserved.
+
+        Responsible authors:    [Ralf Hannemann-Tamas]
+*/
+
+// doxygen documentation ______________________________________________________
+
+/*!
+
+@mainpage Documentation
+
+This document contains a technical introduction to the project BlockDeco.
+It is designed to help readers with technical skills such as developers,
+testers or others get a starting point into BlockDeco.
+
+The document has two sections:
+
+- @subpage User_Guide
+- @subpage Technical_Overview
+
+*/

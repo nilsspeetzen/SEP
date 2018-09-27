@@ -1,0 +1,34 @@
+cascade.h:
+  addFlash überprüfen ob die Anfangswerte sinnvoll sind
+  getFlash sollte mit map funktionieren
+  deleteFlash überprüfen
+  f schreiben, soll ein f aus den f der Flashes und den connections zusammenbauen (später)
+  entsprechend dfdx (später)
+  connectFlashes schreiben, soll die Verbindungen zwischen zwei Flashes irgendwie speichern (z.B. extra Matrix)
+ 
+
+flash.h:
+  gucken ob der neue Löser mit einem Flash funktioniert
+  evtl für das speichern der Verbindungen erweitern (siehe oben)
+  
+lin_sys.h:
+  nix
+  
+module.h:
+  neuen Löser irgendwie einbauen, eventuell in neue Datei
+  
+Worldmachine.h:
+  einfach die Slots mit den neuen Funktionen in cascade belegen
+  aufräumen
+  
+main.cpp:
+  nichts direktes
+  
+dataWindow.qml:
+  soll evtl ein Fenster sein, was auf Knopfdruck aufploppt und die Ergebnisse zeigt, evtl nachgucken wie man ein neues Fenster in QML macht
+  
+flash.qml:
+  ist der kleine blaue Kasten der den Flash darstellt, evtl neues Textfeld für Feed oder so, aber nicht dringend
+  
+main.qml:
+  erstmal nichts, sendet glaube ich die wichtigen Signale schon richtig, muss evtl einen neuen Knopf zum ausführen bekommen

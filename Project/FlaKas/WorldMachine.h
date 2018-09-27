@@ -40,27 +40,29 @@ signals:
 
 public slots:
     void startOneFlashSlot() {
-        QR<> lsol;
+        /*QR<> lsol;
         MODULENEWTON<> nlsol(lsol);
         nlsol.eps() = 1;
-        nlsol.solve(C->getFlash(0));
+        nlsol.solve(C->getFlash(1));
         std::stringstream data;
         data << C->getFlash(0).x();
         QString qdata = QString::fromStdString(data.str());
         //std::cout << "x: " << std::endl << data.str() << std::endl;
-        //_root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);
+        //_root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);*/
     }
 
-    void addFlashSlot() {
-        C->addFlash();
+    void addFlashSlot(const int& id) {
+        qDebug() << "Erstelle: " << id;
+        C->addFlash(id);
     }
 
     void deleteFlashSlot(const int& id) {
-        qDebug() << id;
+        qDebug() << "Lösche: " << id;
+        C->deleteFlash(id);
     }
 
     void connectFlashesSlot(const int& id1, const int& id2, const int& phase) {
-        qDebug() << id1 << id2 << phase;
+        qDebug() << "Verbinde: " << id1 << id2 << phase;
     }
 };
 

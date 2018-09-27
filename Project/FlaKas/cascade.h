@@ -24,20 +24,18 @@ class cascade {
 private:
     int _numS;
     Matrix<TS,Dynamic,7> _a;
-    std::vector <Flash<>> flashes;
+    std::map <int,Flash<>> _flashes;
 public:
     /**
      * @brief Konstruktor
      * @param numSubstances Anzahl der verschiedenen Substanzen im Gemisch
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
-    cascade(int numSubstances, Matrix<TS,Dynamic,7> a) : _numS(numSubstances), _a(a) {
-
-    }
+    cascade(int numSubstances, Matrix<TS,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
     /**
      * @brief addFlash
      */
-    void addFlash() {
+    void addFlash(int id) {
         // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
         Flash<> f(_numS, _a);
         f.T() = 273;
@@ -55,15 +53,18 @@ public:
             f.ki(i) = 0.5;
             f.pi(i) = 1000;
         }
-        flashes.push_back(f);
+        _flashes.insert(std::pair<int, Flash<>>(id,f));
     }
     /**
      * @brief getFlash
      * @param id
      * @return
      */
-    Flash<>& getFlash(unsigned int id) {
-        return flashes[id]; //vielleicht noch besser machen
+    Flash<>& getFlash(int id) {
+        return _flashes[id]; //vielleicht noch besser machen
+    }
+    void deleteFlash(int id) {
+        _flashes.erase(id);
     }
     /**
      * @brief konstruiert das NLS der Kaskade
@@ -72,7 +73,7 @@ public:
     VTS f() {
         //erstmal nur ein Flash, Noch nicht fertig, irgendwie müssen noch mehr gleichungen hin, dafür ist connections
         VTS r = VTS::Zero(5+6*_numS);
-        r.segment(0, 2+4*_numS) = flashes[0].f();
+        r.segment(0, 2+4*_numS) = _flashes[0].f();
         VTS connections = VTS::Zero(3+2*_numS);
         r.segment(2+4*_numS, 3+2*_numS) = connections;
         //TODO

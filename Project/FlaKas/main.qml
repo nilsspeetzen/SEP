@@ -17,7 +17,7 @@ ApplicationWindow {
     property bool activeInConnection: true
 
     signal s_startOneFlash()
-    signal s_addFlash()
+    signal s_addFlash(int id)
     signal s_deleteFlash(int id)
     signal s_connectFlashes(int id1, int id2, int phase)
 
@@ -41,7 +41,7 @@ ApplicationWindow {
             id: addFlashButton
             text: "Add Flash"
             onClicked: {
-                root.s_addFlash()
+                root.s_addFlash(currentID)
                 var newFlash = Qt.createComponent("flash.qml");
                 if (newFlash.status === Component.Ready) {
                     var flashObject = newFlash.createObject(root)

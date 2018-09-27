@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     WorldMachine w(engine, root);
 
     QObject::connect(root, SIGNAL(s_startOneFlash()), &w, SLOT(startOneFlashSlot()));
-    QObject::connect(root, SIGNAL(s_addFlash()), &w, SLOT(addFlashSlot()));
+    QObject::connect(root, SIGNAL(s_addFlash(int)), &w, SLOT(addFlashSlot(int)));
     QObject::connect(root, SIGNAL(s_deleteFlash(int)), &w, SLOT(deleteFlashSlot(int)));
     QObject::connect(root, SIGNAL(s_connectFlashes(int, int, int)), &w, SLOT(connectFlashesSlot(int, int, int)));
 

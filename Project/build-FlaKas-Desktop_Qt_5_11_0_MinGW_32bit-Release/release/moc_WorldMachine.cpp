@@ -35,8 +35,8 @@ QT_MOC_LITERAL(0, 0, 12), // "WorldMachine"
 QT_MOC_LITERAL(1, 13, 17), // "startOneFlashSlot"
 QT_MOC_LITERAL(2, 31, 0), // ""
 QT_MOC_LITERAL(3, 32, 12), // "addFlashSlot"
-QT_MOC_LITERAL(4, 45, 2), // "id"
-QT_MOC_LITERAL(5, 48, 15), // "deleteFlashSlot"
+QT_MOC_LITERAL(4, 45, 15), // "deleteFlashSlot"
+QT_MOC_LITERAL(5, 61, 2), // "id"
 QT_MOC_LITERAL(6, 64, 18), // "connectFlashesSlot"
 QT_MOC_LITERAL(7, 83, 3), // "id1"
 QT_MOC_LITERAL(8, 87, 3), // "id2"
@@ -44,7 +44,7 @@ QT_MOC_LITERAL(9, 91, 5) // "phase"
 
     },
     "WorldMachine\0startOneFlashSlot\0\0"
-    "addFlashSlot\0id\0deleteFlashSlot\0"
+    "addFlashSlot\0deleteFlashSlot\0id\0"
     "connectFlashesSlot\0id1\0id2\0phase"
 };
 #undef QT_MOC_LITERAL
@@ -64,14 +64,14 @@ static const uint qt_meta_data_WorldMachine[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    0,   34,    2, 0x0a /* Public */,
-       3,    1,   35,    2, 0x0a /* Public */,
-       5,    1,   38,    2, 0x0a /* Public */,
-       6,    3,   41,    2, 0x0a /* Public */,
+       3,    0,   35,    2, 0x0a /* Public */,
+       4,    1,   36,    2, 0x0a /* Public */,
+       6,    3,   39,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int,    4,
-    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    5,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    7,    8,    9,
 
        0        // eod
@@ -84,7 +84,7 @@ void WorldMachine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->startOneFlashSlot(); break;
-        case 1: _t->addFlashSlot((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 1: _t->addFlashSlot(); break;
         case 2: _t->deleteFlashSlot((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 3: _t->connectFlashesSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const int(*)>(_a[2])),(*reinterpret_cast< const int(*)>(_a[3]))); break;
         default: ;

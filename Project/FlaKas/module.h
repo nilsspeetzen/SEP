@@ -6,7 +6,8 @@
 #include "lin_sys.h"
 #include <iostream>
 
-#include "AlgebraicEsoView.hpp"
+#include "dco.hpp"
+//#include "AlgebraicEsoView.hpp"
 //#include "src/Eso/include/Eso/Dco1Model.hpp"
 //#include "src/Eso/include/Eso/EqGroup.hpp"
 //#include "src/Eso/include/Eso/FirstOrderEso.hpp"
@@ -40,6 +41,11 @@ public:
 
     VTS& x() { return _x; }
     TS& x(int i) { return _x(i); }
+
+    virtual TS& Lin()=0;
+    virtual TS& Vin()=0;
+    virtual TS& Lout()=0;
+    virtual TS& Vout()=0;
     virtual VTS f()=0;
     virtual MTS dfdx()=0;
 };

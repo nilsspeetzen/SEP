@@ -66,6 +66,9 @@ public:
     void deleteFlash(int id) {
         _flashes.erase(id);
     }
+    void connectFlashes(int id1, int id2, int phase) {
+
+    }
     /**
      * @brief konstruiert das NLS der Kaskade
      * @return NLS der Kaskade

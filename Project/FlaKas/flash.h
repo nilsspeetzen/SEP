@@ -35,6 +35,12 @@ private:
     int _numS;
     Matrix<TS,Dynamic,7> _a;
 
+    //connections
+    Module<TS,NP,NS,TP>* _LinM;
+    Module<TS,NP,NS,TP>* _VinM;
+    Module<TS,NP,NS,TP>* _LoutM;
+    Module<TS,NP,NS,TP>* _VoutM;
+
 public:
     /**
      * @brief Konstruktor
@@ -57,28 +63,29 @@ public:
      * @brief Zugriff auf pg (Druck im Flash)
      * @return _pg
      */
-    double& pg() {
-        return _pg;
-    }
+    double& pg() { return _pg; }
     /**
      * @brief Zuriff auf F (Flüssiger Zustrom)
      * @return _F
      */
-    double& F() {
-        return _F;
-    }
+    double& F() { return _F; }
 
-    double& Lin() { return _x(0); }
-    double& Lout() { return _x(1); }
-    double& Vin() { return _x(2); }
-    double& Vout() { return _x(3); }
-    double& T() { return _x(4); }
-    double& xini(int i) { return _x(5+i); }
-    double& yini(int i) { return _x(5+i+_numS); }
-    double& xi(int i) { return _x(5+i+2*_numS); }
-    double& yi(int i) { return _x(5+i+3*_numS); }
-    double& ki(int i) { return _x(5+i+4*_numS); }
-    double& pi(int i) { return _x(5+i+5*_numS); }
+    Module<TS,NP,NS,TP>* LinM() { return _LinM; }
+    Module<TS,NP,NS,TP>* VinM() { return _VinM; }
+    Module<TS,NP,NS,TP>* LoutM() { return _LoutM; }
+    Module<TS,NP,NS,TP>* VoutM() { return _VoutM; }
+
+    TS& Lin() { return _x(0); }
+    TS& Lout() { return _x(1); }
+    TS& Vin() { return _x(2); }
+    TS& Vout() { return _x(3); }
+    TS& T() { return _x(4); }
+    TS& xini(int i) { return _x(5+i); }
+    TS& yini(int i) { return _x(5+i+_numS); }
+    TS& xi(int i) { return _x(5+i+2*_numS); }
+    TS& yi(int i) { return _x(5+i+3*_numS); }
+    TS& ki(int i) { return _x(5+i+4*_numS); }
+    TS& pi(int i) { return _x(5+i+5*_numS); }
 
     /**
      * @brief f ; muss gleich null sein um das NLS zu lösen (aus Aufgabenstellung)

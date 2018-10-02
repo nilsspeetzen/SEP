@@ -65,8 +65,8 @@ public:
 
 
 private:
-  using TangentType = dco::gt1s_t<RealType>;
-  using TangentModel = ModelTemplate<TangentType>;
+  using TangentType = dco::gt1s_t<RealType>; //DAS HIER GEHT IWIE NICHT
+  using TangentModel = ModelTemplate<TangentType>; //UND DAS
   struct Empty {
     Empty(const Dco1Model<ModelTemplate,RealType>&) {}
     template<typename V>

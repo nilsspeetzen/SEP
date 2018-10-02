@@ -35,11 +35,8 @@ private:
     int _numS;
     Matrix<TS,Dynamic,7> _a;
 
-    //connections
-    Module<TS,NP,NS,TP>* _LinM;
-    Module<TS,NP,NS,TP>* _VinM;
-    Module<TS,NP,NS,TP>* _LoutM;
-    Module<TS,NP,NS,TP>* _VoutM;
+    //connection ids
+    int _LinM, _VinM, _LoutM, _VoutM;
 
 public:
     /**
@@ -56,24 +53,25 @@ public:
         _x = VTS::Zero(5 + 6*numSubstances);
         _pg = 1000;
         _xf = Matrix<TS,Dynamic,1>::Zero(numSubstances);
-        _xf(0) = 0.5;
-        _xf(1) = 0.5;
+        _xf(0) = 0.5; _xf(1) = 0.5;
+        _LinM = -1; _LoutM = -1; _VinM = -1; _VoutM = -1;
     }
+    Flash() {} //Für die map (Standardkonstruktor)
     /**
      * @brief Zugriff auf pg (Druck im Flash)
      * @return _pg
      */
-    double& pg() { return _pg; }
+    TS& pg() { return _pg; }
     /**
      * @brief Zuriff auf F (Flüssiger Zustrom)
      * @return _F
      */
-    double& F() { return _F; }
+    TS& F() { return _F; }
 
-    Module<TS,NP,NS,TP>* LinM() { return _LinM; }
-    Module<TS,NP,NS,TP>* VinM() { return _VinM; }
-    Module<TS,NP,NS,TP>* LoutM() { return _LoutM; }
-    Module<TS,NP,NS,TP>* VoutM() { return _VoutM; }
+    int& LinM() { return _LinM; }
+    int& VinM() { return _VinM; }
+    int& LoutM() { return _LoutM; }
+    int& VoutM() { return _VoutM; }
 
     TS& Lin() { return _x(0); }
     TS& Lout() { return _x(1); }

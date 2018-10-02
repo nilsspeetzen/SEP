@@ -2,9 +2,9 @@
 #define FIRST_ORDER_ESO_HPP
 
 #include "EqGroup.hpp"
-#include "Yasp.hpp"
-#include "Core"
-#include "SparseCore"
+#include "Yasp/Yasp.hpp"
+#include "Eigen/Core"
+#include "Eigen/SparseCore"
 
 template<template<typename> class TangentModelType, typename RealType>
 class FirstOrderEso

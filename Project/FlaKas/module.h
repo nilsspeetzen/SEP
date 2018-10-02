@@ -1,13 +1,11 @@
 #ifndef MODULE_H
 #define MODULE_H
 
-#include "LU" // habe in der FlaKas.pro den Includepfad zu Eigen reingetan
-#include "QR"
 #include "lin_sys.h"
 #include <iostream>
 
-#include "dco.hpp"
-//#include "AlgebraicEsoView.hpp"
+#include "dco/dco.hpp"
+#include "Eso/AlgebraicEsoView.hpp"
 //#include "src/Eso/include/Eso/Dco1Model.hpp"
 //#include "src/Eso/include/Eso/EqGroup.hpp"
 //#include "src/Eso/include/Eso/FirstOrderEso.hpp"

@@ -67,7 +67,15 @@ public:
         _flashes.erase(id);
     }
     void connectFlashes(int id1, int id2, int phase) {
-
+        if(phase == 1) {
+            _flashes[id1].LoutM() = id2;
+            _flashes[id2].LinM() = id1;
+            qDebug() << "Cascade connected: " << id1 << id2 << "Liquid";
+        } else if(phase == 2) {
+            _flashes[id1].VoutM() = id2;
+            _flashes[id2].VinM() = id1;
+            qDebug() << "Cascade connected: " << id1 << id2 << "Vapor";
+        }
     }
     /**
      * @brief konstruiert das NLS der Kaskade

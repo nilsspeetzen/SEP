@@ -23,13 +23,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 INCLUDEPATH += \
-    "../../../lib/eigen/Eigen"
+    #"../../../lib/eigen/Eigen"
+    "src/Eigen3/eigen3"
 INCLUDEPATH += \
-    "../../../lib/dco/dcw6i32nel/include"
+    #"../../../lib/dco/dcw6i32nel/include"
+    "src/DcoCppCe/include"
 INCLUDEPATH += \
-    "src/Eso/include/Eso"
+    "src/Eso/include"
 INCLUDEPATH += \
-    "src/Yasp/include/Yasp"
+    "src/Yasp/include"
 
 SOURCES += \
         main.cpp

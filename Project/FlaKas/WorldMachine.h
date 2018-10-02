@@ -63,6 +63,7 @@ public slots:
 
     void connectFlashesSlot(const int& id1, const int& id2, const int& phase) {
         qDebug() << "Verbinde: " << id1 << id2 << phase;
+        C->connectFlashes(id1, id2, phase);
     }
 };
 

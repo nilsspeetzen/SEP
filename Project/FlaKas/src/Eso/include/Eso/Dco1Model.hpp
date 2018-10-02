@@ -2,8 +2,8 @@
 #define DCO1_MODEL_HPP
 
 #include "EqGroup.hpp"
-#include "dco.hpp"
-#include "Core"
+#include "dco/dco.hpp"
+#include "Eigen/Core"
 #include <type_traits>
 
 

@@ -3,8 +3,8 @@
 #ifndef LIN_SYS_GENERIC_H
 #define LIN_SYS_GENERIC_H
 
-#include "LU"
-#include "QR"
+#include "Eigen/LU"
+#include "Eigen/QR"
 using namespace Eigen;
 
 /**

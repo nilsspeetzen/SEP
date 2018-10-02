@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>src/Eso/include/Eso/AlgebraicEsoView.hpp</file>
+        <file>src/Eso/include/Eso/Dco1Model.hpp</file>
+        <file>src/Eso/include/Eso/EqGroup.hpp</file>
+        <file>src/Eso/include/Eso/FirstOrderEso.hpp</file>
+    </qresource>
+</RCC>

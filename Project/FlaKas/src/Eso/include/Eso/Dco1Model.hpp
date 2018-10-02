@@ -1,9 +1,9 @@
 #ifndef DCO1_MODEL_HPP
 #define DCO1_MODEL_HPP
 
-#include "Eso/EqGroup.hpp"
-#include "dco/dco.hpp"
-#include "Eigen/Core"
+#include "EqGroup.hpp"
+#include "dco.hpp"
+#include "Core"
 #include <type_traits>
 
 

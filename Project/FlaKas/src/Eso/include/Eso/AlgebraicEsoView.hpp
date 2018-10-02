@@ -1,9 +1,9 @@
 #ifndef ALGEBRAIC_ESO_VIEW_HPP
 #define ALGEBRAIC_ESO_VIEW_HPP
 
-#include "Eso/EqGroup.hpp"
-#include "Eso/Dco1Model.hpp"
-#include "Eso/FirstOrderEso.hpp"
+#include "EqGroup.hpp"
+#include "Dco1Model.hpp"
+#include "FirstOrderEso.hpp"
 
 template <int I, int J, class Eso>
 class AlgebraicEsoView {

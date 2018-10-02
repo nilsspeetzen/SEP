@@ -6,6 +6,12 @@
 #include "lin_sys.h"
 #include <iostream>
 
+#include "AlgebraicEsoView.hpp"
+//#include "src/Eso/include/Eso/Dco1Model.hpp"
+//#include "src/Eso/include/Eso/EqGroup.hpp"
+//#include "src/Eso/include/Eso/FirstOrderEso.hpp"
+//#include "src/BlockDeco/include/BlockDeco/AlgebraicEsoBlockSolver.hpp"
+
 /**
  * @file module.h
  * @brief Basismodul
@@ -60,6 +66,13 @@ public:
       mod.x()+=lsys.x();
     }
   }
+};
+
+template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
+class MODULEESO
+{
+public:
+  MODULEESO() {}
 };
 
 #endif // MODULE_H

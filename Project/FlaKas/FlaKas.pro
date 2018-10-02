@@ -24,6 +24,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 INCLUDEPATH += \
     "../../../lib/eigen/Eigen"
+INCLUDEPATH += \
+    "../../../lib/dco/dcw6i32nel/include"
+INCLUDEPATH += \
+    "src/Eso/include/Eso"
+INCLUDEPATH += \
+    "src/Yasp/include/Yasp"
 
 SOURCES += \
         main.cpp

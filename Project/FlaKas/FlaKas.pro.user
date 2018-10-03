@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.7.1, 2018-10-02T12:28:33. -->
+<!-- Written by QtCreator 4.7.1, 2018-10-03T15:52:24. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -60,7 +60,10 @@
    </valuelist>
    <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
    <value type="bool" key="ClangTools.BuildBeforeAnalysis">false</value>
-   <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
+   <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.TidyAndClazy</value>
+   <valuelist type="QVariantList" key="ClangTools.SelectedDirs">
+    <value type="QString">C:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/FlaKas.pro</value>
+   </valuelist>
    <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
    <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
    <value type="bool" key="ClangTools.UseGlobalSettings">true</value>

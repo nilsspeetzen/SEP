@@ -4,6 +4,13 @@
 #include <vector>
 #include <QtCore>
 
+#include "dco/dco.hpp"
+#include "Eso/AlgebraicEsoView.hpp"
+#include "Eso/Dco1Model.hpp"
+#include "Eso/EqGroup.hpp"
+#include "Eso/FirstOrderEso.hpp"
+#include "BlockDeco/AlgebraicEsoBlockSolver.hpp"
+
 /**
  * @file cascade.h
  * @brief Enthält alle Module
@@ -16,14 +23,13 @@
 //TODO erstmal einen Flash einfügen können und den dann Lösen
 //später dann eine Funktion zum darstellen
 
-template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
+template<typename realType=double>
 class cascade {
-    typedef Matrix<TS,NS,1> VTS;
-    typedef Matrix<TS,NS,NS> MTS;
-    typedef Matrix<TP,NP,1> VTP;
+    typedef Matrix<realType,Dynamic,1> VT;
+    typedef Matrix<realType,Dynamic,Dynamic> MT;
 private:
     int _numS;
-    Matrix<TS,Dynamic,7> _a;
+    Matrix<realType,Dynamic,7> _a;
     std::map <int,Flash<>> _flashes;
 public:
     /**
@@ -31,7 +37,7 @@ public:
      * @param numSubstances Anzahl der verschiedenen Substanzen im Gemisch
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
-    cascade(int numSubstances, Matrix<TS,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
+    cascade(int numSubstances, Matrix<realType,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
     /**
      * @brief addFlash
      */
@@ -81,11 +87,11 @@ public:
      * @brief konstruiert das NLS der Kaskade
      * @return NLS der Kaskade
      */
-    VTS f() {
+    VT f() {
         //erstmal nur ein Flash, Noch nicht fertig, irgendwie müssen noch mehr gleichungen hin, dafür ist connections
-        VTS r = VTS::Zero(5+6*_numS);
+        VT r = VT::Zero(5+6*_numS);
         r.segment(0, 2+4*_numS) = _flashes[0].f();
-        VTS connections = VTS::Zero(3+2*_numS);
+        VT connections = VT::Zero(3+2*_numS);
         r.segment(2+4*_numS, 3+2*_numS) = connections;
         //TODO
         /*for(int i = 0; i < flashes.size(); i++) {
@@ -96,9 +102,28 @@ public:
      * @brief dfdx
      * @return Abl. des NLS der Kaskade
      */
-    MTS dfdx() {
+    MT dfdx() {
 
     }
+
+};
+
+template<typename RealType=double>
+using TangentSingleFlash = Dco1Model<cascade,RealType>;
+
+template<typename RealType=double>
+class CASCADEESO
+{
+public:
+  CASCADEESO() {}
+  void solveOneFlash() {
+      FirstOrderEso<TangentSingleFlash,double> eso;
+      AlgebraicEsoView<0,0,decltype(eso)> algEsoView(eso);
+      //Eigen::Matrix<double,Eigen::Dynamic,1> x(algEsoView.numVariables());
+      //x.setOnes();
+      AlgebraicEsoBlockSolver solver;
+      //solver.solve(algEsoView,x);
+  }
 };
 
 #endif // CASCADE_H

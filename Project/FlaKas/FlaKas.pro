@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += qml#core gui
+QT       += qml
+CONFIG   += c++1z
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,15 +24,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 INCLUDEPATH += \
-    #"../../../lib/eigen/Eigen"
-    "src/Eigen3/eigen3"
-INCLUDEPATH += \
-    #"../../../lib/dco/dcw6i32nel/include"
-    "src/DcoCppCe/include"
-INCLUDEPATH += \
-    "src/Eso/include"
-INCLUDEPATH += \
-    "src/Yasp/include"
+    "src/Eigen3/eigen3" \
+    "src/Eigen3/eigen3/unsupported" \
+    "src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization" \
+    "src/DcoCppCe/include" \
+    "src/Eso/include" \
+    "src/Yasp/include" \
+    "src/BlockDeco/include" \
+    "src/BlockDecoBTF/include"
 
 SOURCES += \
         main.cpp

@@ -21,7 +21,6 @@ class WorldMachine : public QObject
     Q_OBJECT
 
 private:
-    QString m_userName;
     QQmlApplicationEngine* _engine;
     QObject* _root;
     int NUMSUBSTANCES;

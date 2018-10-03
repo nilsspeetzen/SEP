@@ -3,11 +3,14 @@
 
 #include <set>
 
+namespace BlockDecoBlock {
+
 struct Block {
-  size_t size() const {return VariableIndices.size(); }
+  std::size_t size() const {return VariableIndices.size(); }
   std::set<unsigned> VariableIndices;
   std::set<unsigned> EquationIndices;
 };
 
+}
 
 #endif // BLOCK_HPP

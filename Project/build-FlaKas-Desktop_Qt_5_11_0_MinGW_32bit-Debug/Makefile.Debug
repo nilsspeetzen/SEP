@@ -13,8 +13,8 @@ CC            = gcc
 CXX           = g++
 DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_NEEDS_QMAIN
 CFLAGS        = -fno-keep-inline-dllexport -g -Wall -W -Wextra $(DEFINES)
-CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -W -Wextra -fexceptions -mthreads $(DEFINES)
-INCPATH       = -I..\FlaKas -I. -I..\FlaKas\src\Eigen3\eigen3 -I..\FlaKas\src\DcoCppCe\include -I..\FlaKas\src\Eso\include -I..\FlaKas\src\Yasp\include -I..\..\..\..\Qt\5.11.0\mingw53_32\include -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtWidgets -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtGui -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtANGLE -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtQml -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtNetwork -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtCore -Idebug -I..\..\..\..\Qt\5.11.0\mingw53_32\mkspecs\win32-g++ 
+CXXFLAGS      = -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -W -Wextra -fexceptions -mthreads $(DEFINES)
+INCPATH       = -I..\FlaKas -I. -I..\FlaKas\src\Eigen3\eigen3 -I..\FlaKas\src\Eigen3\eigen3\unsupported -I..\FlaKas\src\Eigen3\eigen3\unsupported\Eigen\src\NonLinearOptimization -I..\FlaKas\src\DcoCppCe\include -I..\FlaKas\src\Eso\include -I..\FlaKas\src\Yasp\include -I..\FlaKas\src\BlockDeco\include -I..\FlaKas\src\BlockDecoBTF\include -I..\..\..\..\Qt\5.11.0\mingw53_32\include -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtWidgets -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtGui -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtANGLE -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtQml -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtNetwork -I..\..\..\..\Qt\5.11.0\mingw53_32\include\QtCore -Idebug -I..\..\..\..\Qt\5.11.0\mingw53_32\mkspecs\win32-g++ 
 LINKER      =        g++
 LFLAGS        =        -Wl,-subsystem,windows -mthreads
 LIBS        =        -lmingw32 -LC:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libqtmaind.a -LC:\openssl\lib -LC:\Utils\my_sql\my_sql\lib -LC:\Utils\postgresql\pgsql\lib -lshell32 C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libQt5Widgetsd.a C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libQt5Guid.a C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libQt5Qmld.a C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libQt5Networkd.a C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\lib\libQt5Cored.a 
@@ -111,7 +111,7 @@ compiler_moc_predefs_make_all: debug/moc_predefs.h
 compiler_moc_predefs_clean:
 	-$(DEL_FILE) debug\moc_predefs.h
 debug/moc_predefs.h: ../../../../Qt/5.11.0/mingw53_32/mkspecs/features/data/dummy.cpp
-	g++ -fno-keep-inline-dllexport -g -std=gnu++11 -Wall -W -Wextra -dM -E -o debug\moc_predefs.h ..\..\..\..\Qt\5.11.0\mingw53_32\mkspecs\features\data\dummy.cpp
+	g++ -fno-keep-inline-dllexport -g -std=gnu++1z -Wall -W -Wextra -dM -E -o debug\moc_predefs.h ..\..\..\..\Qt\5.11.0\mingw53_32\mkspecs\features\data\dummy.cpp
 
 compiler_moc_header_make_all: debug/moc_WorldMachine.cpp
 compiler_moc_header_clean:
@@ -322,6 +322,7 @@ debug/moc_WorldMachine.cpp: ../../../../Qt/5.11.0/mingw53_32/include/QtCore/QtCo
 		../FlaKas/cascade.h \
 		../FlaKas/flash.h \
 		../FlaKas/module.h \
+		../FlaKas/lin_sys.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/LU \
 		../FlaKas/src/Eigen3/eigen3/Eigen/Core \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -489,7 +490,6 @@ debug/moc_WorldMachine.cpp: ../../../../Qt/5.11.0/mingw53_32/include/QtCore/QtCo
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/HouseholderQR_LAPACKE.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h \
-		../FlaKas/lin_sys.h \
 		../FlaKas/src/DcoCppCe/include/dco/dco.hpp \
 		../FlaKas/src/DcoCppCe/include/dco/types.hpp \
 		../FlaKas/src/DcoCppCe/include/dco/global_includes.hpp \
@@ -503,10 +503,58 @@ debug/moc_WorldMachine.cpp: ../../../../Qt/5.11.0/mingw53_32/include/QtCore/QtCo
 		../FlaKas/src/Eso/include/Eso/EqGroup.hpp \
 		../FlaKas/src/Eso/include/Eso/Dco1Model.hpp \
 		../FlaKas/src/Eso/include/Eso/FirstOrderEso.hpp \
+		../FlaKas/src/Yasp/include/Yasp/Yasp.hpp \
+		../FlaKas/src/Eigen3/eigen3/Eigen/SparseCore \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMap.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseVector.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseRef.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDot.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+		../FlaKas/src/BlockDeco/include/BlockDeco/AlgebraicEsoBlockSolver.hpp \
+		../FlaKas/src/BlockDeco/include/BlockDeco/Block.hpp \
+		../FlaKas/src/BlockDecoBTF/include/BlockDecoBTF/btf.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/NonLinearOptimization \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/NumericalDiff \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NumericalDiff/NumericalDiff.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/qrsolv.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1updt.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1mpyq.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/rwupdt.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/fdjac1.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/lmpar.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/dogleg.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/covar.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/chkder.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/HybridNonLinearSolver.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/LevenbergMarquardt.h \
 		../FlaKas/WorldMachine.h \
 		debug/moc_predefs.h \
 		../../../../Qt/5.11.0/mingw53_32/bin/moc.exe
-	C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/mkspecs/win32-g++ -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eigen3/eigen3 -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/DcoCppCe/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eso/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Yasp/include -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtWidgets -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtGui -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtANGLE -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtQml -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtNetwork -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtCore -I. -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\FlaKas\WorldMachine.h -o debug\moc_WorldMachine.cpp
+	C:\Users\ASRock\Documents\Qt\5.11.0\mingw53_32\bin\moc.exe $(DEFINES) --include debug/moc_predefs.h -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/mkspecs/win32-g++ -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eigen3/eigen3 -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eigen3/eigen3/unsupported -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/DcoCppCe/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Eso/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/Yasp/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/BlockDeco/include -IC:/Users/ASRock/Documents/GitHub/SEP/Project/FlaKas/src/BlockDecoBTF/include -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtWidgets -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtGui -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtANGLE -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtQml -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtNetwork -IC:/Users/ASRock/Documents/Qt/5.11.0/mingw53_32/include/QtCore -I. -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IC:/Users/ASRock/Documents/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ..\FlaKas\WorldMachine.h -o debug\moc_WorldMachine.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -733,6 +781,7 @@ debug/main.o: ../FlaKas/main.cpp ../FlaKas/WorldMachine.h \
 		../FlaKas/cascade.h \
 		../FlaKas/flash.h \
 		../FlaKas/module.h \
+		../FlaKas/lin_sys.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/LU \
 		../FlaKas/src/Eigen3/eigen3/Eigen/Core \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/Core/util/DisableStupidWarnings.h \
@@ -900,7 +949,6 @@ debug/main.o: ../FlaKas/main.cpp ../FlaKas/WorldMachine.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/CompleteOrthogonalDecomposition.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/HouseholderQR_LAPACKE.h \
 		../FlaKas/src/Eigen3/eigen3/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h \
-		../FlaKas/lin_sys.h \
 		../FlaKas/src/DcoCppCe/include/dco/dco.hpp \
 		../FlaKas/src/DcoCppCe/include/dco/types.hpp \
 		../FlaKas/src/DcoCppCe/include/dco/global_includes.hpp \
@@ -914,6 +962,54 @@ debug/main.o: ../FlaKas/main.cpp ../FlaKas/WorldMachine.h \
 		../FlaKas/src/Eso/include/Eso/EqGroup.hpp \
 		../FlaKas/src/Eso/include/Eso/Dco1Model.hpp \
 		../FlaKas/src/Eso/include/Eso/FirstOrderEso.hpp \
+		../FlaKas/src/Yasp/include/Yasp/Yasp.hpp \
+		../FlaKas/src/Eigen3/eigen3/Eigen/SparseCore \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseUtil.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMatrixBase.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseAssign.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/CompressedStorage.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/AmbiVector.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCompressedBase.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMatrix.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseMap.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/MappedSparseMatrix.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseVector.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseRef.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCwiseUnaryOp.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseCwiseBinaryOp.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseTranspose.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseBlock.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDot.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseRedux.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDiagonalProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/ConservativeSparseSparseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSparseProductWithPruning.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseDenseProduct.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSelfAdjointView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseTriangularView.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/TriangularSolver.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparsePermutation.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseFuzzy.h \
+		../FlaKas/src/Eigen3/eigen3/Eigen/src/SparseCore/SparseSolverBase.h \
+		../FlaKas/src/BlockDeco/include/BlockDeco/AlgebraicEsoBlockSolver.hpp \
+		../FlaKas/src/BlockDeco/include/BlockDeco/Block.hpp \
+		../FlaKas/src/BlockDecoBTF/include/BlockDecoBTF/btf.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/NonLinearOptimization \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/NumericalDiff \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NumericalDiff/NumericalDiff.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/qrsolv.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1updt.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/r1mpyq.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/rwupdt.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/fdjac1.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/lmpar.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/dogleg.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/covar.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/chkder.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/HybridNonLinearSolver.h \
+		../FlaKas/src/Eigen3/eigen3/unsupported/Eigen/src/NonLinearOptimization/LevenbergMarquardt.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/QGuiApplication \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/qguiapplication.h \
 		../../../../Qt/5.11.0/mingw53_32/include/QtGui/qtguiglobal.h \

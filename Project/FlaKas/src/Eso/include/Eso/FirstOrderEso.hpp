@@ -17,7 +17,6 @@ public:
     tangentModel.setVariable(varGroup,variableIndex,variableValue);
   }
 
-
   template<int I>
   static constexpr inline int numEquations(EqGroup<I> eqGroup) {
     return TangentModelType<RealType>::numEquations(eqGroup);

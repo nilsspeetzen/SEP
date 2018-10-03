@@ -9,6 +9,7 @@
 #include <vector>
 #include <numeric>
 
+using BDB = BlockDecoBlock::Block;
 
 class AlgebraicEsoBlockSolver
 {
@@ -30,11 +31,11 @@ public:
           return 0;
       }
 
-      Block block;
+      BDB block;
       AlgebraicEso& eso;
 
   public:
-      void setBlock(const Block &value) {block = value;}
+      void setBlock(const BDB &value) {block = value;}
   };
 
   template<class AlgebraicEso, class StateType>
@@ -110,7 +111,7 @@ public:
       throw std::runtime_error("Error in HybridNonLinearSolver::hybrj1(): Algorithm did not converge!");
   }
 
-  std::vector<Block> blocks;
+  std::vector<BDB> blocks;
   int maxDimBlock;
 };
 

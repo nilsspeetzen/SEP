@@ -22,18 +22,23 @@
 
 //TODO die GLS vom Module genauer machen, visuelles Zeug
 
-template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
-class Flash : public Module<>
+template<typename RealType=double>
+class Flash : public Module<RealType>
 {
-    typedef Matrix<TS,NS,1> VTS;
-    typedef Matrix<TS,NS,NS> MTS;
-    typedef Matrix<TP,NP,1> VTP;
-private:
+    typedef Matrix<RealType,Dynamic,1> VT;
+    typedef Matrix<RealType,Dynamic,Dynamic> MT;
 
-    TS _pg, _F;
-    Matrix<TS,Dynamic,1> _xf;
+    using Module<RealType>::_x;
+    using Module<RealType>::Lin;
+    using Module<RealType>::Lout;
+    using Module<RealType>::Vin;
+    using Module<RealType>::Vout;
+
+private:
+    RealType _pg, _F;
+    Matrix<RealType,Dynamic,1> _xf;
     int _numS;
-    Matrix<TS,Dynamic,7> _a;
+    Matrix<RealType,Dynamic,7> _a;
 
     //connection ids
     int _LinM, _VinM, _LoutM, _VoutM;
@@ -44,53 +49,52 @@ public:
      * @param numSubstances Anzahl der verschiedenen Substanzen im Gemisch
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
-    Flash(int numSubstances, Matrix<TS,Dynamic,7> a) :
-            Module<TS, NP, NS, TP>(), _numS(numSubstances), _a(a) {
+    Flash(int numSubstances, Matrix<RealType,Dynamic,7> a) :
+            Module<RealType>(), _numS(numSubstances), _a(a) {
         /**
          * _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
          */
-        static_assert(NP==-1&&NS==-1,"Wrong NP or NS!");
-        _x = VTS::Zero(5 + 6*numSubstances);
+        _x = VT::Zero(5 + 6*numSubstances);
         _pg = 1000;
-        _xf = Matrix<TS,Dynamic,1>::Zero(numSubstances);
+        _xf = Matrix<RealType,Dynamic,1>::Zero(numSubstances);
         _xf(0) = 0.5; _xf(1) = 0.5;
         _LinM = -1; _LoutM = -1; _VinM = -1; _VoutM = -1;
     }
-    Flash() {} //Für die map (Standardkonstruktor)
+    Flash() : Module<RealType>() {} //Für die map (Standardkonstruktor)
     /**
      * @brief Zugriff auf pg (Druck im Flash)
      * @return _pg
      */
-    TS& pg() { return _pg; }
+    RealType& pg() { return _pg; }
     /**
      * @brief Zuriff auf F (Flüssiger Zustrom)
      * @return _F
      */
-    TS& F() { return _F; }
+    RealType& F() { return _F; }
 
     int& LinM() { return _LinM; }
     int& VinM() { return _VinM; }
     int& LoutM() { return _LoutM; }
     int& VoutM() { return _VoutM; }
 
-    TS& Lin() { return _x(0); }
-    TS& Lout() { return _x(1); }
-    TS& Vin() { return _x(2); }
-    TS& Vout() { return _x(3); }
-    TS& T() { return _x(4); }
-    TS& xini(int i) { return _x(5+i); }
-    TS& yini(int i) { return _x(5+i+_numS); }
-    TS& xi(int i) { return _x(5+i+2*_numS); }
-    TS& yi(int i) { return _x(5+i+3*_numS); }
-    TS& ki(int i) { return _x(5+i+4*_numS); }
-    TS& pi(int i) { return _x(5+i+5*_numS); }
+    inline RealType Lin()  const { return _x(0); }
+    inline RealType Lout() const { return _x(1); }
+    inline RealType Vin()  const { return _x(2); }
+    inline RealType Vout() const { return _x(3); }
+    inline RealType T()    const { return _x(4); }
+    inline RealType xini(int i) const { return _x(5+i); }
+    inline RealType yini(int i) const { return _x(5+i+_numS); }
+    inline RealType xi(int i) const { return _x(5+i+2*_numS); }
+    inline RealType yi(int i) const { return _x(5+i+3*_numS); }
+    inline RealType ki(int i) const { return _x(5+i+4*_numS); }
+    inline RealType pi(int i) const { return _x(5+i+5*_numS); }
 
     /**
      * @brief f ; muss gleich null sein um das NLS zu lösen (aus Aufgabenstellung)
      * @return f in Abhängigkeit der Variablen
      */
-    VTS f() {
-        VTS r = VTS::Zero(_x.size());
+    VT f() {
+        VT r = VT::Zero(_x.size());
         //GLS
         for(int i = 0; i<_numS; i++) {
             r(i)            = _F*_xf(i) + Lin()*xini(i) + Vin()*yini(i) - Lout()*xi(i) - Vout()*yi(i); //1
@@ -117,8 +121,8 @@ public:
      * @brief dfdx ; für den Newton-Löser
      * @return dfdx in Abhängigkeit der Variablen
      */
-    MTS dfdx() {
-        MTS drdx = MTS::Zero(_x.size(), _x.size());
+    MT dfdx() {
+        MT drdx = MT::Zero(_x.size(), _x.size());
         //TODO
         // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
 

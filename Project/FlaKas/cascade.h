@@ -31,7 +31,7 @@ private:
     int _numS;
     VT _x;
     Matrix<RealType,Dynamic,7> _a;
-    std::map <int,Flash<>> _flashes;
+    std::map <int,Flash<RealType>> _flashes;
 public:
     /**
      * @brief Konstruktor
@@ -47,18 +47,19 @@ public:
 
     template<int K>
     inline void setVariable(VarGroup<K> , const int index, const RealType& value){
-      static_assert (K==0,"only one variable group present" );
-      _x[index] = value;
+        static_assert (K==0,"only one variable group present" );
+        _x[index] = value;
     }
 
     template<int K>
     inline RealType getVariable(VarGroup<K> , const int index) const {
-      static_assert (K==0,"only one variable group present" );
-      return _x[index];
+        static_assert (K==0,"only one variable group present" );
+        return _x[index];
     }
-    //TODO
-    inline RealType eval(EqGroup<0>, EqIndex<15>) const {
-      return _flashes[1].Vin();
+
+    template<int K>
+    inline RealType eval(EqGroup<0>, EqIndex<K>) const {
+        return _flashes.at(K).T();
     }
 
     /**
@@ -67,7 +68,7 @@ public:
      */
     void addFlash(int id) {
         // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
-        Flash<> f(_numS, _a);
+        Flash<RealType> f(_numS, _a);/*
         f.T() = 273;
         f.F() = 100;
         f.Vin() = 0;
@@ -82,8 +83,8 @@ public:
             f.yi(i) = 0.5;
             f.ki(i) = 0.5;
             f.pi(i) = 1000;
-        }
-        _flashes.insert(std::pair<int, Flash<>>(id,f));
+        }*/
+        _flashes.insert(std::pair<int, Flash<RealType>>(id,f));
     }
 
     /**
@@ -122,18 +123,17 @@ public:
     }
 };
 
-template<typename RealType=double>
+template<typename RealType>
 using TangentSingleFlash = Dco1Model<cascade,RealType>;
 
-template<typename RealType=double>
 class CASCADEESO
 {
 public:
   CASCADEESO() {}
-  void solveOneFlash() {
+  void solve() {
       FirstOrderEso<TangentSingleFlash,double> eso;
       AlgebraicEsoView<0,0,decltype(eso)> algEsoView(eso);
-      Eigen::Matrix<double,Eigen::Dynamic,1> x(algEsoView.numVariables());
+      Matrix<double,Dynamic,1> x(algEsoView.numVariables());
       x.setOnes();
       AlgebraicEsoBlockSolver solver;
       solver.solve(algEsoView,x);

@@ -16,46 +16,43 @@
  * definiert und die innere Operation abstrakt lässt.
  */
 
-//TODO allgemeine GLS als NonlinSys z.B. einfügen (abstrakt, wie z.B. in dem alten Projekt), Input/Output sind x und rechte seite?
-//UPDATE _x sind alle NLS Variablen, _p ist 0, damit soll f(x) = 0 sein (f und dfdx werden in flash festgelegt)
-
-template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
+template<typename RealType=double>
 class Module
 {
-    typedef Matrix<TS,NS,1> VTS;
-    typedef Matrix<TS,NS,NS> MTS;
-    typedef Matrix<TP,NP,1> VTP;
+    typedef Matrix<RealType,Dynamic,1> VTS;
+    typedef Matrix<RealType,Dynamic,Dynamic> MTS;
+    typedef Matrix<RealType,Dynamic,1> VTP;
 protected:
     VTS _x;
 public:
     Module() {}
 
     VTS& x() { return _x; }
-    TS& x(int i) { return _x(i); }
+    RealType& x(int i) { return _x(i); }
 
-    virtual TS& Lin()=0;
-    virtual TS& Vin()=0;
-    virtual TS& Lout()=0;
-    virtual TS& Vout()=0;
+    virtual RealType Lin() const=0;
+    virtual RealType Vin() const=0;
+    virtual RealType Lout() const=0;
+    virtual RealType Vout() const=0;
     virtual VTS f()=0;
-    virtual MTS dfdx()=0;
+    //virtual MTS dfdx()=0;
 };
 
 /**
  *@brief Newton Löser für Abgeleitete Klassen von Modul
  */
-
-template<typename TS=double, int NP=Dynamic, int NS=Dynamic, typename TP=TS>
+/*
+template<typename RealType=double, int NP=Dynamic, int NS=Dynamic, typename TP=RealType>
 class MODULENEWTON
 {
-  LINEAR_SOLVER<TS,NS>& _lsol;
+  LINEAR_SOLVER<RealType,NS>& _lsol;
   double _eps;
 public:
-  MODULENEWTON(LINEAR_SOLVER<TS,NS>& lsol) : _lsol(lsol), _eps(0) {}
+  MODULENEWTON(LINEAR_SOLVER<RealType,NS>& lsol) : _lsol(lsol), _eps(0) {}
   double& eps() { return _eps; }
-  void solve(Module<TS,NP,NS,TP>& mod) {
+  void solve(Module<RealType>& mod) {
     assert(_eps>0);
-    LINEAR_SYSTEM<TS,NS> lsys(mod.x().size());
+    LINEAR_SYSTEM<RealType,NS> lsys(mod.x().size());
     while (mod.f().norm()>_eps) {
       lsys.A()=mod.dfdx(); lsys.b()=-mod.f();
       _lsol.solve(lsys);
@@ -64,5 +61,5 @@ public:
     }
   }
 };
-
+*/
 #endif // MODULE_H

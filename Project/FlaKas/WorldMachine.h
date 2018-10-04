@@ -40,8 +40,8 @@ signals:
 public slots:
     void startCascadeSlot() {
         qDebug() << "Starte Löser";
-        CASCADEESO<double> solver;
-        solver.solveOneFlash();
+        CASCADEESO solver;
+        solver.solve();
     }
 
     void addFlashSlot(const int& id) {

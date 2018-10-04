@@ -23,13 +23,14 @@
 //TODO erstmal einen Flash einfügen können und den dann Lösen
 //später dann eine Funktion zum darstellen
 
-template<typename realType=double>
+template<typename RealType=double>
 class cascade {
-    typedef Matrix<realType,Dynamic,1> VT;
-    typedef Matrix<realType,Dynamic,Dynamic> MT;
+    typedef Matrix<RealType,Dynamic,1> VT;
+    typedef Matrix<RealType,Dynamic,Dynamic> MT;
 private:
     int _numS;
-    Matrix<realType,Dynamic,7> _a;
+    VT _x;
+    Matrix<RealType,Dynamic,7> _a;
     std::map <int,Flash<>> _flashes;
 public:
     /**
@@ -37,9 +38,32 @@ public:
      * @param numSubstances Anzahl der verschiedenen Substanzen im Gemisch
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
-    cascade(int numSubstances, Matrix<realType,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
+    cascade(int numSubstances, Matrix<RealType,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
+    cascade() {}
+
+    //FÜR ESO
+    static constexpr int numVariables(VarGroup<0>&) { return 5 + 6; }
+    static constexpr int numEquations(EqGroup<0>&) { return 5 + 6; }
+
+    template<int K>
+    inline void setVariable(VarGroup<K> , const int index, const RealType& value){
+      static_assert (K==0,"only one variable group present" );
+      _x[index] = value;
+    }
+
+    template<int K>
+    inline RealType getVariable(VarGroup<K> , const int index) const {
+      static_assert (K==0,"only one variable group present" );
+      return _x[index];
+    }
+    //TODO
+    inline RealType eval(EqGroup<0>, EqIndex<15>) const {
+      return _flashes[1].Vin();
+    }
+
     /**
-     * @brief addFlash
+     * @brief Erstellt einne neuen Flash
+     * @param id ID
      */
     void addFlash(int id) {
         // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
@@ -61,17 +85,30 @@ public:
         }
         _flashes.insert(std::pair<int, Flash<>>(id,f));
     }
+
     /**
-     * @brief getFlash
-     * @param id
-     * @return
+     * @brief Zugriff auf einen gespeicherten Flash
+     * @param id ID
+     * @return Flash mit angegebener id
      */
     Flash<>& getFlash(int id) {
         return _flashes[id]; //vielleicht noch besser machen
     }
+
+    /**
+     * @brief Löscht einen Flash
+     * @param id ID
+     */
     void deleteFlash(int id) {
         _flashes.erase(id);
     }
+
+    /**
+     * @brief Speichert Verbindung in den Flashes
+     * @param id1 OutputID
+     * @param id2 InputID
+     * @param phase 1: Flüssig 2: Gasförmig
+     */
     void connectFlashes(int id1, int id2, int phase) {
         if(phase == 1) {
             _flashes[id1].LoutM() = id2;
@@ -83,29 +120,6 @@ public:
             qDebug() << "Cascade connected: " << id1 << id2 << "Vapor";
         }
     }
-    /**
-     * @brief konstruiert das NLS der Kaskade
-     * @return NLS der Kaskade
-     */
-    VT f() {
-        //erstmal nur ein Flash, Noch nicht fertig, irgendwie müssen noch mehr gleichungen hin, dafür ist connections
-        VT r = VT::Zero(5+6*_numS);
-        r.segment(0, 2+4*_numS) = _flashes[0].f();
-        VT connections = VT::Zero(3+2*_numS);
-        r.segment(2+4*_numS, 3+2*_numS) = connections;
-        //TODO
-        /*for(int i = 0; i < flashes.size(); i++) {
-
-        }*/
-    }
-    /**
-     * @brief dfdx
-     * @return Abl. des NLS der Kaskade
-     */
-    MT dfdx() {
-
-    }
-
 };
 
 template<typename RealType=double>
@@ -119,10 +133,11 @@ public:
   void solveOneFlash() {
       FirstOrderEso<TangentSingleFlash,double> eso;
       AlgebraicEsoView<0,0,decltype(eso)> algEsoView(eso);
-      //Eigen::Matrix<double,Eigen::Dynamic,1> x(algEsoView.numVariables());
-      //x.setOnes();
+      Eigen::Matrix<double,Eigen::Dynamic,1> x(algEsoView.numVariables());
+      x.setOnes();
       AlgebraicEsoBlockSolver solver;
-      //solver.solve(algEsoView,x);
+      solver.solve(algEsoView,x);
+      std::cout << x;
   }
 };
 

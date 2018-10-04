@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_WorldMachine_t {
     QByteArrayData data[10];
-    char stringdata0[97];
+    char stringdata0[96];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,18 +32,18 @@ struct qt_meta_stringdata_WorldMachine_t {
 static const qt_meta_stringdata_WorldMachine_t qt_meta_stringdata_WorldMachine = {
     {
 QT_MOC_LITERAL(0, 0, 12), // "WorldMachine"
-QT_MOC_LITERAL(1, 13, 17), // "startOneFlashSlot"
-QT_MOC_LITERAL(2, 31, 0), // ""
-QT_MOC_LITERAL(3, 32, 12), // "addFlashSlot"
-QT_MOC_LITERAL(4, 45, 2), // "id"
-QT_MOC_LITERAL(5, 48, 15), // "deleteFlashSlot"
-QT_MOC_LITERAL(6, 64, 18), // "connectFlashesSlot"
-QT_MOC_LITERAL(7, 83, 3), // "id1"
-QT_MOC_LITERAL(8, 87, 3), // "id2"
-QT_MOC_LITERAL(9, 91, 5) // "phase"
+QT_MOC_LITERAL(1, 13, 16), // "startCascadeSlot"
+QT_MOC_LITERAL(2, 30, 0), // ""
+QT_MOC_LITERAL(3, 31, 12), // "addFlashSlot"
+QT_MOC_LITERAL(4, 44, 2), // "id"
+QT_MOC_LITERAL(5, 47, 15), // "deleteFlashSlot"
+QT_MOC_LITERAL(6, 63, 18), // "connectFlashesSlot"
+QT_MOC_LITERAL(7, 82, 3), // "id1"
+QT_MOC_LITERAL(8, 86, 3), // "id2"
+QT_MOC_LITERAL(9, 90, 5) // "phase"
 
     },
-    "WorldMachine\0startOneFlashSlot\0\0"
+    "WorldMachine\0startCascadeSlot\0\0"
     "addFlashSlot\0id\0deleteFlashSlot\0"
     "connectFlashesSlot\0id1\0id2\0phase"
 };
@@ -83,7 +83,7 @@ void WorldMachine::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         WorldMachine *_t = static_cast<WorldMachine *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->startOneFlashSlot(); break;
+        case 0: _t->startCascadeSlot(); break;
         case 1: _t->addFlashSlot((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 2: _t->deleteFlashSlot((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 3: _t->connectFlashesSlot((*reinterpret_cast< const int(*)>(_a[1])),(*reinterpret_cast< const int(*)>(_a[2])),(*reinterpret_cast< const int(*)>(_a[3]))); break;

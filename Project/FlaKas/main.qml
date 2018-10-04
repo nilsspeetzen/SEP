@@ -16,7 +16,7 @@ ApplicationWindow {
     property bool activeOutConnection: false
     property bool activeInConnection: true
 
-    signal s_startOneFlash()
+    signal s_startCascade()
     signal s_addFlash(int id)
     signal s_deleteFlash(int id)
     signal s_connectFlashes(int id1, int id2, int phase)
@@ -31,9 +31,9 @@ ApplicationWindow {
 
         Button {
             id: startButton
-            text: "OneFlash"
+            text: "Start"
             onClicked: {
-                root.s_startOneFlash()
+                root.s_startCascade()
             }
         }
 

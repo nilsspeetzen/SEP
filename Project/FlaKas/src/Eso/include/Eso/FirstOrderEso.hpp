@@ -11,6 +11,7 @@ class FirstOrderEso
 {
 
 public:
+  FirstOrderEso() {}
   template<int K>
   inline void setVariable(VarGroup<K> varGroup, int variableIndex, const RealType& variableValue)
   {

@@ -23,9 +23,9 @@ class WorldMachine : public QObject
 private:
     QQmlApplicationEngine* _engine;
     QObject* _root;
-    int NUMSUBSTANCES;
     Matrix<double,2,7> A;
     cascade<>* C;
+    int NUMSUBSTANCES;
 
 public:
     WorldMachine(QQmlApplicationEngine* engine, QObject* root) : _engine(engine), _root(root) {
@@ -38,16 +38,10 @@ public:
 signals:
 
 public slots:
-    void startOneFlashSlot() {
-        /*QR<> lsol;
-        MODULENEWTON<> nlsol(lsol);
-        nlsol.eps() = 1;
-        nlsol.solve(C->getFlash(1));
-        std::stringstream data;
-        data << C->getFlash(0).x();
-        QString qdata = QString::fromStdString(data.str());
-        //std::cout << "x: " << std::endl << data.str() << std::endl;
-        //_root->findChild<QObject*>("dataDisplay")->setProperty("text", qdata);*/
+    void startCascadeSlot() {
+        qDebug() << "Starte Löser";
+        CASCADEESO<double> solver;
+        solver.solveOneFlash();
     }
 
     void addFlashSlot(const int& id) {

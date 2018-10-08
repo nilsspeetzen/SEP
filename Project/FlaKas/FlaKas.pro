@@ -41,7 +41,8 @@ HEADERS += \
     module.h \
     lin_sys.h \
     cascade.h \
-    WorldMachine.h
+    WorldMachine.h \
+    cascadeeso.h
 
 FORMS +=
 

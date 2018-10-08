@@ -4,7 +4,8 @@
 #include <QtCore>
 #include <QtQml/QQmlApplicationEngine>
 #include <QQmlComponent>
-#include "cascade.h"
+#include <QtQuick/QQuickWindow>
+#include "cascadeeso.h"
 
 
 /**
@@ -27,6 +28,20 @@ private:
     cascade<>* C;
     int NUMSUBSTANCES;
 
+    void setUpDataWindow() {
+        QQmlComponent newWindow(_engine);
+        newWindow.loadUrl(QUrl(QStringLiteral("qrc:/dataWindow.qml")));
+        if(newWindow.isReady()) {
+            QQuickWindow* dataWindow = dynamic_cast<QQuickWindow*>(newWindow.create(_engine->rootContext()));
+            //dataWindow->setParent(_root);
+            dataWindow->show();
+            //TODO gib Window die DATEN
+        }
+        else {
+            qDebug() << "newWindow not ready";
+        }
+    }
+
 public:
     WorldMachine(QQmlApplicationEngine* engine, QObject* root) : _engine(engine), _root(root) {
         NUMSUBSTANCES = 2;
@@ -36,12 +51,12 @@ public:
     }
 
 signals:
-
 public slots:
     void startCascadeSlot() {
         qDebug() << "Starte Löser";
         CASCADEESO solver;
         solver.solve();
+        setUpDataWindow();
     }
 
     void addFlashSlot(const int& id) {

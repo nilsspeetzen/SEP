@@ -1,6 +1,6 @@
 <map id="WorldMachine.h" name="WorldMachine.h">
-<area shape="rect" id="node3" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="165,80,248,107"/>
-<area shape="rect" id="node4" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="179,155,239,181"/>
-<area shape="rect" id="node5" href="$module_8h.html" title="Basismodul. " alt="" coords="97,229,172,256"/>
-<area shape="rect" id="node8" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="24,304,99,331"/>
+<area shape="rect" id="node5" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="497,80,580,107"/>
+<area shape="rect" id="node6" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="161,162,221,189"/>
+<area shape="rect" id="node7" href="$module_8h.html" title="Basismodul. " alt="" coords="79,244,153,271"/>
+<area shape="rect" id="node8" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="56,319,131,345"/>
 </map>

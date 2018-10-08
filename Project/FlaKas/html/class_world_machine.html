@@ -84,19 +84,25 @@ Collaboration diagram for WorldMachine:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a84f92960f72d17c1a5897072bf203996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#a84f92960f72d17c1a5897072bf203996">startOneFlashSlot</a> ()</td></tr>
-<tr class="separator:a84f92960f72d17c1a5897072bf203996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59dea1c70b3767e42a624daba7497b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#aa59dea1c70b3767e42a624daba7497b9">startCascadeSlot</a> ()</td></tr>
+<tr class="separator:aa59dea1c70b3767e42a624daba7497b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0985510eda06d6ed11cab70c2cc234f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#a0985510eda06d6ed11cab70c2cc234f1">addFlashSlot</a> (const int &amp;id)</td></tr>
+<tr class="separator:a0985510eda06d6ed11cab70c2cc234f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdd88afd0bef7ed98054e19cf59487c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#abdd88afd0bef7ed98054e19cf59487c4">deleteFlashSlot</a> (const int &amp;id)</td></tr>
+<tr class="separator:abdd88afd0bef7ed98054e19cf59487c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb2d5067594fa2f04f4c1035025ebe86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#adb2d5067594fa2f04f4c1035025ebe86">connectFlashesSlot</a> (const int &amp;id1, const int &amp;id2, const int &amp;phase)</td></tr>
+<tr class="separator:adb2d5067594fa2f04f4c1035025ebe86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abeca68557cc423c469cfbf09ad5c2640"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#abeca68557cc423c469cfbf09ad5c2640">WorldMachine</a> (QObject *root)</td></tr>
-<tr class="separator:abeca68557cc423c469cfbf09ad5c2640"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd4474fe539494cdb9a0e030a50d82c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_world_machine.html#aafd4474fe539494cdb9a0e030a50d82c">WorldMachine</a> (QQmlApplicationEngine *engine, QObject *root)</td></tr>
+<tr class="separator:aafd4474fe539494cdb9a0e030a50d82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>C++ - QML Schnittstelle Organisiert die Kaskade und das GUI. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abeca68557cc423c469cfbf09ad5c2640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abeca68557cc423c469cfbf09ad5c2640">&#9670;&nbsp;</a></span>WorldMachine()</h2>
+<a id="aafd4474fe539494cdb9a0e030a50d82c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd4474fe539494cdb9a0e030a50d82c">&#9670;&nbsp;</a></span>WorldMachine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -107,9 +113,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">WorldMachine::WorldMachine </td>
           <td>(</td>
-          <td class="paramtype">QObject *&#160;</td>
-          <td class="paramname"><em>root</em></td><td>)</td>
+          <td class="paramtype">QQmlApplicationEngine *&#160;</td>
+          <td class="paramname"><em>engine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">QObject *&#160;</td>
+          <td class="paramname"><em>root</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -122,8 +138,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a84f92960f72d17c1a5897072bf203996"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84f92960f72d17c1a5897072bf203996">&#9670;&nbsp;</a></span>startOneFlashSlot</h2>
+<a id="a0985510eda06d6ed11cab70c2cc234f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0985510eda06d6ed11cab70c2cc234f1">&#9670;&nbsp;</a></span>addFlashSlot</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,7 +148,125 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void WorldMachine::startOneFlashSlot </td>
+          <td class="memname">void WorldMachine::addFlashSlot </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_world_machine_a0985510eda06d6ed11cab70c2cc234f1_cgraph.png" border="0" usemap="#class_world_machine_a0985510eda06d6ed11cab70c2cc234f1_cgraph" alt=""/></div>
+<map name="class_world_machine_a0985510eda06d6ed11cab70c2cc234f1_cgraph" id="class_world_machine_a0985510eda06d6ed11cab70c2cc234f1_cgraph">
+<area shape="rect" id="node2" href="classcascade.html#a04cb46ee066fb830e25828fc28cec392" title="Erstellt einne neuen Flash. " alt="" coords="243,5,375,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb2d5067594fa2f04f4c1035025ebe86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb2d5067594fa2f04f4c1035025ebe86">&#9670;&nbsp;</a></span>connectFlashesSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WorldMachine::connectFlashesSlot </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>phase</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_world_machine_adb2d5067594fa2f04f4c1035025ebe86_cgraph.png" border="0" usemap="#class_world_machine_adb2d5067594fa2f04f4c1035025ebe86_cgraph" alt=""/></div>
+<map name="class_world_machine_adb2d5067594fa2f04f4c1035025ebe86_cgraph" id="class_world_machine_adb2d5067594fa2f04f4c1035025ebe86_cgraph">
+<area shape="rect" id="node2" href="classcascade.html#a6c0ead85f1c6cae57bcf8e4494ab340c" title="Speichert Verbindung in den Flashes. " alt="" coords="281,5,452,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abdd88afd0bef7ed98054e19cf59487c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdd88afd0bef7ed98054e19cf59487c4">&#9670;&nbsp;</a></span>deleteFlashSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WorldMachine::deleteFlashSlot </td>
+          <td>(</td>
+          <td class="paramtype">const int &amp;&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_world_machine_abdd88afd0bef7ed98054e19cf59487c4_cgraph.png" border="0" usemap="#class_world_machine_abdd88afd0bef7ed98054e19cf59487c4_cgraph" alt=""/></div>
+<map name="class_world_machine_abdd88afd0bef7ed98054e19cf59487c4_cgraph" id="class_world_machine_abdd88afd0bef7ed98054e19cf59487c4_cgraph">
+<area shape="rect" id="node2" href="classcascade.html#ac1f72e57609f175e19422300f0332c81" title="Löscht einen Flash. " alt="" coords="256,5,403,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa59dea1c70b3767e42a624daba7497b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59dea1c70b3767e42a624daba7497b9">&#9670;&nbsp;</a></span>startCascadeSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WorldMachine::startCascadeSlot </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -147,18 +281,9 @@ Public Member Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_world_machine_a84f92960f72d17c1a5897072bf203996_cgraph.png" border="0" usemap="#class_world_machine_a84f92960f72d17c1a5897072bf203996_cgraph" alt=""/></div>
-<map name="class_world_machine_a84f92960f72d17c1a5897072bf203996_cgraph" id="class_world_machine_a84f92960f72d17c1a5897072bf203996_cgraph">
-<area shape="rect" id="node2" href="classcascade.html#ae1aae44e18b9d87cb710c54726726baa" title="addFlash " alt="" coords="291,5,423,32"/>
-<area shape="rect" id="node4" href="class_m_o_d_u_l_e_n_e_w_t_o_n.html#a2df80239a016b8216c167bfe026e76b4" title="MODULENEWTON::eps" alt="" coords="276,56,439,83"/>
-<area shape="rect" id="node5" href="class_m_o_d_u_l_e_n_e_w_t_o_n.html#a8c3da4880abb18ae9e99854c21335e20" title="MODULENEWTON::solve" alt="" coords="272,157,443,184"/>
-<area shape="rect" id="node6" href="class_module.html#a923f4a0593063f6df53e165cc1db4891" title="Module::x" alt="" coords="534,81,613,108"/>
-<area shape="rect" id="node11" href="classcascade.html#a1608f0fc7e55bd87b4fc1a109ded71fa" title="getFlash " alt="" coords="293,208,422,235"/>
-<area shape="rect" id="node3" href="classcascade.html#a9c5bb14ea8b17d1f79c097c6704f1919" title="konstruiert das NLS der Kaskade " alt="" coords="532,5,615,32"/>
-<area shape="rect" id="node7" href="class_module.html#a2499211a4fc52bc33512761ea7fb3c62" title="Module::f" alt="" coords="536,132,611,159"/>
-<area shape="rect" id="node8" href="class_l_i_n_e_a_r___s_y_s_t_e_m.html#a307c8896bb3218768f016a2a24de3bcd" title="LINEAR_SYSTEM::A" alt="" coords="500,183,647,209"/>
-<area shape="rect" id="node9" href="class_module.html#a0762d7cbad2a73d5eff3f2f1155e8e33" title="Module::dfdx" alt="" coords="525,233,621,260"/>
-<area shape="rect" id="node10" href="class_l_i_n_e_a_r___s_o_l_v_e_r.html#a83c4d3b280e57814ec091dd9f8927c24" title="LINEAR_SOLVER::solve" alt="" coords="491,284,656,311"/>
+<div class="center"><img src="class_world_machine_aa59dea1c70b3767e42a624daba7497b9_cgraph.png" border="0" usemap="#class_world_machine_aa59dea1c70b3767e42a624daba7497b9_cgraph" alt=""/></div>
+<map name="class_world_machine_aa59dea1c70b3767e42a624daba7497b9_cgraph" id="class_world_machine_aa59dea1c70b3767e42a624daba7497b9_cgraph">
+<area shape="rect" id="node2" href="class_c_a_s_c_a_d_e_e_s_o.html#a87ddbb1f74cbb26db6dafa7d780ed7e9" title="CASCADEESO::solve" alt="" coords="267,5,417,32"/>
 </map>
 </div>
 

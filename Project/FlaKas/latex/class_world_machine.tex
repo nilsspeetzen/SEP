@@ -30,12 +30,18 @@ Collaboration diagram for World\+Machine\+:\nopagebreak
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{class_world_machine_a84f92960f72d17c1a5897072bf203996}{start\+One\+Flash\+Slot}} ()
+void \mbox{\hyperlink{class_world_machine_aa59dea1c70b3767e42a624daba7497b9}{start\+Cascade\+Slot}} ()
+\item 
+void \mbox{\hyperlink{class_world_machine_a0985510eda06d6ed11cab70c2cc234f1}{add\+Flash\+Slot}} (const int \&id)
+\item 
+void \mbox{\hyperlink{class_world_machine_abdd88afd0bef7ed98054e19cf59487c4}{delete\+Flash\+Slot}} (const int \&id)
+\item 
+void \mbox{\hyperlink{class_world_machine_adb2d5067594fa2f04f4c1035025ebe86}{connect\+Flashes\+Slot}} (const int \&id1, const int \&id2, const int \&phase)
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_world_machine_abeca68557cc423c469cfbf09ad5c2640}{World\+Machine}} (Q\+Object $\ast$root)
+\mbox{\hyperlink{class_world_machine_aafd4474fe539494cdb9a0e030a50d82c}{World\+Machine}} (Q\+Qml\+Application\+Engine $\ast$engine, Q\+Object $\ast$root)
 \end{DoxyCompactItemize}
 
 
@@ -43,27 +49,65 @@ void \mbox{\hyperlink{class_world_machine_a84f92960f72d17c1a5897072bf203996}{sta
 C++ -\/ Q\+ML Schnittstelle Organisiert die Kaskade und das G\+UI. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_world_machine_abeca68557cc423c469cfbf09ad5c2640}\label{class_world_machine_abeca68557cc423c469cfbf09ad5c2640}} 
+\mbox{\Hypertarget{class_world_machine_aafd4474fe539494cdb9a0e030a50d82c}\label{class_world_machine_aafd4474fe539494cdb9a0e030a50d82c}} 
 \index{World\+Machine@{World\+Machine}!World\+Machine@{World\+Machine}}
 \index{World\+Machine@{World\+Machine}!World\+Machine@{World\+Machine}}
 \subsubsection{\texorpdfstring{World\+Machine()}{WorldMachine()}}
-{\footnotesize\ttfamily World\+Machine\+::\+World\+Machine (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily World\+Machine\+::\+World\+Machine (\begin{DoxyParamCaption}\item[{Q\+Qml\+Application\+Engine $\ast$}]{engine,  }\item[{Q\+Object $\ast$}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_world_machine_a84f92960f72d17c1a5897072bf203996}\label{class_world_machine_a84f92960f72d17c1a5897072bf203996}} 
-\index{World\+Machine@{World\+Machine}!start\+One\+Flash\+Slot@{start\+One\+Flash\+Slot}}
-\index{start\+One\+Flash\+Slot@{start\+One\+Flash\+Slot}!World\+Machine@{World\+Machine}}
-\subsubsection{\texorpdfstring{start\+One\+Flash\+Slot}{startOneFlashSlot}}
-{\footnotesize\ttfamily void World\+Machine\+::start\+One\+Flash\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+\mbox{\Hypertarget{class_world_machine_a0985510eda06d6ed11cab70c2cc234f1}\label{class_world_machine_a0985510eda06d6ed11cab70c2cc234f1}} 
+\index{World\+Machine@{World\+Machine}!add\+Flash\+Slot@{add\+Flash\+Slot}}
+\index{add\+Flash\+Slot@{add\+Flash\+Slot}!World\+Machine@{World\+Machine}}
+\subsubsection{\texorpdfstring{add\+Flash\+Slot}{addFlashSlot}}
+{\footnotesize\ttfamily void World\+Machine\+::add\+Flash\+Slot (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_world_machine_a84f92960f72d17c1a5897072bf203996_cgraph}
+\includegraphics[width=350pt]{class_world_machine_a0985510eda06d6ed11cab70c2cc234f1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_world_machine_adb2d5067594fa2f04f4c1035025ebe86}\label{class_world_machine_adb2d5067594fa2f04f4c1035025ebe86}} 
+\index{World\+Machine@{World\+Machine}!connect\+Flashes\+Slot@{connect\+Flashes\+Slot}}
+\index{connect\+Flashes\+Slot@{connect\+Flashes\+Slot}!World\+Machine@{World\+Machine}}
+\subsubsection{\texorpdfstring{connect\+Flashes\+Slot}{connectFlashesSlot}}
+{\footnotesize\ttfamily void World\+Machine\+::connect\+Flashes\+Slot (\begin{DoxyParamCaption}\item[{const int \&}]{id1,  }\item[{const int \&}]{id2,  }\item[{const int \&}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_world_machine_adb2d5067594fa2f04f4c1035025ebe86_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_world_machine_abdd88afd0bef7ed98054e19cf59487c4}\label{class_world_machine_abdd88afd0bef7ed98054e19cf59487c4}} 
+\index{World\+Machine@{World\+Machine}!delete\+Flash\+Slot@{delete\+Flash\+Slot}}
+\index{delete\+Flash\+Slot@{delete\+Flash\+Slot}!World\+Machine@{World\+Machine}}
+\subsubsection{\texorpdfstring{delete\+Flash\+Slot}{deleteFlashSlot}}
+{\footnotesize\ttfamily void World\+Machine\+::delete\+Flash\+Slot (\begin{DoxyParamCaption}\item[{const int \&}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_world_machine_abdd88afd0bef7ed98054e19cf59487c4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_world_machine_aa59dea1c70b3767e42a624daba7497b9}\label{class_world_machine_aa59dea1c70b3767e42a624daba7497b9}} 
+\index{World\+Machine@{World\+Machine}!start\+Cascade\+Slot@{start\+Cascade\+Slot}}
+\index{start\+Cascade\+Slot@{start\+Cascade\+Slot}!World\+Machine@{World\+Machine}}
+\subsubsection{\texorpdfstring{start\+Cascade\+Slot}{startCascadeSlot}}
+{\footnotesize\ttfamily void World\+Machine\+::start\+Cascade\+Slot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_world_machine_aa59dea1c70b3767e42a624daba7497b9_cgraph}
 \end{center}
 \end{figure}
 

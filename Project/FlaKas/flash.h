@@ -3,7 +3,6 @@
 
 #include "module.h"
 #include <math.h>
-#include <iostream>
 
 /**
  * @file flash.h
@@ -35,9 +34,12 @@ class Flash : public Module<RealType>
     using Module<RealType>::Vout;
 
 private:
+    /**
+     * _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
+     */
     RealType _pg, _F;
     Matrix<RealType,Dynamic,1> _xf;
-    int _numS;
+    const int _numS;
     Matrix<RealType,Dynamic,7> _a;
 
     //connection ids
@@ -51,9 +53,6 @@ public:
      */
     Flash(int numSubstances, Matrix<RealType,Dynamic,7> a) :
             Module<RealType>(), _numS(numSubstances), _a(a) {
-        /**
-         * _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
-         */
         _x = VT::Zero(5 + 6*numSubstances);
         _pg = 1000;
         _xf = Matrix<RealType,Dynamic,1>::Zero(numSubstances);
@@ -61,15 +60,11 @@ public:
         _LinM = -1; _LoutM = -1; _VinM = -1; _VoutM = -1;
     }
     Flash() : Module<RealType>() {} //Für die map (Standardkonstruktor)
-    /**
-     * @brief Zugriff auf pg (Druck im Flash)
-     * @return _pg
-     */
+
+    constexpr int numVariables() { return 5 + 6*_numS; }
+    constexpr int numEquations() { return 5 + 6*_numS; }
+
     RealType& pg() { return _pg; }
-    /**
-     * @brief Zuriff auf F (Flüssiger Zustrom)
-     * @return _F
-     */
     RealType& F() { return _F; }
 
     int& LinM() { return _LinM; }
@@ -116,62 +111,6 @@ public:
             r(4+5*_numS+i) = yini(i) - 0.5;
         }
         return r;
-    }
-    /**
-     * @brief dfdx ; für den Newton-Löser
-     * @return dfdx in Abhängigkeit der Variablen
-     */
-    MT dfdx() {
-        MT drdx = MT::Zero(_x.size(), _x.size());
-        //TODO
-        // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
-
-        //3
-        for(int j=0; j<_numS; j++) {
-            drdx(0+2*_numS,5+2*_numS+j)=1;
-        }
-
-        //4
-        for(int j=0; j<_numS; j++) {
-            drdx(1+2*_numS,5+3*_numS+j)=1;
-        }
-
-        //1256
-        for(int i = 0; i<_numS; i++) {
-            // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
-            //1
-            drdx(i,0)   = xini(i);
-            drdx(i,1)   = -xi(i);
-            drdx(i,2)   = yini(i);
-            drdx(i,3)   = -yi(i);
-            drdx(i,5+i)          = Lin();
-            drdx(i,5+_numS+i)    = Vin();
-            drdx(i,5+2*_numS+i)  = -Lout();
-            drdx(i,5+3*_numS+i)  = -Vout();
-
-            //2
-            drdx(_numS+i,5+2*_numS+i)  = -ki(i);
-            drdx(_numS+i,5+3*_numS+i)  = 1;
-            drdx(_numS+i,5+4*_numS+i)  = -xi(i);
-
-            //5
-            drdx(2+2*_numS+i,5+4*_numS+i)=1;
-            drdx(2+2*_numS+i,5+5*_numS+i)=-1/_pg;
-
-            //6
-            drdx(2+3*_numS+i,4)=-_a(i,1)/(pow(T()+_a(i,2), 2)) - _a(i,3) - _a(i,4)/T() - _a(i,5)*_a(i,6)*pow(T(), _a(i,6)-1);
-            drdx(2+3*_numS+i,5+5*_numS+i)=1/pi(i);
-        }
-
-        //Input und Output
-        drdx(2+4*_numS, 3) = 1;
-        drdx(3+4*_numS, 0) = 1;
-        drdx(4+4*_numS, 2) = 1;
-        for(int i = 0; i<_numS; i++) {
-            drdx(5+4*_numS+i, 5+i) = 1;
-            drdx(5+5*_numS+i, 5+i+_numS) = 1;
-        }
-        return drdx;
     }
 };
 

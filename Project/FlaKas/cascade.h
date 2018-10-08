@@ -5,11 +5,7 @@
 #include <QtCore>
 
 #include "dco/dco.hpp"
-#include "Eso/AlgebraicEsoView.hpp"
 #include "Eso/Dco1Model.hpp"
-#include "Eso/EqGroup.hpp"
-#include "Eso/FirstOrderEso.hpp"
-#include "BlockDeco/AlgebraicEsoBlockSolver.hpp"
 
 /**
  * @file cascade.h
@@ -19,10 +15,6 @@
 /**
  * @brief Enthält alle Flashes
  */
-
-//TODO erstmal einen Flash einfügen können und den dann Lösen
-//später dann eine Funktion zum darstellen
-
 template<typename RealType=double>
 class cascade {
     typedef Matrix<RealType,Dynamic,1> VT;
@@ -41,7 +33,8 @@ public:
     cascade(int numSubstances, Matrix<RealType,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
     cascade() {}
 
-    //FÜR ESO
+    //FÜR ESO ----------------------------------------------
+
     static constexpr int numVariables(VarGroup<0>&) { return 5 + 6; }
     static constexpr int numEquations(EqGroup<0>&) { return 5 + 6; }
 
@@ -59,31 +52,17 @@ public:
 
     template<int K>
     inline RealType eval(EqGroup<0>, EqIndex<K>) const {
+        //HIER MÜSSEN DIE ENTSPRECHENDEN GL DER FLASHES UND DIE VERBINDUNGSGL HIN
         return _flashes.at(K).T();
     }
 
+    //KASKADENMODIFIKATION ---------------------------------
     /**
      * @brief Erstellt einne neuen Flash
      * @param id ID
      */
     void addFlash(int id) {
-        // _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
-        Flash<RealType> f(_numS, _a);/*
-        f.T() = 273;
-        f.F() = 100;
-        f.Vin() = 0;
-        f.Vout() = 50;
-        f.Lin() = 0;
-        f.Lout() = 50;
-        f.pg() = 1000;
-        for(int i=0; i<_numS; i++) {
-            f.xini(i) = 0.5;
-            f.yini(i) = 0.5;
-            f.xi(i) = 0.5;
-            f.yi(i) = 0.5;
-            f.ki(i) = 0.5;
-            f.pi(i) = 1000;
-        }*/
+        Flash<RealType> f(_numS, _a);
         _flashes.insert(std::pair<int, Flash<RealType>>(id,f));
     }
 
@@ -93,7 +72,7 @@ public:
      * @return Flash mit angegebener id
      */
     Flash<>& getFlash(int id) {
-        return _flashes[id]; //vielleicht noch besser machen
+        return _flashes.at(id); //vielleicht noch besser machen
     }
 
     /**
@@ -108,7 +87,7 @@ public:
      * @brief Speichert Verbindung in den Flashes
      * @param id1 OutputID
      * @param id2 InputID
-     * @param phase 1: Flüssig 2: Gasförmig
+     * @param phase 1:Flüssig 2:Gasförmig
      */
     void connectFlashes(int id1, int id2, int phase) {
         if(phase == 1) {
@@ -121,24 +100,6 @@ public:
             qDebug() << "Cascade connected: " << id1 << id2 << "Vapor";
         }
     }
-};
-
-template<typename RealType>
-using TangentSingleFlash = Dco1Model<cascade,RealType>;
-
-class CASCADEESO
-{
-public:
-  CASCADEESO() {}
-  void solve() {
-      FirstOrderEso<TangentSingleFlash,double> eso;
-      AlgebraicEsoView<0,0,decltype(eso)> algEsoView(eso);
-      Matrix<double,Dynamic,1> x(algEsoView.numVariables());
-      x.setOnes();
-      AlgebraicEsoBlockSolver solver;
-      solver.solve(algEsoView,x);
-      std::cout << x;
-  }
 };
 
 #endif // CASCADE_H

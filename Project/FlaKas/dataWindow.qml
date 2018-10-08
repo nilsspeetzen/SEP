@@ -4,4 +4,9 @@ import QtQuick.Window 2.1
 Window {
     width: 300
     height: 200
+
+    Rectangle {
+        color: "steelblue"
+        anchors.fill: parent
+    }
 }

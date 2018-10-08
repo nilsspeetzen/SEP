@@ -1,5 +1,5 @@
-\hypertarget{classcascade}{}\section{cascade$<$ TS, NP, NS, TP $>$ Class Template Reference}
-\label{classcascade}\index{cascade$<$ T\+S, N\+P, N\+S, T\+P $>$@{cascade$<$ T\+S, N\+P, N\+S, T\+P $>$}}
+\hypertarget{classcascade}{}\section{cascade$<$ Real\+Type $>$ Class Template Reference}
+\label{classcascade}\index{cascade$<$ Real\+Type $>$@{cascade$<$ Real\+Type $>$}}
 
 
 Enthält alle Flashes.  
@@ -12,31 +12,46 @@ Enthält alle Flashes.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classcascade_a9775f4c242df052cfb9c0c8a095a2964}{cascade}} (int num\+Substances, Matrix$<$ TS, Dynamic, 7 $>$ a)
+\mbox{\hyperlink{classcascade_ac437f03d454f773e195b4528cce89cc9}{cascade}} (int num\+Substances, Matrix$<$ Real\+Type, Dynamic, 7 $>$ a)
 \begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classcascade_ae1aae44e18b9d87cb710c54726726baa}{add\+Flash}} ()
-\begin{DoxyCompactList}\small\item\em add\+Flash \end{DoxyCompactList}\item 
-\mbox{\hyperlink{class_flash}{Flash}} \& \mbox{\hyperlink{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}{get\+Flash}} (unsigned int id)
-\begin{DoxyCompactList}\small\item\em get\+Flash \end{DoxyCompactList}\item 
-V\+TS \mbox{\hyperlink{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}{f}} ()
-\begin{DoxyCompactList}\small\item\em konstruiert das N\+LS der Kaskade \end{DoxyCompactList}\item 
-M\+TS \mbox{\hyperlink{classcascade_ac72705f0ad01cc88d43c002d63acce13}{dfdx}} ()
-\begin{DoxyCompactList}\small\item\em dfdx \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{classcascade_a368b15328ebb48ae4af81dacd2d3165f}{cascade}} ()
+\item 
+{\footnotesize template$<$int K$>$ }\\void \mbox{\hyperlink{classcascade_a2195202880e150925ff465597830981c}{set\+Variable}} (Var\+Group$<$ K $>$, const int index, const Real\+Type \&value)
+\item 
+{\footnotesize template$<$int K$>$ }\\Real\+Type \mbox{\hyperlink{classcascade_a9f4e1a91f1f15ffc2af36a825a95a67d}{get\+Variable}} (Var\+Group$<$ K $>$, const int index) const
+\item 
+{\footnotesize template$<$int K$>$ }\\Real\+Type \mbox{\hyperlink{classcascade_abff441f97a7e505609a1ba09973d64b8}{eval}} (Eq\+Group$<$ 0 $>$, Eq\+Index$<$ K $>$) const
+\item 
+void \mbox{\hyperlink{classcascade_a04cb46ee066fb830e25828fc28cec392}{add\+Flash}} (int id)
+\begin{DoxyCompactList}\small\item\em Erstellt einne neuen \mbox{\hyperlink{class_flash}{Flash}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_flash}{Flash}} \& \mbox{\hyperlink{classcascade_a3da9e284a344a7f24512f54fabe2fa70}{get\+Flash}} (int id)
+\begin{DoxyCompactList}\small\item\em Zugriff auf einen gespeicherten \mbox{\hyperlink{class_flash}{Flash}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcascade_ac1f72e57609f175e19422300f0332c81}{delete\+Flash}} (int id)
+\begin{DoxyCompactList}\small\item\em Löscht einen \mbox{\hyperlink{class_flash}{Flash}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcascade_a6c0ead85f1c6cae57bcf8e4494ab340c}{connect\+Flashes}} (int id1, int id2, int phase)
+\begin{DoxyCompactList}\small\item\em Speichert Verbindung in den Flashes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{classcascade_a437738f915a517f4fb76a848e94ec923}{num\+Variables}} (Var\+Group$<$ 0 $>$ \&)
+\item 
+static constexpr int \mbox{\hyperlink{classcascade_a9c6e6421737df16249a7198e8feda747}{num\+Equations}} (Eq\+Group$<$ 0 $>$ \&)
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$\newline
-class cascade$<$ T\+S, N\+P, N\+S, T\+P $>$}
+\subsubsection*{template$<$typename Real\+Type = double$>$\newline
+class cascade$<$ Real\+Type $>$}
 
 Enthält alle Flashes. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classcascade_a9775f4c242df052cfb9c0c8a095a2964}\label{classcascade_a9775f4c242df052cfb9c0c8a095a2964}} 
+\mbox{\Hypertarget{classcascade_ac437f03d454f773e195b4528cce89cc9}\label{classcascade_ac437f03d454f773e195b4528cce89cc9}} 
 \index{cascade@{cascade}!cascade@{cascade}}
 \index{cascade@{cascade}!cascade@{cascade}}
-\subsubsection{\texorpdfstring{cascade()}{cascade()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-\mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{classcascade}{cascade}} (\begin{DoxyParamCaption}\item[{int}]{num\+Substances,  }\item[{Matrix$<$ TS, Dynamic, 7 $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{cascade()}{cascade()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+\mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::\mbox{\hyperlink{classcascade}{cascade}} (\begin{DoxyParamCaption}\item[{int}]{num\+Substances,  }\item[{Matrix$<$ Real\+Type, Dynamic, 7 $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -49,95 +64,146 @@ Konstruktor.
 {\em a} & Antoine-\/\+Parameter für die Substanzen (num\+Substances$\ast$7 Matrix) \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{classcascade_a368b15328ebb48ae4af81dacd2d3165f}\label{classcascade_a368b15328ebb48ae4af81dacd2d3165f}} 
+\index{cascade@{cascade}!cascade@{cascade}}
+\index{cascade@{cascade}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{cascade()}{cascade()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+\mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::\mbox{\hyperlink{classcascade}{cascade}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classcascade_ae1aae44e18b9d87cb710c54726726baa}\label{classcascade_ae1aae44e18b9d87cb710c54726726baa}} 
+\mbox{\Hypertarget{classcascade_a04cb46ee066fb830e25828fc28cec392}\label{classcascade_a04cb46ee066fb830e25828fc28cec392}} 
 \index{cascade@{cascade}!add\+Flash@{add\+Flash}}
 \index{add\+Flash@{add\+Flash}!cascade@{cascade}}
 \subsubsection{\texorpdfstring{add\+Flash()}{addFlash()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-void \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::add\+Flash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+void \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::add\+Flash (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-add\+Flash 
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=277pt]{classcascade_ae1aae44e18b9d87cb710c54726726baa_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classcascade_ae1aae44e18b9d87cb710c54726726baa_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classcascade_ac72705f0ad01cc88d43c002d63acce13}\label{classcascade_ac72705f0ad01cc88d43c002d63acce13}} 
-\index{cascade@{cascade}!dfdx@{dfdx}}
-\index{dfdx@{dfdx}!cascade@{cascade}}
-\subsubsection{\texorpdfstring{dfdx()}{dfdx()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-M\+TS \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::dfdx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-dfdx 
-
-\begin{DoxyReturn}{Returns}
-Abl. des N\+LS der Kaskade 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}\label{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919}} 
-\index{cascade@{cascade}!f@{f}}
-\index{f@{f}!cascade@{cascade}}
-\subsubsection{\texorpdfstring{f()}{f()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-V\+TS \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-konstruiert das N\+LS der Kaskade 
-
-\begin{DoxyReturn}{Returns}
-N\+LS der Kaskade 
-\end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classcascade_a9c5bb14ea8b17d1f79c097c6704f1919_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}\label{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa}} 
-\index{cascade@{cascade}!get\+Flash@{get\+Flash}}
-\index{get\+Flash@{get\+Flash}!cascade@{cascade}}
-\subsubsection{\texorpdfstring{get\+Flash()}{getFlash()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-\mbox{\hyperlink{class_flash}{Flash}}\& \mbox{\hyperlink{classcascade}{cascade}}$<$ TS, NP, NS, TP $>$\+::get\+Flash (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-get\+Flash 
+Erstellt einne neuen \mbox{\hyperlink{class_flash}{Flash}}. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em id} & \\
+{\em id} & ID \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classcascade_a1608f0fc7e55bd87b4fc1a109ded71fa_icgraph}
+\includegraphics[width=350pt]{classcascade_a04cb46ee066fb830e25828fc28cec392_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{classcascade_a6c0ead85f1c6cae57bcf8e4494ab340c}\label{classcascade_a6c0ead85f1c6cae57bcf8e4494ab340c}} 
+\index{cascade@{cascade}!connect\+Flashes@{connect\+Flashes}}
+\index{connect\+Flashes@{connect\+Flashes}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{connect\+Flashes()}{connectFlashes()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+void \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::connect\+Flashes (\begin{DoxyParamCaption}\item[{int}]{id1,  }\item[{int}]{id2,  }\item[{int}]{phase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Speichert Verbindung in den Flashes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id1} & Output\+ID \\
+\hline
+{\em id2} & Input\+ID \\
+\hline
+{\em phase} & 1\+:Flüssig 2\+:Gasförmig \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcascade_a6c0ead85f1c6cae57bcf8e4494ab340c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcascade_ac1f72e57609f175e19422300f0332c81}\label{classcascade_ac1f72e57609f175e19422300f0332c81}} 
+\index{cascade@{cascade}!delete\+Flash@{delete\+Flash}}
+\index{delete\+Flash@{delete\+Flash}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{delete\+Flash()}{deleteFlash()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+void \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::delete\+Flash (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Löscht einen \mbox{\hyperlink{class_flash}{Flash}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcascade_ac1f72e57609f175e19422300f0332c81_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcascade_abff441f97a7e505609a1ba09973d64b8}\label{classcascade_abff441f97a7e505609a1ba09973d64b8}} 
+\index{cascade@{cascade}!eval@{eval}}
+\index{eval@{eval}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{eval()}{eval()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+template$<$int K$>$ \\
+Real\+Type \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::eval (\begin{DoxyParamCaption}\item[{Eq\+Group$<$ 0 $>$}]{,  }\item[{Eq\+Index$<$ K $>$}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcascade_a3da9e284a344a7f24512f54fabe2fa70}\label{classcascade_a3da9e284a344a7f24512f54fabe2fa70}} 
+\index{cascade@{cascade}!get\+Flash@{get\+Flash}}
+\index{get\+Flash@{get\+Flash}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{get\+Flash()}{getFlash()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+\mbox{\hyperlink{class_flash}{Flash}}\& \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::get\+Flash (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Zugriff auf einen gespeicherten \mbox{\hyperlink{class_flash}{Flash}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_flash}{Flash}} mit angegebener id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcascade_a9f4e1a91f1f15ffc2af36a825a95a67d}\label{classcascade_a9f4e1a91f1f15ffc2af36a825a95a67d}} 
+\index{cascade@{cascade}!get\+Variable@{get\+Variable}}
+\index{get\+Variable@{get\+Variable}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{get\+Variable()}{getVariable()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+template$<$int K$>$ \\
+Real\+Type \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::get\+Variable (\begin{DoxyParamCaption}\item[{Var\+Group$<$ K $>$}]{,  }\item[{const int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcascade_a9c6e6421737df16249a7198e8feda747}\label{classcascade_a9c6e6421737df16249a7198e8feda747}} 
+\index{cascade@{cascade}!num\+Equations@{num\+Equations}}
+\index{num\+Equations@{num\+Equations}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{num\+Equations()}{numEquations()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+static constexpr int \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::num\+Equations (\begin{DoxyParamCaption}\item[{Eq\+Group$<$ 0 $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcascade_a437738f915a517f4fb76a848e94ec923}\label{classcascade_a437738f915a517f4fb76a848e94ec923}} 
+\index{cascade@{cascade}!num\+Variables@{num\+Variables}}
+\index{num\+Variables@{num\+Variables}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{num\+Variables()}{numVariables()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+static constexpr int \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::num\+Variables (\begin{DoxyParamCaption}\item[{Var\+Group$<$ 0 $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcascade_a2195202880e150925ff465597830981c}\label{classcascade_a2195202880e150925ff465597830981c}} 
+\index{cascade@{cascade}!set\+Variable@{set\+Variable}}
+\index{set\+Variable@{set\+Variable}!cascade@{cascade}}
+\subsubsection{\texorpdfstring{set\+Variable()}{setVariable()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+template$<$int K$>$ \\
+void \mbox{\hyperlink{classcascade}{cascade}}$<$ Real\+Type $>$\+::set\+Variable (\begin{DoxyParamCaption}\item[{Var\+Group$<$ K $>$}]{,  }\item[{const int}]{index,  }\item[{const Real\+Type \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

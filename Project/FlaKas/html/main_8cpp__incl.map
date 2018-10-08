@@ -1,7 +1,7 @@
 <map id="main.cpp" name="main.cpp">
-<area shape="rect" id="node2" href="$_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="109,80,225,107"/>
-<area shape="rect" id="node4" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="165,155,248,181"/>
-<area shape="rect" id="node5" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="179,229,239,256"/>
-<area shape="rect" id="node6" href="$module_8h.html" title="Basismodul. " alt="" coords="97,304,172,331"/>
-<area shape="rect" id="node9" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="24,379,99,405"/>
+<area shape="rect" id="node2" href="$_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="187,80,303,107"/>
+<area shape="rect" id="node6" href="$cascade_8h.html" title="Enthält alle Module. " alt="" coords="491,155,573,181"/>
+<area shape="rect" id="node7" href="$flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="241,237,301,263"/>
+<area shape="rect" id="node8" href="$module_8h.html" title="Basismodul. " alt="" coords="159,319,233,345"/>
+<area shape="rect" id="node9" href="$lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="136,393,211,420"/>
 </map>

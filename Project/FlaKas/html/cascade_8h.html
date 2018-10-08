@@ -59,7 +59,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">cascade.h File Reference</div>  </div>
 </div><!--header-->
@@ -70,14 +71,20 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="flash_8h_source.html">flash.h</a>&quot;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;QtCore&gt;</code><br />
+<code>#include &quot;dco/dco.hpp&quot;</code><br />
+<code>#include &quot;Eso/AlgebraicEsoView.hpp&quot;</code><br />
+<code>#include &quot;Eso/Dco1Model.hpp&quot;</code><br />
+<code>#include &quot;Eso/EqGroup.hpp&quot;</code><br />
+<code>#include &quot;Eso/FirstOrderEso.hpp&quot;</code><br />
+<code>#include &quot;BlockDeco/AlgebraicEsoBlockSolver.hpp&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cascade.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="cascade_8h__incl.png" border="0" usemap="#cascade_8h" alt=""/></div>
 <map name="cascade_8h" id="cascade_8h">
-<area shape="rect" id="node2" href="flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="179,80,239,107"/>
-<area shape="rect" id="node3" href="module_8h.html" title="Basismodul. " alt="" coords="97,155,172,181"/>
-<area shape="rect" id="node6" href="lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="24,229,99,256"/>
+<area shape="rect" id="node2" href="flash_8h.html" title="Flash als Erweiterung des Moduls. " alt="" coords="161,87,221,114"/>
+<area shape="rect" id="node3" href="module_8h.html" title="Basismodul. " alt="" coords="79,169,153,196"/>
+<area shape="rect" id="node4" href="lin__sys_8h.html" title="Lineare Systeme. " alt="" coords="56,244,131,271"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -85,10 +92,8 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="cascade_8h__dep__incl.png" border="0" usemap="#cascade_8hdep" alt=""/></div>
 <map name="cascade_8hdep" id="cascade_8hdep">
-<area shape="rect" id="node2" href="_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="90,80,206,107"/>
-<area shape="rect" id="node3" href="main_8cpp.html" title="Programminitiation. " alt="" coords="5,155,80,181"/>
-<area shape="rect" id="node4" href="testclass_8h.html" title="testclass.h" alt="" coords="105,155,191,181"/>
-<area shape="rect" id="node5" href="_world_machine_8cpp.html" title="WorldMachine.cpp" alt="" coords="216,155,347,181"/>
+<area shape="rect" id="node2" href="_world_machine_8h.html" title="C++ &#45; QML Schnittstelle. " alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node3" href="main_8cpp.html" title="Programminitiation. " alt="" coords="26,155,101,181"/>
 </map>
 </div>
 </div>
@@ -96,13 +101,38 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcascade.html">cascade&lt; TS, NP, NS, TP &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcascade.html">cascade&lt; RealType &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enthält alle Flashes.  <a href="classcascade.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_a_s_c_a_d_e_e_s_o.html">CASCADEESO</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a98b86f6842277476a0d5b3eaa896cec2"><td class="memTemplParams" colspan="2">template&lt;typename RealType &gt; </td></tr>
+<tr class="memitem:a98b86f6842277476a0d5b3eaa896cec2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="cascade_8h.html#a98b86f6842277476a0d5b3eaa896cec2">TangentSingleFlash</a> = Dco1Model&lt; <a class="el" href="classcascade.html">cascade</a>, RealType &gt;</td></tr>
+<tr class="separator:a98b86f6842277476a0d5b3eaa896cec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Enthält alle <a class="el" href="class_module.html" title="Akstrakte Klasse für allgemeine Bauteile. ">Module</a>. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a98b86f6842277476a0d5b3eaa896cec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b86f6842277476a0d5b3eaa896cec2">&#9670;&nbsp;</a></span>TangentSingleFlash</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RealType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="cascade_8h.html#a98b86f6842277476a0d5b3eaa896cec2">TangentSingleFlash</a> =  Dco1Model&lt;<a class="el" href="classcascade.html">cascade</a>,RealType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

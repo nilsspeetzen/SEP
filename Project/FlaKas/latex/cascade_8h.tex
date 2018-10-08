@@ -8,6 +8,12 @@ Enthält alle \mbox{\hyperlink{class_module}{Module}}.
 {\ttfamily \#include \char`\"{}flash.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$vector$>$}\newline
 {\ttfamily \#include $<$Qt\+Core$>$}\newline
+{\ttfamily \#include \char`\"{}dco/dco.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eso/\+Algebraic\+Eso\+View.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eso/\+Dco1\+Model.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eso/\+Eq\+Group.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eso/\+First\+Order\+Eso.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Block\+Deco/\+Algebraic\+Eso\+Block\+Solver.\+hpp\char`\"{}}\newline
 Include dependency graph for cascade.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -20,16 +26,33 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{cascade_8h__dep__incl}
+\includegraphics[width=167pt]{cascade_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classcascade}{cascade$<$ T\+S, N\+P, N\+S, T\+P $>$}}
-\begin{DoxyCompactList}\small\item\em Enthält alle Flashes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+class \mbox{\hyperlink{classcascade}{cascade$<$ Real\+Type $>$}}
+\begin{DoxyCompactList}\small\item\em Enthält alle Flashes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_c_a_s_c_a_d_e_e_s_o}{C\+A\+S\+C\+A\+D\+E\+E\+SO}}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Real\+Type $>$ }\\using \mbox{\hyperlink{cascade_8h_a98b86f6842277476a0d5b3eaa896cec2}{Tangent\+Single\+Flash}} = Dco1\+Model$<$ \mbox{\hyperlink{classcascade}{cascade}}, Real\+Type $>$
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Enthält alle \mbox{\hyperlink{class_module}{Module}}. 
+
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{cascade_8h_a98b86f6842277476a0d5b3eaa896cec2}\label{cascade_8h_a98b86f6842277476a0d5b3eaa896cec2}} 
+\index{cascade.\+h@{cascade.\+h}!Tangent\+Single\+Flash@{Tangent\+Single\+Flash}}
+\index{Tangent\+Single\+Flash@{Tangent\+Single\+Flash}!cascade.\+h@{cascade.\+h}}
+\subsubsection{\texorpdfstring{Tangent\+Single\+Flash}{TangentSingleFlash}}
+{\footnotesize\ttfamily template$<$typename Real\+Type $>$ \\
+using \mbox{\hyperlink{cascade_8h_a98b86f6842277476a0d5b3eaa896cec2}{Tangent\+Single\+Flash}} =  Dco1\+Model$<$\mbox{\hyperlink{classcascade}{cascade}},Real\+Type$>$}
 

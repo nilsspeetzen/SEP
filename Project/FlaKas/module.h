@@ -2,7 +2,6 @@
 #define MODULE_H
 
 #include "lin_sys.h"
-#include <iostream>
 
 /**
  * @file module.h
@@ -35,31 +34,6 @@ public:
     virtual RealType Lout() const=0;
     virtual RealType Vout() const=0;
     virtual VTS f()=0;
-    //virtual MTS dfdx()=0;
 };
 
-/**
- *@brief Newton Löser für Abgeleitete Klassen von Modul
- */
-/*
-template<typename RealType=double, int NP=Dynamic, int NS=Dynamic, typename TP=RealType>
-class MODULENEWTON
-{
-  LINEAR_SOLVER<RealType,NS>& _lsol;
-  double _eps;
-public:
-  MODULENEWTON(LINEAR_SOLVER<RealType,NS>& lsol) : _lsol(lsol), _eps(0) {}
-  double& eps() { return _eps; }
-  void solve(Module<RealType>& mod) {
-    assert(_eps>0);
-    LINEAR_SYSTEM<RealType,NS> lsys(mod.x().size());
-    while (mod.f().norm()>_eps) {
-      lsys.A()=mod.dfdx(); lsys.b()=-mod.f();
-      _lsol.solve(lsys);
-      //std::cout << "A: " << std::endl << lsys.A() << std::endl << "b: " << std::endl << lsys.b() << std::endl << (mod.f().norm()>_eps) << std::endl;
-      mod.x()+=lsys.x();
-    }
-  }
-};
-*/
 #endif // MODULE_H

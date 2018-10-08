@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['makenewbutton',['makeNewButton',['../class_test_class.html#a3a11769246ee3997da85854f86ee1727',1,'TestClass']]],
-  ['module',['Module',['../class_module.html#a40ec09f0f85314f2b542077d83567d7a',1,'Module']]],
-  ['modulenewton',['MODULENEWTON',['../class_m_o_d_u_l_e_n_e_w_t_o_n.html#aa2e0aeb40d8313bfcac5803cb18b5a45',1,'MODULENEWTON']]]
+  ['newton',['NEWTON',['../class_n_e_w_t_o_n.html#a473d598fe7f30d8895a90a7daecb5f01',1,'NEWTON']]],
+  ['nonlinear_5fsystem',['NONLINEAR_SYSTEM',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#aa6073542adb090bf99729df5b03ca707',1,'NONLINEAR_SYSTEM']]],
+  ['np',['np',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#ab5876470030832088d8ee1ed609d5311',1,'NONLINEAR_SYSTEM']]],
+  ['ns',['ns',['../class_n_o_n_l_i_n_e_a_r___s_y_s_t_e_m.html#abf4102c649f8316e44033a76f9d6183f',1,'NONLINEAR_SYSTEM']]],
+  ['numequations',['numEquations',['../classcascade.html#a9c6e6421737df16249a7198e8feda747',1,'cascade']]],
+  ['numvariables',['numVariables',['../classcascade.html#a437738f915a517f4fb76a848e94ec923',1,'cascade']]]
 ];

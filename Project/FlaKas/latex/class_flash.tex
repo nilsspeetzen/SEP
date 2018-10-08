@@ -1,5 +1,5 @@
-\hypertarget{class_flash}{}\section{Flash$<$ TS, NP, NS, TP $>$ Class Template Reference}
-\label{class_flash}\index{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$@{Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}}
+\hypertarget{class_flash}{}\section{Flash$<$ Real\+Type $>$ Class Template Reference}
+\label{class_flash}\index{Flash$<$ Real\+Type $>$@{Flash$<$ Real\+Type $>$}}
 
 
 Flashmodul.  
@@ -11,63 +11,71 @@ Flashmodul.
 
 
 
-Inheritance diagram for Flash$<$ TS, NP, NS, TP $>$\+:\nopagebreak
+Inheritance diagram for Flash$<$ Real\+Type $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=208pt]{class_flash__inherit__graph}
+\includegraphics[width=187pt]{class_flash__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Flash$<$ TS, NP, NS, TP $>$\+:\nopagebreak
+Collaboration diagram for Flash$<$ Real\+Type $>$\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=208pt]{class_flash__coll__graph}
+\includegraphics[width=187pt]{class_flash__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_flash_afe08d3b05a9b5abe02071065b46abf62}{Flash}} (int num\+Substances, Matrix$<$ TS, Dynamic, 7 $>$ a)
+\mbox{\hyperlink{class_flash_abd6d1b3833826823dceb861c1da31b71}{Flash}} (int num\+Substances, Matrix$<$ Real\+Type, Dynamic, 7 $>$ a)
 \begin{DoxyCompactList}\small\item\em Konstruktor. \end{DoxyCompactList}\item 
-double \& \mbox{\hyperlink{class_flash_ac3cec3cdb03bd71e7b32d7e77a209308}{pg}} ()
-\begin{DoxyCompactList}\small\item\em Zugriff auf pg (Druck im \mbox{\hyperlink{class_flash}{Flash}}) \end{DoxyCompactList}\item 
-double \& \mbox{\hyperlink{class_flash_ac44eff7052e26a0075c21b4f068e162e}{F}} ()
-\begin{DoxyCompactList}\small\item\em Zuriff auf F (Flüssiger Zustrom) \end{DoxyCompactList}\item 
-double \& \mbox{\hyperlink{class_flash_a8bfde1e00ab93b6a9b07deead0d3525a}{Lin}} ()
+\mbox{\hyperlink{class_flash_ac655ea4d40f71a0a6ecb9adfeeb2017e}{Flash}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_a74418fb8dbfaf3f5e8f99d53393f6419}{Lout}} ()
+Real\+Type \& \mbox{\hyperlink{class_flash_a7e75d64415f5fd5dcb16fb0b8e5d4f40}{pg}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_aa4358ff3c66c1c461a2dba41436b95fe}{Vin}} ()
+Real\+Type \& \mbox{\hyperlink{class_flash_a561213a694ff2d2fd93b4a7c79401611}{F}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_a14aa681b115b9ca955ab775ff5e674e0}{Vout}} ()
+int \& \mbox{\hyperlink{class_flash_a34db5184e457483f86b89cb89e393dc5}{LinM}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_af0f7e7c438368d98a6ea330d40b39cd3}{T}} ()
+int \& \mbox{\hyperlink{class_flash_a16c48c278f54a6de62dd8c1241e9670a}{VinM}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_ade19a84735d622bd8fcc10bc37ed5cdd}{xini}} (int i)
+int \& \mbox{\hyperlink{class_flash_af0ad1baa628d2d891c036cefe7fb8a48}{LoutM}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_a5bebef2024531af739160f0fc23e3086}{yini}} (int i)
+int \& \mbox{\hyperlink{class_flash_adba4e13cb3bbf4f3c2e9fbef7f4e13c1}{VoutM}} ()
 \item 
-double \& \mbox{\hyperlink{class_flash_a289586a8a31a503bd4f96ea9455f235e}{xi}} (int i)
+Real\+Type \mbox{\hyperlink{class_flash_a074095aaca2230d0bc8d9e5cc513086c}{Lin}} () const
 \item 
-double \& \mbox{\hyperlink{class_flash_a2af985b9562aa54cbc5c3dfd2f4292ef}{yi}} (int i)
+Real\+Type \mbox{\hyperlink{class_flash_a1c6d0596f0a6dbdd7b391ab85772b2d4}{Lout}} () const
 \item 
-double \& \mbox{\hyperlink{class_flash_a5ae7d29d13281fafa84cc9c247461fda}{ki}} (int i)
+Real\+Type \mbox{\hyperlink{class_flash_a6b1604cf88d584aeea83f00bc7587dda}{Vin}} () const
 \item 
-double \& \mbox{\hyperlink{class_flash_ae54dbc3d5d7b87c854a765e9b5f4e519}{pi}} (int i)
+Real\+Type \mbox{\hyperlink{class_flash_aadd1e6c91da7d8a56b69f815b4346c5b}{Vout}} () const
 \item 
-V\+TS \mbox{\hyperlink{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2}{f}} ()
-\begin{DoxyCompactList}\small\item\em f ; muss gleich null sein um das N\+LS zu lösen (aus Aufgabenstellung) \end{DoxyCompactList}\item 
-M\+TS \mbox{\hyperlink{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b}{dfdx}} ()
-\begin{DoxyCompactList}\small\item\em dfdx ; für den Newton-\/\+Löser \end{DoxyCompactList}\end{DoxyCompactItemize}
+Real\+Type \mbox{\hyperlink{class_flash_aacc8bbe06bf30d2e124bbc6eadb31507}{T}} () const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_a64985fac64164cce252b68801b269f78}{xini}} (int i) const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_a7667f4e5e1df4abe07bf12b4e7696a81}{yini}} (int i) const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_abf2fb32491f3e75427ad25dadd7af546}{xi}} (int i) const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_a79622eee2bd4ec63c7d04c50603119a0}{yi}} (int i) const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_ae7582896021d0734356b1b5253ac68f1}{ki}} (int i) const
+\item 
+Real\+Type \mbox{\hyperlink{class_flash_a7a00a2495097cc7d45ee1f61b512829d}{pi}} (int i) const
+\item 
+VT \mbox{\hyperlink{class_flash_abd6eed865f215c9b4633547f154e91ec}{f}} ()
+\begin{DoxyCompactList}\small\item\em f ; muss gleich null sein um das N\+LS zu lösen (aus Aufgabenstellung) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$\newline
-class Flash$<$ T\+S, N\+P, N\+S, T\+P $>$}
+\subsubsection*{template$<$typename Real\+Type = double$>$\newline
+class Flash$<$ Real\+Type $>$}
 
 Flashmodul. 
 
@@ -76,12 +84,12 @@ Ein spezifisches Bauteil. Es handelt sich um einen \mbox{\hyperlink{class_flash}
 Besitzt durch \mbox{\hyperlink{class_module}{Module}} die Eigenschaften eines N\+LS 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_flash_afe08d3b05a9b5abe02071065b46abf62}\label{class_flash_afe08d3b05a9b5abe02071065b46abf62}} 
+\mbox{\Hypertarget{class_flash_abd6d1b3833826823dceb861c1da31b71}\label{class_flash_abd6d1b3833826823dceb861c1da31b71}} 
 \index{Flash@{Flash}!Flash@{Flash}}
 \index{Flash@{Flash}!Flash@{Flash}}
-\subsubsection{\texorpdfstring{Flash()}{Flash()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-\mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::\mbox{\hyperlink{class_flash}{Flash}} (\begin{DoxyParamCaption}\item[{int}]{num\+Substances,  }\item[{Matrix$<$ TS, Dynamic, 7 $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Flash()}{Flash()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+\mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::\mbox{\hyperlink{class_flash}{Flash}} (\begin{DoxyParamCaption}\item[{int}]{num\+Substances,  }\item[{Matrix$<$ Real\+Type, Dynamic, 7 $>$}]{a }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -94,54 +102,29 @@ Konstruktor.
 {\em a} & Antoine-\/\+Parameter für die Substanzen (num\+Substances$\ast$7 Matrix) \\
 \hline
 \end{DoxyParams}
-\+\_\+x\+: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
+\mbox{\Hypertarget{class_flash_ac655ea4d40f71a0a6ecb9adfeeb2017e}\label{class_flash_ac655ea4d40f71a0a6ecb9adfeeb2017e}} 
+\index{Flash@{Flash}!Flash@{Flash}}
+\index{Flash@{Flash}!Flash@{Flash}}
+\subsubsection{\texorpdfstring{Flash()}{Flash()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+\mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::\mbox{\hyperlink{class_flash}{Flash}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b}\label{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b}} 
-\index{Flash@{Flash}!dfdx@{dfdx}}
-\index{dfdx@{dfdx}!Flash@{Flash}}
-\subsubsection{\texorpdfstring{dfdx()}{dfdx()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-M\+TS \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::dfdx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
-dfdx ; für den Newton-\/\+Löser 
-
-\begin{DoxyReturn}{Returns}
-dfdx in Abhängigkeit der Variablen 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{class_module_a0762d7cbad2a73d5eff3f2f1155e8e33}{Module$<$$>$}}.
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=248pt]{class_flash_a83e35b3ab13b3705f0fe06c40b800a8b_cgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{class_flash_ac44eff7052e26a0075c21b4f068e162e}\label{class_flash_ac44eff7052e26a0075c21b4f068e162e}} 
+\mbox{\Hypertarget{class_flash_a561213a694ff2d2fd93b4a7c79401611}\label{class_flash_a561213a694ff2d2fd93b4a7c79401611}} 
 \index{Flash@{Flash}!F@{F}}
 \index{F@{F}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{F()}{F()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::F (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
-
-Zuriff auf F (Flüssiger Zustrom) 
-
-\begin{DoxyReturn}{Returns}
-\+\_\+F 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2}\label{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2}} 
+\mbox{\Hypertarget{class_flash_abd6eed865f215c9b4633547f154e91ec}\label{class_flash_abd6eed865f215c9b4633547f154e91ec}} 
 \index{Flash@{Flash}!f@{f}}
 \index{f@{f}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{f()}{f()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-V\+TS \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+VT \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::f (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -152,192 +135,218 @@ f in Abhängigkeit der Variablen
 \end{DoxyReturn}
 
 
-Implements \mbox{\hyperlink{class_module_a2499211a4fc52bc33512761ea7fb3c62}{Module$<$$>$}}.
+Implements \mbox{\hyperlink{class_module_ad28dc7d3309858af1011b60b53c51c1a}{Module$<$ Real\+Type $>$}}.
 
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=232pt]{class_flash_ad29e755877ca96aa5b9f34a10d6cd8b2_cgraph}
+\includegraphics[width=232pt]{class_flash_abd6eed865f215c9b4633547f154e91ec_cgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a5ae7d29d13281fafa84cc9c247461fda}\label{class_flash_a5ae7d29d13281fafa84cc9c247461fda}} 
+\mbox{\Hypertarget{class_flash_ae7582896021d0734356b1b5253ac68f1}\label{class_flash_ae7582896021d0734356b1b5253ac68f1}} 
 \index{Flash@{Flash}!ki@{ki}}
 \index{ki@{ki}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{ki()}{ki()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::ki (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::ki (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=235pt]{class_flash_a5ae7d29d13281fafa84cc9c247461fda_icgraph}
+\includegraphics[width=219pt]{class_flash_ae7582896021d0734356b1b5253ac68f1_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a8bfde1e00ab93b6a9b07deead0d3525a}\label{class_flash_a8bfde1e00ab93b6a9b07deead0d3525a}} 
+\mbox{\Hypertarget{class_flash_a074095aaca2230d0bc8d9e5cc513086c}\label{class_flash_a074095aaca2230d0bc8d9e5cc513086c}} 
 \index{Flash@{Flash}!Lin@{Lin}}
 \index{Lin@{Lin}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{Lin()}{Lin()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::Lin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::Lin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+
+Implements \mbox{\hyperlink{class_module_afd5ad051a1d37aac40709badad675732}{Module$<$ Real\+Type $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=240pt]{class_flash_a8bfde1e00ab93b6a9b07deead0d3525a_icgraph}
+\includegraphics[width=224pt]{class_flash_a074095aaca2230d0bc8d9e5cc513086c_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a74418fb8dbfaf3f5e8f99d53393f6419}\label{class_flash_a74418fb8dbfaf3f5e8f99d53393f6419}} 
+\mbox{\Hypertarget{class_flash_a34db5184e457483f86b89cb89e393dc5}\label{class_flash_a34db5184e457483f86b89cb89e393dc5}} 
+\index{Flash@{Flash}!LinM@{LinM}}
+\index{LinM@{LinM}!Flash@{Flash}}
+\subsubsection{\texorpdfstring{Lin\+M()}{LinM()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+int\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::LinM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_flash_a1c6d0596f0a6dbdd7b391ab85772b2d4}\label{class_flash_a1c6d0596f0a6dbdd7b391ab85772b2d4}} 
 \index{Flash@{Flash}!Lout@{Lout}}
 \index{Lout@{Lout}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{Lout()}{Lout()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::Lout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::Lout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+
+Implements \mbox{\hyperlink{class_module_a0258058bfb378f0016b3306dcb8082f3}{Module$<$ Real\+Type $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=246pt]{class_flash_a74418fb8dbfaf3f5e8f99d53393f6419_icgraph}
+\includegraphics[width=230pt]{class_flash_a1c6d0596f0a6dbdd7b391ab85772b2d4_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_ac3cec3cdb03bd71e7b32d7e77a209308}\label{class_flash_ac3cec3cdb03bd71e7b32d7e77a209308}} 
+\mbox{\Hypertarget{class_flash_af0ad1baa628d2d891c036cefe7fb8a48}\label{class_flash_af0ad1baa628d2d891c036cefe7fb8a48}} 
+\index{Flash@{Flash}!LoutM@{LoutM}}
+\index{LoutM@{LoutM}!Flash@{Flash}}
+\subsubsection{\texorpdfstring{Lout\+M()}{LoutM()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+int\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::LoutM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_flash_a7e75d64415f5fd5dcb16fb0b8e5d4f40}\label{class_flash_a7e75d64415f5fd5dcb16fb0b8e5d4f40}} 
 \index{Flash@{Flash}!pg@{pg}}
 \index{pg@{pg}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{pg()}{pg()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::pg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::pg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
-
-Zugriff auf pg (Druck im \mbox{\hyperlink{class_flash}{Flash}}) 
-
-\begin{DoxyReturn}{Returns}
-\+\_\+pg 
-\end{DoxyReturn}
-\mbox{\Hypertarget{class_flash_ae54dbc3d5d7b87c854a765e9b5f4e519}\label{class_flash_ae54dbc3d5d7b87c854a765e9b5f4e519}} 
+\mbox{\Hypertarget{class_flash_a7a00a2495097cc7d45ee1f61b512829d}\label{class_flash_a7a00a2495097cc7d45ee1f61b512829d}} 
 \index{Flash@{Flash}!pi@{pi}}
 \index{pi@{pi}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{pi()}{pi()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::pi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::pi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=235pt]{class_flash_ae54dbc3d5d7b87c854a765e9b5f4e519_icgraph}
+\includegraphics[width=219pt]{class_flash_a7a00a2495097cc7d45ee1f61b512829d_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_af0f7e7c438368d98a6ea330d40b39cd3}\label{class_flash_af0f7e7c438368d98a6ea330d40b39cd3}} 
+\mbox{\Hypertarget{class_flash_aacc8bbe06bf30d2e124bbc6eadb31507}\label{class_flash_aacc8bbe06bf30d2e124bbc6eadb31507}} 
 \index{Flash@{Flash}!T@{T}}
 \index{T@{T}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{T()}{T()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::T (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=233pt]{class_flash_af0f7e7c438368d98a6ea330d40b39cd3_icgraph}
+\includegraphics[width=217pt]{class_flash_aacc8bbe06bf30d2e124bbc6eadb31507_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_aa4358ff3c66c1c461a2dba41436b95fe}\label{class_flash_aa4358ff3c66c1c461a2dba41436b95fe}} 
+\mbox{\Hypertarget{class_flash_a6b1604cf88d584aeea83f00bc7587dda}\label{class_flash_a6b1604cf88d584aeea83f00bc7587dda}} 
 \index{Flash@{Flash}!Vin@{Vin}}
 \index{Vin@{Vin}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{Vin()}{Vin()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::Vin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::Vin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+
+Implements \mbox{\hyperlink{class_module_a5ef6a7e21c2941a3e8940e7c0e5f0670}{Module$<$ Real\+Type $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{class_flash_aa4358ff3c66c1c461a2dba41436b95fe_icgraph}
+\includegraphics[width=226pt]{class_flash_a6b1604cf88d584aeea83f00bc7587dda_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a14aa681b115b9ca955ab775ff5e674e0}\label{class_flash_a14aa681b115b9ca955ab775ff5e674e0}} 
+\mbox{\Hypertarget{class_flash_a16c48c278f54a6de62dd8c1241e9670a}\label{class_flash_a16c48c278f54a6de62dd8c1241e9670a}} 
+\index{Flash@{Flash}!VinM@{VinM}}
+\index{VinM@{VinM}!Flash@{Flash}}
+\subsubsection{\texorpdfstring{Vin\+M()}{VinM()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+int\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::VinM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_flash_aadd1e6c91da7d8a56b69f815b4346c5b}\label{class_flash_aadd1e6c91da7d8a56b69f815b4346c5b}} 
 \index{Flash@{Flash}!Vout@{Vout}}
 \index{Vout@{Vout}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{Vout()}{Vout()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::Vout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::Vout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+
+Implements \mbox{\hyperlink{class_module_ae479ac97ae43fd740cdd44b947b952d9}{Module$<$ Real\+Type $>$}}.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=248pt]{class_flash_a14aa681b115b9ca955ab775ff5e674e0_icgraph}
+\includegraphics[width=232pt]{class_flash_aadd1e6c91da7d8a56b69f815b4346c5b_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a289586a8a31a503bd4f96ea9455f235e}\label{class_flash_a289586a8a31a503bd4f96ea9455f235e}} 
+\mbox{\Hypertarget{class_flash_adba4e13cb3bbf4f3c2e9fbef7f4e13c1}\label{class_flash_adba4e13cb3bbf4f3c2e9fbef7f4e13c1}} 
+\index{Flash@{Flash}!VoutM@{VoutM}}
+\index{VoutM@{VoutM}!Flash@{Flash}}
+\subsubsection{\texorpdfstring{Vout\+M()}{VoutM()}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+int\& \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::VoutM (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_flash_abf2fb32491f3e75427ad25dadd7af546}\label{class_flash_abf2fb32491f3e75427ad25dadd7af546}} 
 \index{Flash@{Flash}!xi@{xi}}
 \index{xi@{xi}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{xi()}{xi()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::xi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::xi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=235pt]{class_flash_a289586a8a31a503bd4f96ea9455f235e_icgraph}
+\includegraphics[width=219pt]{class_flash_abf2fb32491f3e75427ad25dadd7af546_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_ade19a84735d622bd8fcc10bc37ed5cdd}\label{class_flash_ade19a84735d622bd8fcc10bc37ed5cdd}} 
+\mbox{\Hypertarget{class_flash_a64985fac64164cce252b68801b269f78}\label{class_flash_a64985fac64164cce252b68801b269f78}} 
 \index{Flash@{Flash}!xini@{xini}}
 \index{xini@{xini}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{xini()}{xini()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::xini (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::xini (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=243pt]{class_flash_ade19a84735d622bd8fcc10bc37ed5cdd_icgraph}
+\includegraphics[width=227pt]{class_flash_a64985fac64164cce252b68801b269f78_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a2af985b9562aa54cbc5c3dfd2f4292ef}\label{class_flash_a2af985b9562aa54cbc5c3dfd2f4292ef}} 
+\mbox{\Hypertarget{class_flash_a79622eee2bd4ec63c7d04c50603119a0}\label{class_flash_a79622eee2bd4ec63c7d04c50603119a0}} 
 \index{Flash@{Flash}!yi@{yi}}
 \index{yi@{yi}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{yi()}{yi()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::yi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::yi (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=235pt]{class_flash_a2af985b9562aa54cbc5c3dfd2f4292ef_icgraph}
+\includegraphics[width=219pt]{class_flash_a79622eee2bd4ec63c7d04c50603119a0_icgraph}
 \end{center}
 \end{figure}
-\mbox{\Hypertarget{class_flash_a5bebef2024531af739160f0fc23e3086}\label{class_flash_a5bebef2024531af739160f0fc23e3086}} 
+\mbox{\Hypertarget{class_flash_a7667f4e5e1df4abe07bf12b4e7696a81}\label{class_flash_a7667f4e5e1df4abe07bf12b4e7696a81}} 
 \index{Flash@{Flash}!yini@{yini}}
 \index{yini@{yini}!Flash@{Flash}}
 \subsubsection{\texorpdfstring{yini()}{yini()}}
-{\footnotesize\ttfamily template$<$typename TS = double, int NP = Dynamic, int NS = Dynamic, typename TP = TS$>$ \\
-double\& \mbox{\hyperlink{class_flash}{Flash}}$<$ TS, NP, NS, TP $>$\+::yini (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename Real\+Type = double$>$ \\
+Real\+Type \mbox{\hyperlink{class_flash}{Flash}}$<$ Real\+Type $>$\+::yini (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=243pt]{class_flash_a5bebef2024531af739160f0fc23e3086_icgraph}
+\includegraphics[width=227pt]{class_flash_a7667f4e5e1df4abe07bf12b4e7696a81_icgraph}
 \end{center}
 \end{figure}
 

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['yi',['yi',['../class_flash.html#a2af985b9562aa54cbc5c3dfd2f4292ef',1,'Flash']]],
-  ['yini',['yini',['../class_flash.html#a5bebef2024531af739160f0fc23e3086',1,'Flash']]]
+  ['yi',['yi',['../class_flash.html#a79622eee2bd4ec63c7d04c50603119a0',1,'Flash']]],
+  ['yini',['yini',['../class_flash.html#a7667f4e5e1df4abe07bf12b4e7696a81',1,'Flash']]]
 ];

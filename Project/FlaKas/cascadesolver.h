@@ -1,0 +1,29 @@
+#ifndef CASCADESOLVER_H
+#define CASCADESOLVER_H
+
+#include "cascade.h"
+#include "TestEso.h"
+#include "BlockDeco/AlgebraicEsoBlockSolver.hpp"
+
+class CascadeSolver
+{
+public:
+	CascadeSolver() {}
+	void solve() {
+		TestEso<double> eso;
+		AlgebraicEsoBlockSolver solver;
+		Matrix<double, Dynamic, 1> x(eso.numVariables());
+		x.setOnes();
+		try
+		{
+			solver.solve(eso, x);
+		}
+		catch (const std::exception&)
+		{
+			qDebug() << "Konvergiert nicht";
+		}
+		std::cout << x;
+  }
+};
+
+#endif // CASCADESOLVER_H

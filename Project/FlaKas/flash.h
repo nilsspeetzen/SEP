@@ -59,7 +59,7 @@ public:
         _xf(0) = 0.5; _xf(1) = 0.5;
         _LinM = -1; _LoutM = -1; _VinM = -1; _VoutM = -1;
     }
-    Flash() : Module<RealType>() {} //Für die map (Standardkonstruktor)
+	Flash() : Module<RealType>(), _numS(2) {} //Für die map (Standardkonstruktor)
 
     constexpr int numVariables() { return 5 + 6*_numS; }
     constexpr int numEquations() { return 5 + 6*_numS; }

@@ -5,7 +5,7 @@
 #include <QtQml/QQmlApplicationEngine>
 #include <QQmlComponent>
 #include <QtQuick/QQuickWindow>
-#include "cascadeeso.h"
+#include "cascadesolver.h"
 
 
 /**
@@ -24,7 +24,7 @@ class WorldMachine : public QObject
 private:
     QQmlApplicationEngine* _engine;
     QObject* _root;
-    Matrix<double,2,7> A;
+	Matrix<double, 2, 7> A;
     cascade<>* C;
     int NUMSUBSTANCES;
 
@@ -54,9 +54,9 @@ signals:
 public slots:
     void startCascadeSlot() {
         qDebug() << "Starte Löser";
-        CASCADEESO solver;
+        CascadeSolver solver;
         solver.solve();
-        setUpDataWindow();
+        //setUpDataWindow();
     }
 
     void addFlashSlot(const int& id) {

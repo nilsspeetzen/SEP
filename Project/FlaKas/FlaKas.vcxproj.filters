@@ -59,6 +59,9 @@
     <ClCompile Include="src\BlockDecoBTF\btf_strongcomp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Yasp\src\Yasp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="WorldMachine.h">
@@ -95,6 +98,9 @@
     <QtRcc Include="qml.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <None Include="dataWindow.qml" />
+    <None Include="flash.qml" />
+    <None Include="main.qml" />
     <None Include="dataWindow.qml" />
     <None Include="flash.qml" />
     <None Include="main.qml" />

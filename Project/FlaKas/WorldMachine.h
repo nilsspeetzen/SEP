@@ -25,7 +25,7 @@ private:
     QQmlApplicationEngine* _engine;
     QObject* _root;
 	Matrix<double, 2, 7> A;
-    cascade<>* C;
+    cascade<double>* C;
     int NUMSUBSTANCES;
 
     void setUpDataWindow() {
@@ -47,7 +47,7 @@ public:
         NUMSUBSTANCES = 2;
         A <<    73.649, -7258.2, 0, 0, -7.3037, 4.1653e-6, 2,
                 79.276, -10105, 0, 0, -7.521, 7.3408e-19, 6;
-        C = new cascade<>(NUMSUBSTANCES, A);
+        C = new cascade<double>(NUMSUBSTANCES, A);
     }
 
 signals:
@@ -55,7 +55,7 @@ public slots:
     void startCascadeSlot() {
         qDebug() << "Starte Löser";
         CascadeSolver solver;
-        solver.solve();
+        solver.solve(C);
         //setUpDataWindow();
     }
 

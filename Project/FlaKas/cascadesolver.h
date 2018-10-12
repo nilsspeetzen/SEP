@@ -9,20 +9,22 @@ class CascadeSolver
 {
 public:
 	CascadeSolver() {}
-	void solve() {
-		TestEso<double> eso;
+	void solve(cascade<double>* eso) {
+		eso->initX();
 		AlgebraicEsoBlockSolver solver;
-		Matrix<double, Dynamic, 1> x(eso.numVariables());
+		Matrix<double, Dynamic, 1> x(eso->numVariables());
 		x.setOnes();
 		try
 		{
-			solver.solve(eso, x);
+			solver.solve(*eso, x);
 		}
 		catch (const std::exception&)
 		{
 			qDebug() << "Konvergiert nicht";
 		}
-		std::cout << x;
+		std::stringstream sx;
+		sx << x;
+		qDebug() << "x:" << QString::fromStdString(sx.str());
   }
 };
 

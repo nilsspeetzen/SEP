@@ -19,22 +19,16 @@ using namespace Eigen;
 template<typename RealType=double>
 class Module
 {
-    typedef Matrix<RealType,Dynamic,1> VTS;
-    typedef Matrix<RealType,Dynamic,Dynamic> MTS;
-    typedef Matrix<RealType,Dynamic,1> VTP;
+    typedef Matrix<RealType,Dynamic,1> VT;
 protected:
-    VTS _x;
+    VT _x;
 public:
     Module() {}
 
-    VTS& x() { return _x; }
+    VT& x() { return _x; }
     RealType& x(int i) { return _x(i); }
 
-    virtual RealType Lin() const=0;
-    virtual RealType Vin() const=0;
-    virtual RealType Lout() const=0;
-    virtual RealType Vout() const=0;
-    virtual VTS f()=0;
+    virtual VT f(VT v)=0;
 };
 
 #endif // MODULE_H

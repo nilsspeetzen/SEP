@@ -68,7 +68,6 @@ public:
     tangentModel.evalAll(eqGroup,residuals);
   }
 
-
   template<int I, int K>
   inline RealType evalDerivative(EqGroup<I> eqGroup, int equationIndex, VarGroup<K> varGroup, int variableIndex){
     tangentModel.setTangent(varGroup,variableIndex,1.0);

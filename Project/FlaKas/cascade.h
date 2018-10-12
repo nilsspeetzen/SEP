@@ -1,6 +1,10 @@
 #ifndef CASCADE_H
 #define CASCADE_H
 #include "flash.h"
+#include "Eigen/SparseCore"
+#include "Eigen/Core"
+#include "Yasp/Yasp.hpp"
+#include <math.h>
 #include <vector>
 #include <QtCore>
 
@@ -15,15 +19,15 @@
 /**
  * @brief Enthält alle Flashes
  */
-template<typename RealType=double>
+template<typename RealType>
 class cascade {
     typedef Matrix<RealType,Dynamic,1> VT;
     typedef Matrix<RealType,Dynamic,Dynamic> MT;
-private:
+protected:
     int _numS;
-    VT _x;
     Matrix<RealType,Dynamic,7> _a;
     std::map <int,Flash<RealType>> _flashes;
+    VT _x;
 public:
     /**
      * @brief Konstruktor
@@ -31,72 +35,168 @@ public:
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
     cascade(int numSubstances, Matrix<RealType,Dynamic,7> a) : _numS(numSubstances), _a(a) {}
-    cascade() {}
+	cascade() {}
+
+	VT& x() { return _x; }
+	RealType& x(int i) { return _x(i); }
+	int& numS() { return _numS; }
+	Matrix<RealType, Dynamic, 7>& a() { return _a; }
+	std::map <int, Flash<RealType>>& flashes() { return _flashes; }
 
     //FÜR ESO ----------------------------------------------
 
-    static constexpr int numVariables(VarGroup<0>&) { return 5 + 6; }
-    static constexpr int numEquations(EqGroup<0>&) { return 5 + 6; }
+	void initX() {
+		_x = VT::Zero(5);//VT::Zero(numVariables());
+	}
 
-    template<int K>
-    inline void setVariable(VarGroup<K> , const int index, const RealType& value){
-        static_assert (K==0,"only one variable group present" );
-        _x[index] = value;
-    }
+	int numVariables() {
+		int numV = 0;
+		for (auto i = cbegin(_flashes); i != cend(_flashes); i++) {
+			numV += i->second.numVariables();
+		}
+		return 5;//numV;
+	}
 
-    template<int K>
-    inline RealType getVariable(VarGroup<K> , const int index) const {
-        static_assert (K==0,"only one variable group present" );
-        return _x[index];
-    }
+	int numEquations() { 
+		int numE = 0;
+		for (auto i = cbegin(_flashes); i != cend(_flashes); i++) {
+			numE += i->second.numEquations();
+		}
+		return 5;//numE; 
+	}
 
-    template<int K>
-    inline RealType eval(EqGroup<0>, EqIndex<K>) const {
-        //HIER MÜSSEN DIE ENTSPRECHENDEN GL DER FLASHES UND DIE VERBINDUNGSGL HIN
-        return _flashes.at(K).T();
-    }
+	inline void setVariable(int variableIndex, const RealType& variableValue)
+	{
+		_x(variableIndex) = variableValue;
+	}
 
+	template<class X, class V>
+	inline void setVariables(X indices, const V& values) {
+		int irow = 0;
+		for (auto i = cbegin(indices); i != cend(indices); ++i, ++irow)
+			setVariable(*i, values(irow));
+	}
+
+	//Eval
+	template<class V>
+	inline void evalAll(V& residuals) {
+		for (int i = 0; i < numEquations(); i++)
+			residuals[i] = eval(i);
+	}
+
+	template<class X, class V>
+	inline void evalBlock(X indices, V& residuals) {
+		int irow = 0;
+		for (auto i = cbegin(indices); i != cend(indices); ++i, ++irow)
+			residuals[irow] = eval(*i);
+	}
+
+	RealType eval(int i) {
+		return x(i) - i;
+	}
+
+	//Derivative
+	template<class X, class Y, typename Jacobian>
+	inline void evalBlockJacobian(const X& eqIndices, const Y& varIndices, Jacobian& jac) {
+		using std::cbegin;
+		using std::cend;
+		int jcol = 0;
+		for (auto j = cbegin(varIndices); j != cend(varIndices); ++j, ++jcol) {
+			int irow = 0;
+			for (auto i = cbegin(eqIndices); i != cend(eqIndices); ++i, ++irow)
+				jac(irow, jcol) = evalDerivative(*i, *j);
+		}
+	}
+
+	RealType evalDerivative(int i, int j) {
+		cascade<gt1s_t<RealType>> tangentCascade;
+		tangentCascade.initX();
+		for (int k = 0; k < numVariables(); k++) {
+			value(tangentCascade.x(k)) = x(k);
+			derivative(tangentCascade.x(k)) = 0;
+		}
+		derivative(tangentCascade.x(j)) = 1;
+		return derivative(tangentCascade.eval(i));
+	}
+
+	//Jacobianpattern
+	template<typename _Scalar>
+	inline void evalJacobianPattern(Eigen::SparseMatrix<_Scalar>& jacobian)
+	{
+		cascade<Yasp> patternCascade;
+		patternCascade.numS() = _numS;
+		for (auto i = cbegin(_flashes); i != cend(_flashes); i++) {
+			Flash<Yasp> f;
+			patternCascade.flashes().insert(std::pair<int, Flash<Yasp>>(i->first,f));
+		}
+		patternCascade.initX();
+
+		int numEqns = numEquations();
+		int numVars = numVariables();
+
+
+		for (int i = 0; i < numVars; ++i) {
+			patternCascade.setVariable(i, Yasp{ i });
+		}
+
+
+		Eigen::Matrix<Yasp, -1, 1> residuals;
+		residuals.resize(numEqns, 1);
+		patternCascade.evalAll(residuals);
+
+		size_t nnz = 0;
+		for (int i = 0; i < numEqns; ++i) {
+			nnz += residuals[i].nz.size();
+		}
+
+		using TripletType = Eigen::Triplet<_Scalar>;
+		std::vector<TripletType> triplets;
+		triplets.reserve(nnz);
+
+		// second iteration to fill entries
+		for (int irow = 0; irow < numEqns; irow++) {
+			for (auto icol : residuals[irow].nz) {
+				triplets.emplace_back(TripletType{ irow,icol,0.0 });
+			}
+		}
+
+		jacobian.resize(numEqns, numVars);
+		jacobian.setFromTriplets(triplets.begin(), triplets.end());
+		jacobian.makeCompressed();
+
+	}
+	
     //KASKADENMODIFIKATION ---------------------------------
-    /**
-     * @brief Erstellt einne neuen Flash
-     * @param id ID
-     */
+
     void addFlash(int id) {
         Flash<RealType> f(_numS, _a);
         _flashes.insert(std::pair<int, Flash<RealType>>(id,f));
     }
 
-    /**
-     * @brief Zugriff auf einen gespeicherten Flash
-     * @param id ID
-     * @return Flash mit angegebener id
-     */
     Flash<>& getFlash(int id) {
         return _flashes.at(id); //vielleicht noch besser machen
     }
 
-    /**
-     * @brief Löscht einen Flash
-     * @param id ID
-     */
     void deleteFlash(int id) {
+		if (_flashes.at(id).LinM() != nullptr) _flashes.at(id).LinM()->LoutM() = nullptr;
+		if (_flashes.at(id).VinM() != nullptr) _flashes.at(id).VinM()->VoutM() = nullptr;
+		if (_flashes.at(id).LoutM() != nullptr) _flashes.at(id).LoutM()->LinM() = nullptr;
+		if (_flashes.at(id).VoutM() != nullptr) _flashes.at(id).VoutM()->VinM() = nullptr;
         _flashes.erase(id);
     }
 
-    /**
-     * @brief Speichert Verbindung in den Flashes
-     * @param id1 OutputID
-     * @param id2 InputID
-     * @param phase 1:Flüssig 2:Gasförmig
-     */
     void connectFlashes(int id1, int id2, int phase) {
         if(phase == 1) {
-            _flashes[id1].LoutM() = id2;
-            _flashes[id2].LinM() = id1;
+			if (_flashes.at(id1).LoutM() != nullptr) _flashes.at(id1).LoutM()->LinM() = nullptr;
+			if (_flashes.at(id2).LinM() != nullptr) _flashes.at(id2).LinM()->LoutM() = nullptr;
+            _flashes.at(id1).LoutM() = &_flashes.at(id2);
+            _flashes.at(id2).LinM() = &_flashes.at(id1);
             qDebug() << "Cascade connected: " << id1 << id2 << "Liquid";
         } else if(phase == 2) {
-            _flashes[id1].VoutM() = id2;
-            _flashes[id2].VinM() = id1;
+			if (_flashes.at(id1).VoutM() != nullptr) _flashes.at(id1).VoutM()->VinM() = nullptr;
+			if (_flashes.at(id2).VinM() != nullptr) _flashes.at(id2).VinM()->VoutM() = nullptr;
+            _flashes.at(id1).VoutM() = &_flashes.at(id2);
+            _flashes.at(id2).VinM() = &_flashes.at(id1);
             qDebug() << "Cascade connected: " << id1 << id2 << "Vapor";
         }
     }

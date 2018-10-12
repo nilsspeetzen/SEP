@@ -191,6 +191,7 @@
     <ClCompile Include="src\BlockDecoBTF\btf_maxtrans.c" />
     <ClCompile Include="src\BlockDecoBTF\btf_order.c" />
     <ClCompile Include="src\BlockDecoBTF\btf_strongcomp.c" />
+    <ClCompile Include="src\Yasp\src\Yasp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TestEso.h" />

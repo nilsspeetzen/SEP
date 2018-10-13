@@ -10,7 +10,6 @@ class CascadeSolver
 public:
 	CascadeSolver() {}
 	void solve(cascade<double>* eso) {
-		eso->initX();
 		AlgebraicEsoBlockSolver solver;
 		Matrix<double, Dynamic, 1> x(eso->numVariables());
 		x.setOnes();
@@ -24,7 +23,9 @@ public:
 		}
 		std::stringstream sx;
 		sx << x;
-		qDebug() << "x:" << QString::fromStdString(sx.str());
+		QString qstr = QString::fromStdString(sx.str());
+		qstr.replace(QChar('\n'), QChar(' '));
+		qDebug() << "x:" << qstr;
   }
 };
 

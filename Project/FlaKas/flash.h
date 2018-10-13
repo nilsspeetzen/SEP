@@ -21,7 +21,7 @@
 
 //TODO die GLS vom Module genauer machen, visuelles Zeug
 
-template<typename RealType=double>
+template<typename RealType=double, typename ConstType=RealType>
 class Flash : public Module<RealType>
 {
     typedef Matrix<RealType,Dynamic,1> VT;
@@ -34,15 +34,16 @@ private:
      * _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
      */
     RealType _pg, _F;
-    Matrix<RealType,Dynamic,1> _xf;
+    Matrix<ConstType,Dynamic,1> _xf;
     const int _numS;
-    Matrix<RealType,Dynamic,7> _a;
+    Matrix<ConstType,Dynamic,7> _a;
 
     //connection flashes
 	Flash* _LinM;
 	Flash* _VinM;
 	Flash* _LoutM;
 	Flash* _VoutM;
+	int _LinID, _VinID, _LoutID, _VoutID;
 
 public:
     /**
@@ -50,46 +51,75 @@ public:
      * @param numSubstances Anzahl der verschiedenen Substanzen im Gemisch
      * @param a Antoine-Parameter für die Substanzen (numSubstances*7 Matrix)
      */
-    Flash(int numSubstances, Matrix<RealType,Dynamic,7> a) : Module<RealType>(), _numS(numSubstances), _a(a) {
-        _x = VT::Zero(5 + 6*numSubstances);
-        _LinM = nullptr;
-		_LoutM = nullptr;
-		_VinM = nullptr;
-		_VoutM = nullptr;
+    Flash(int numSubstances, Matrix<ConstType,Dynamic,7> a) : Module<RealType>(), _numS(numSubstances), _a(a) {
+		initX();
+		_xf = Matrix<ConstType, Dynamic, 1>::Zero(numSubstances);
+		_F = 0;
+		_pg = 1000;
+        _LinID = _LoutID = _VinID = _VoutID = -1;
     }
 	Flash() : Module<RealType>(), _numS(0) {} //Für die map (Standardkonstruktor)
 
 	int numVariables() const { return 5 + 6 * _numS; }
 	int numEquations() const { return 5 + 6 * _numS; }
 
-    RealType& pg() { return _pg; }
-    RealType& F() { return _F; }
+	int numS() const { return _numS; }
+	ConstType& pg() { return _pg; }
+	ConstType& F() { return _F; }
 
-    Flash*& LinM() { return _LinM; }
-    Flash*& VinM() { return _VinM; }
-    Flash*& LoutM() { return _LoutM; }
-    Flash*& VoutM() { return _VoutM; }
+	inline int& LinID() { return _LinID; }
+	inline int& VinID() { return _VinID; }
+	inline int& LoutID() { return _LoutID; }
+	inline int& VoutID() { return _VoutID; }
+	inline Flash*& LinM() { return _LinM; }
+	inline Flash*& VinM() { return _VinM; }
+	inline Flash*& LoutM() { return _LoutM; }
+	inline Flash*& VoutM() { return _VoutM; }
 	
-    inline RealType Lin()  const { return _x(0); }
-    inline RealType Lout() const { return _x(1); }
-    inline RealType Vin()  const { return _x(2); }
-    inline RealType Vout() const { return _x(3); }
-    inline RealType T()    const { return _x(4); }
-    inline RealType xini(int i) const { return _x(5+i); }
-    inline RealType yini(int i) const { return _x(5+i+_numS); }
-    inline RealType xi(int i) const { return _x(5+i+2*_numS); }
-    inline RealType yi(int i) const { return _x(5+i+3*_numS); }
-    inline RealType ki(int i) const { return _x(5+i+4*_numS); }
-    inline RealType pi(int i) const { return _x(5+i+5*_numS); }
+    inline RealType& Lin() { return _x(0); }
+    inline RealType& Lout() { return _x(1); }
+    inline RealType& Vin() { return _x(2); }
+    inline RealType& Vout() { return _x(3); }
+    inline RealType& T() { return _x(4); }
+    inline RealType& xini(int i) { return _x(5+i); }
+    inline RealType& yini(int i) { return _x(5+i+_numS); }
+    inline RealType& xi(int i) { return _x(5+i+2*_numS); }
+    inline RealType& yi(int i) { return _x(5+i+3*_numS); }
+    inline RealType& ki(int i) { return _x(5+i+4*_numS); }
+    inline RealType& pi(int i) { return _x(5+i+5*_numS); }
+
+	inline void setVariable(int i, const RealType& value) {
+		_x(i) = value;
+	}
+
+	inline void initX() {
+		_x = VT::Zero(5 + 6 * _numS);
+		Lin() = 0;
+		Lout() = 0;
+		Vin() = 0;
+		Vout() = 0;
+		T() = 273;
+		for (int i = 0; i < _numS; i++) {
+			xini(i) = 0;
+			yini(i) = 0;
+			xi(i) = 0;
+			yi(i) = 0;
+			ki(i) = 1;
+			pi(i) = 1000;
+		}
+	}
 
     /**
      * @brief f ; muss gleich null sein um das NLS zu lösen (aus Aufgabenstellung)
      * @return f in Abhängigkeit der Variablen
      */
-    VT f(VT x) {
-		_x = x;
+    RealType f(int eq) {
         VT r = VT::Zero(_x.size());
         //GLS
+
+	/**
+	 * _x: Lin, Lout, Vin, Vout, T, xini, yini, xi..., yi..., ki..., pi...
+	 */
         for(int i = 0; i<_numS; i++) {
             r(i)            = _F*_xf(i) + Lin()*xini(i) + Vin()*yini(i) - Lout()*xi(i) - Vout()*yi(i); //1
             r(_numS + i)    = yi(i) - ki(i)*xi(i); //2
@@ -105,23 +135,23 @@ public:
 		r(2 + 4 * _numS) = Vout() - 50;
 		r(3 + 4 * _numS) = Lin();
 		r(4 + 4 * _numS) = Vin();
-		if(_VoutM != nullptr)
+		if(_VoutID != -1)
 			r(2+4*_numS) = Vout() - _VoutM->Vin();
-		if(_LinM != nullptr)
+		if(_LinID != -1)
 			r(3+4*_numS) = Lin() - _LinM->Lout();
-		if(_VinM != nullptr)
+		if(_VinID != -1)
 			r(4+4*_numS) = Vin() - _VinM->Vout();
 
         for(int i = 0; i<_numS; i++) {
-            r(4+4*_numS+i) = xini(i);
-            r(4+5*_numS+i) = yini(i);
+            r(5+4*_numS+i) = xini(i);
+            r(5+5*_numS+i) = yini(i);
 
-			if (_LinM != nullptr)
-				r(4+4*_numS+i) = xini(i) - _LinM->xi(i);
-			if (_VinM != nullptr)
-				r(4+5*_numS+i) = yini(i) - _LinM->yi(i);
+			if (_LinID != -1)
+				r(5+4*_numS+i) = xini(i) - _LinM->xi(i);
+			if (_VinID != -1)
+				r(5+5*_numS+i) = yini(i) - _LinM->yi(i);
         }
-        return r;
+        return r(eq);
     }
 };
 

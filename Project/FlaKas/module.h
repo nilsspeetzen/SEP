@@ -28,7 +28,7 @@ public:
     VT& x() { return _x; }
     RealType& x(int i) { return _x(i); }
 
-    virtual VT f(VT v)=0;
+    virtual RealType f(int i)=0;
 };
 
 #endif // MODULE_H

@@ -14,7 +14,7 @@ ApplicationWindow {
     property int inConnectID: 1
     property int inConnectPhase: 2
     property bool activeOutConnection: false
-    property bool activeInConnection: true
+    property bool activeInConnection: false
 
     signal s_startCascade()
     signal s_addFlash(int id)

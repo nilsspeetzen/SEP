@@ -45,7 +45,7 @@ public:
 		Matrix<int, 2, 1> pos = getIdAndRestForEquation(i);
 		int id = pos(0);
 		int varid = pos(1);
-		return _flashes.at(id).x(i);
+		return _flashes.at(id).x(varid);
 	}
 
 	int numVariables() {
@@ -77,7 +77,6 @@ public:
 	inline void setVariables(X indices, const V& values) {
 		int irow = 0;
 		for (auto i = cbegin(indices); i != cend(indices); ++i, ++irow) {
-			qDebug() << "Setze: " << *i << values(irow);
 			setVariable(*i, values(irow));
 		}
 	}
@@ -98,7 +97,6 @@ public:
 	
 	RealType eval(int eq) {
 		Matrix<int, 2, 1> pos = getIdAndRestForEquation(eq);
-		//qDebug() << "Flash: " << pos(0) << "for Equation:" << eq << pos(1);
 		int id = pos(0);
 		int eqid = pos(1);
 		return _flashes.at(id).f(eqid);

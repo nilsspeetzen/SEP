@@ -24,9 +24,7 @@ class WorldMachine : public QObject
 private:
     QQmlApplicationEngine* _engine;
     QObject* _root;
-	Matrix<double, 2, 7> A;
     cascade<double>* C;
-    int NUMSUBSTANCES;
 
     void setUpDataWindow() {
         QQmlComponent newWindow(_engine);
@@ -35,7 +33,6 @@ private:
             QQuickWindow* dataWindow = dynamic_cast<QQuickWindow*>(newWindow.create(_engine->rootContext()));
             //dataWindow->setParent(_root);
             dataWindow->show();
-            //TODO gib Window die DATEN
         }
         else {
             qDebug() << "newWindow not ready";
@@ -44,7 +41,8 @@ private:
 
 public:
     WorldMachine(QQmlApplicationEngine* engine, QObject* root) : _engine(engine), _root(root) {
-        NUMSUBSTANCES = 2;
+        int NUMSUBSTANCES = 2;
+		Matrix<double, 2, 7> A;
         A <<    73.649, -7258.2, 0, 0, -7.3037, 4.1653e-6, 2,
                 79.276, -10105, 0, 0, -7.521, 7.3408e-19, 6;
         C = new cascade<double>(NUMSUBSTANCES, A);
@@ -56,7 +54,7 @@ public slots:
         qDebug() << "Starte Löser";
         CascadeSolver solver;
         solver.solve(C);
-        //setUpDataWindow();
+        setUpDataWindow();
     }
 
     void addFlashSlot(const int& id) {

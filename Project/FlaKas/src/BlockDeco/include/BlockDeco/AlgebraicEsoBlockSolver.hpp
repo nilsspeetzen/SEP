@@ -43,7 +43,7 @@ public:
   {
     std::vector<int> allIndices(eso.numVariables());
     std::iota(std::begin(allIndices),std::end(allIndices),0);// Fill with 0, 1, 2, ...
-    //eso.setVariables(allIndices,x);
+    eso.setVariables(allIndices,x);
     computeBlocks(eso,x);
     EigenHybridBlockAdapter<AlgebraicEso> functor{eso};
     using RealType = std::remove_reference_t<decltype(x[0])>;

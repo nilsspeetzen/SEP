@@ -54,8 +54,9 @@ public:
     Flash(int numSubstances, Matrix<ConstType,Dynamic,7> a) : Module<RealType>(), _numS(numSubstances), _a(a) {
 		initX();
 		_xf = Matrix<ConstType, Dynamic, 1>::Zero(numSubstances);
-		_F = 0;
-		_pg = 1000;
+		_F = 100;
+		_xf.setConstant(0.5);
+		_pg = 1.013e5;
         _LinID = _LoutID = _VinID = _VoutID = -1;
     }
 	Flash() : Module<RealType>(), _numS(0) {} //Für die map (Standardkonstruktor)
@@ -135,12 +136,12 @@ public:
 		r(2 + 4 * _numS) = Vout() - 50;
 		r(3 + 4 * _numS) = Lin();
 		r(4 + 4 * _numS) = Vin();
-		if(_VoutID != -1)
-			r(2+4*_numS) = Vout() - _VoutM->Vin();
+		//if(_VoutID != -1)
+		//	r(2+4*_numS) = Vout() - _VoutM->Vin();	// <- alt
 		if(_LinID != -1)
 			r(3+4*_numS) = Lin() - _LinM->Lout();
 		if(_VinID != -1)
-			r(4+4*_numS) = Vin() - _VinM->Vout();
+			r(4+4*_numS) = Vin() - _VinM->Vout();	// <- z.B. hier besteht nur eine Abhängigkeit von Vin() von diesem Flash
 
         for(int i = 0; i<_numS; i++) {
             r(5+4*_numS+i) = xini(i);
@@ -149,7 +150,7 @@ public:
 			if (_LinID != -1)
 				r(5+4*_numS+i) = xini(i) - _LinM->xi(i);
 			if (_VinID != -1)
-				r(5+5*_numS+i) = yini(i) - _LinM->yi(i);
+				r(5+5*_numS+i) = yini(i) - _VinM->yi(i);
         }
         return r(eq);
     }

@@ -132,7 +132,7 @@ public:
 	RealType evalDerivative(int i, int j) {
 		typedef gt1s_t<RealType> DCOTYPE;
 		cascade<DCOTYPE, ConstType> tangentCascade(_numS, _a);
-		tangentCascade.copyFlashSetup(flashes());
+		tangentCascade.copyFlashSetup(_flashes);
 		for (int k = 0; k < numVariables(); k++) {
 			value(tangentCascade.x(k)) = x(k);
 			derivative(tangentCascade.x(k)) = 0;
@@ -147,9 +147,7 @@ public:
 	{
 		cascade<Yasp, RealType> patternCascade(_numS, _a);
 
-		for (auto i = cbegin(_flashes); i != cend(_flashes); i++) {
-			patternCascade.addFlash(i->first);
-		}
+		patternCascade.copyFlashSetup(_flashes);
 
 		int numEqns = numEquations();
 		int numVars = numVariables();

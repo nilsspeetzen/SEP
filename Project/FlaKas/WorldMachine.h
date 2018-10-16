@@ -54,7 +54,6 @@ public slots:
         qDebug() << "Starte Löser";
         CascadeSolver solver;
         solver.solve(C);
-        setUpDataWindow();
     }
 
     void addFlashSlot(const int& id) {

@@ -31,6 +31,21 @@ Item{
                 flash.destroy()
             }
         }
+		
+		Button {
+            width: 14
+            height: 14
+            x: 43
+            y: 36
+            text: "i"
+            onClicked: {
+                var newDataWindow = Qt.createComponent("dataWindow.qml");
+                if (newDataWindow.status === Component.Ready) {
+                    var dataWindowObject = newDataWindow.createObject(root)
+					dataWindowObject.show()
+                }
+            }
+        }
 
         Button {
             id: vout
